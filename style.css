@@ -7,7 +7,9 @@ body {
 }
 
 .navbar .navbar-brand {
-    color: yellow;
+    color: #8B1A1A;
+    font-family:Arial;
+    font-size:300%;
 }
 .navbar .brand-name:hover {
     text-decoration: underline;
