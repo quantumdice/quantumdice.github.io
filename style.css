@@ -6,6 +6,18 @@ body {
     
 }
 
+.navbar {
+    
+ background-color: #fff2e5;
+
+
+}
+
+.navbar .navbar-default {
+margin-bottom:20px;
+
+}
+
 .navbar .navbar-brand {
     color: #8B1A1A;
     font-family:Arial;

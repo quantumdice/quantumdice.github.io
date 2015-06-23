@@ -674,6 +674,8 @@ var Navbar = React.createClass({
   displayName: 'Navbar',
   render: function() {
     return el.div(
+        {className: 'navbar navbar-default'},
+        el.div(
       {className: 'navbar'},
       el.div(
         {className: 'container-fluid'},
@@ -702,6 +704,7 @@ var Navbar = React.createClass({
         // Userbox
         React.createElement(UserBox, null)
       )
+    )
     );
   }
 });
