@@ -1,12 +1,26 @@
 body {
     margin-top: 20px;
+    background-color: #3f3f3f;
+    color: black;
+
+    
 }
 
 .navbar .navbar-brand {
-    color: #777777;
+    color: yellow;
 }
 .navbar .brand-name:hover {
     text-decoration: underline;
+}
+
+.panel{
+    background-color: #545454;
+    
+}
+
+
+a {
+    color: blue;
 }
 
 /* ChatBox */
