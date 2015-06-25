@@ -144,17 +144,19 @@ var MoneyPot = (function() {
     });
   };
 
-  o.getAllBetsInfo = function() {
-      var data = $.ajax({
+
+
+  o.getAllBetsData = function() {
+   var betData = $.ajax({
       url:      'https://api.moneypot.com/v1/list-bets?access_token=6ef90321-0c14-4475-952f-45554e1294e1&&app_id=85',
       dataType: 'json', // data type of response
       method:   'GET',
       headers: {
         'Content-Type': 'text/plain'
       }
-
     });
-    return data.responseJSON;
+    
+  return betData;
   };
   
 
@@ -1574,15 +1576,9 @@ var AllBetsTabContent = React.createClass({
   },
  
   
+  
   render: function() {
-    var betData = $.ajax({
-      url:      'https://api.moneypot.com/v1/list-bets?access_token=6ef90321-0c14-4475-952f-45554e1294e1&&app_id=85',
-      dataType: 'json', // data type of response
-      method:   'GET',
-      headers: {
-        'Content-Type': 'text/plain'
-      }
-    });
+   
     
 
   
@@ -1605,8 +1601,8 @@ var AllBetsTabContent = React.createClass({
         
         el.tbody(
           null,
-          
-         betData.responseJSON.map(function(bet) {
+        
+         MoneyPot.getAllBetData().responseJSON.map(function(bet) {
             return el.tr(
               {
                 key: bet.uname
