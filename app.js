@@ -116,6 +116,7 @@ var getAllBetData = function(betData) {
   $.ajax({
       url:      url,
       dataType: 'json', // data type of response
+      async: false, 
       method:   'GET',
       headers: {
         'Content-Type': 'text/plain'
@@ -1614,7 +1615,7 @@ var AllBetsTabContent = React.createClass({
         el.tbody(
           null,
         
-         getAllBetData().responseJSON.map(function(bet) {
+         getAllBetData().map(function(bet) {
             return el.tr(
               {
                 key: bet.uname
