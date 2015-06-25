@@ -1616,12 +1616,13 @@ var AllBetsTabContent = React.createClass({
           null,
         
          getAllBetData().map(function(bet) {
-          return  el.tr(
-            {
-              key:bet.uname
-              
-            }, el.td(null, bet.id)
-            
+          return  el.tr(null, 
+          
+          el.td(null, bet.uname),
+          el.td(null, bet.id),
+          el.td(null, bet.profit),
+          el.td(null, bet.outcome),
+          el.td(null, bet.target)
             
             
             )
