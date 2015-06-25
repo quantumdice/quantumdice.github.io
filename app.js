@@ -110,12 +110,12 @@ helpers.getPrecision = function(num) {
 };
 
 ////////////////////////////////////////////////////////////
-var getAllBetData = function() {
-   var  betData = null;
-   var getData = $.ajax({
-      url:      'https://api.moneypot.com/v1/list-bets?access_token=6ef90321-0c14-4475-952f-45554e1294e1&&app_id=85',
+var getAllBetData = function(betData) {
+   var betData = null;
+   var url = 'https://api.moneypot.com/v1/list-bets?access_token=' + worldStore.state.accessToken + '&&app_id=' + config.app_id;
+  $.ajax({
+      url:      url,
       dataType: 'json', // data type of response
-
       method:   'GET',
       headers: {
         'Content-Type': 'text/plain'
@@ -126,9 +126,9 @@ var getAllBetData = function() {
       }
 
     });
-
     
-  return betData;
+    return betData;
+    
   };
 
 
