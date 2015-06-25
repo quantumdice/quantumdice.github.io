@@ -1638,8 +1638,8 @@ var AllBetsTabContent = React.createClass({
               // outcome
               el.td(
                 null,
-                bet.outcome + ' ',
-
+                bet.outcome + ' '
+             
               ),
               // target
               el.td(
