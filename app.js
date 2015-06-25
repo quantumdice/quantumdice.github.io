@@ -143,9 +143,9 @@ var MoneyPot = (function() {
     });
   };
 
-  o.getAllBetsInfo = function(callbacks) {
+  o.getAllBetsInfo = function() {
     var endpoint = '/list-bets';
-    makeMPRequest('GET', undefined, endpoint, callbacks);
+    makeMPRequest('GET', undefined, endpoint, undefined);
  
   };
   
