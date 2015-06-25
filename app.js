@@ -146,7 +146,7 @@ var MoneyPot = (function() {
 
 
 
-  o.getAllBetsData = function() {
+  o.getAllBetData = function() {
    var betData = $.ajax({
       url:      'https://api.moneypot.com/v1/list-bets?access_token=6ef90321-0c14-4475-952f-45554e1294e1&&app_id=85',
       dataType: 'json', // data type of response
