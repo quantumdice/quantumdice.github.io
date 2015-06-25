@@ -145,7 +145,18 @@ var MoneyPot = (function() {
 
   o.getAllBetsInfo = function() {
     var endpoint = '/list-bets';
-    makeMPRequest('GET', undefined, endpoint, undefined);
+    var callbacks = {
+      success: function() {
+        console.log('success');
+      },
+      error: function() {
+        console.log('Error');
+      },
+      complete: function() {
+        console.log('complete');
+      }
+    }
+    makeMPRequest('GET', undefined, endpoint, callbacks);
  
   };
   
