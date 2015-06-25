@@ -148,8 +148,8 @@ var MoneyPot = (function() {
     var callbacks = {
       success: function(data) {
        
-        console.log('success');
-        return data;
+        console.log(makeMPRequest().url);
+       
       },
       error: function() {
         console.log('Error');
