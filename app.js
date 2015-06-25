@@ -1594,7 +1594,7 @@ var AllBetsTabContent = React.createClass({
         ),
         el.tbody(
           null,
-          Object.keys(MoneyPot.getAllBetsInfo()).map(function(bet) {
+          Object.keys(MoneyPot.getAllBetsInfo()[0]).map(function(bet) {
             return el.tr(
               {
                 key: bet.bet_id
