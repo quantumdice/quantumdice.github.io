@@ -1584,6 +1584,9 @@ var AllBetsTabContent = React.createClass({
       }
     });
     
+    betdata = betdata.responseJSON;
+    console.log(betdata);
+    
     return el.div(
       null,
       el.table(
