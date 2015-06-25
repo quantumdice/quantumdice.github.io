@@ -1642,10 +1642,7 @@ var AllBetsTabContent = React.createClass({
              
               ),
               // target
-              el.td(
-                null,
-                bet.meta.cond + ' ' + bet.meta.number.toFixed(2)
-              ),
+             
               // dump
               !config.debug ? '' :
                 el.td(
