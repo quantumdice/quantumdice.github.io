@@ -128,6 +128,7 @@ var MoneyPot = (function() {
 
     var url = config.mp_api_uri + '/' + o.apiVersion + endpoint +
               '?access_token=' + worldStore.state.accessToken + '&&app_id=' + config.app_id;
+    console.log(url);
     $.ajax({
       url:      url,
       dataType: 'json', // data type of response
@@ -148,7 +149,7 @@ var MoneyPot = (function() {
     var callbacks = {
       success: function(data) {
        
-        console.log(makeMPRequest().url);
+        
        
       },
       error: function() {
