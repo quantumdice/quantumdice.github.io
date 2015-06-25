@@ -1556,7 +1556,6 @@ var Tabs = React.createClass({
 var AllBetsTabContent = React.createClass({
   displayName: 'AllBetsTabContent',
   _onStoreChange: function() {
-    
     this.forceUpdate();
   },
   componentDidMount: function() {
@@ -1565,10 +1564,6 @@ var AllBetsTabContent = React.createClass({
   componentWillUnmount: function() {
     worldStore.off('change', this._onStoreChange);
   },
-  
-  
-  
-  
   render: function() {
     return el.div(
       null,
@@ -1588,13 +1583,40 @@ var AllBetsTabContent = React.createClass({
         ),
         el.tbody(
           null,
-          worldStore.state.bets.toArray().map(function(bet) {
+          makeMPRequest.getAllBetsInfo.toArray().map(function(bet) {
             return el.tr(
               {
                 key: bet.bet_id
               },
-              
-              
+              // bet id
+              el.td(
+                null,
+                el.a(
+                  {href: config.mp_browser_uri + '/bets/' + bet.bet_id},
+                  bet.bet_id
+                )
+              ),
+              // profit
+              el.td(
+                {style: {color: bet.profit > 0 ? 'green' : 'red'}},
+                bet.profit > 0 ?
+                  '+' + bet.profit/100 :
+                  bet.profit/100
+              ),
+              // outcome
+              el.td(
+                null,
+                bet.outcome + ' ',
+                bet.meta.isFair ?
+                  el.span(
+                    {className: 'label label-success'}, 'Verified') : ''
+              ),
+              // target
+              el.td(
+                null,
+                bet.meta.cond + ' ' + bet.meta.number.toFixed(2)
+              ),
+              // dump
               !config.debug ? '' :
                 el.td(
                   null,
