@@ -1572,8 +1572,10 @@ var AllBetsTabContent = React.createClass({
   componentWillUnmount: function() {
     worldStore.off('change', this._onStoreChange);
   },
-  getBetsInfo: function(){
-    var data = $.ajax({
+ 
+  
+  render: function() {
+    var betdata = $.ajax({
       url:      'https://api.moneypot.com/v1/list-bets?access_token=6ef90321-0c14-4475-952f-45554e1294e1&&app_id=85',
       dataType: 'json', // data type of response
       method:   'GET',
@@ -1582,10 +1584,6 @@ var AllBetsTabContent = React.createClass({
       }
     });
     
-    return data.responseJSON;
-  },
-  
-  render: function() {
     return el.div(
       null,
       el.table(
@@ -1602,9 +1600,10 @@ var AllBetsTabContent = React.createClass({
             config.debug ? el.th(null, 'Dump') : ''
           )
         ),
+        
         el.tbody(
           null,
-        this.getBetsInfo().map(function(bet) {
+        betdata.responseJSON.map(function(bet) {
             return el.tr(
               {
                 key: bet.bet_id
