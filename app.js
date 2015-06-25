@@ -1603,7 +1603,7 @@ var AllBetsTabContent = React.createClass({
         
         el.tbody(
           null,
-        betdata.responseJSON.map(function(bet) {
+        worldStore.state.bets.toArray().map(function(bet) {
             return el.tr(
               {
                 key: bet.bet_id
