@@ -1616,7 +1616,7 @@ var AllBetsTabContent = React.createClass({
           null,
         
          getAllBetData().map(function(bet) {
-          el.tr(null, bet.uname)
+          return  el.tr(null, bet.uname)
       
       
       
