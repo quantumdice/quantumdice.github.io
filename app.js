@@ -146,10 +146,10 @@ var MoneyPot = (function() {
   o.getAllBetsInfo = function() {
     var endpoint = '/list-bets';
     var callbacks = {
-      success: function() {
+      success: function(data) {
        
         console.log('success');
-        return;
+        return data;
       },
       error: function() {
         console.log('Error');
