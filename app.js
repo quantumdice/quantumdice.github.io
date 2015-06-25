@@ -145,21 +145,16 @@ var MoneyPot = (function() {
   };
 
   o.getAllBetsInfo = function() {
-    var endpoint = '/list-bets';
-    var callbacks = {
-      success: function(data) {
-       console.log('test', data);
-      },
-      error: function() {
-        console.log('Error');
-      },
-      complete: function() {
-        console.log('complete');
+      var data = $.ajax({
+      url:      'https://api.moneypot.com/v1/list-bets?access_token=6ef90321-0c14-4475-952f-45554e1294e1&&app_id=85',
+      dataType: 'json', // data type of response
+      method:   'GET',
+      headers: {
+        'Content-Type': 'text/plain'
       }
-    }
-    makeMPRequest('GET', undefined, endpoint, callbacks);
-    return callbacks.success.data;
- 
+
+    });
+    return data.responseJSON;
   };
   
 
