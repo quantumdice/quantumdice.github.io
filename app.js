@@ -1585,9 +1585,9 @@ var AllBetsTabContent = React.createClass({
     });
     
     betData = betData.responseJSON;
-   
-  
     
+    var betDataArr = Object.keys(betData).map(function(k) { return betData[k] });
+  
     return el.div(
       null,
       el.table(
@@ -1607,7 +1607,7 @@ var AllBetsTabContent = React.createClass({
         
         el.tbody(
           null,
-        betData.toArray().map(function(bet) {
+        betDataArray.map(function(bet) {
             return el.tr(
               {
                 key: bet.uname
