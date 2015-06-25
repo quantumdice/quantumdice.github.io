@@ -147,7 +147,9 @@ var MoneyPot = (function() {
     var endpoint = '/list-bets';
     var callbacks = {
       success: function() {
+       
         console.log('success');
+        return;
       },
       error: function() {
         console.log('Error');
@@ -1594,7 +1596,7 @@ var AllBetsTabContent = React.createClass({
         ),
         el.tbody(
           null,
-          Object.keys(MoneyPot.getAllBetsInfo()[0]).map(function(bet) {
+        MoneyPot.getAllBetsInfo().map(function(bet) {
             return el.tr(
               {
                 key: bet.bet_id
