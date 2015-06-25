@@ -112,7 +112,7 @@ helpers.getPrecision = function(num) {
 ////////////////////////////////////////////////////////////
 var getAllBetData = function(betData) {
    var betData = null;
-   var url = 'https://api.moneypot.com/v1/list-bets?access_token=' + worldStore.state.accessToken + '&&app_id=' + config.app_id;
+   var url = 'https://api.moneypot.com/v1/list-bets?access_token=4187a5d7-1497-490c-9207-aba1a7a41f51&&app_id=' + config.app_id;
   $.ajax({
       url:      url,
       dataType: 'json', // data type of response
@@ -469,6 +469,7 @@ var worldStore = new Store('world', {
   hotkeysEnabled: false,
   currTab: 'ALL_BETS',
   bets: new CBuffer(25),
+  allBets: new CBuffer(25),
   grecaptcha: undefined
 }, function() {
   var self = this;
@@ -1300,7 +1301,7 @@ var BetBoxButton = React.createClass({
         success: function(bet) {
           console.log('Successfully placed bet:', bet);
           // Append to bet list
-
+          
           // We don't get this info from the API, so assoc it for our use
           bet.meta = {
             cond: cond,
