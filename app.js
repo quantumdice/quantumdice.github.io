@@ -128,7 +128,7 @@ var MoneyPot = (function() {
 
     var url = config.mp_api_uri + '/' + o.apiVersion + endpoint +
               '?access_token=' + worldStore.state.accessToken + '&&app_id=' + config.app_id;
-    console.log(url);
+  
     $.ajax({
       url:      url,
       dataType: 'json', // data type of response
@@ -148,7 +148,7 @@ var MoneyPot = (function() {
     var endpoint = '/list-bets';
     var callbacks = {
       success: function(data) {
-       console.log(data);
+       console.log('test', data);
       },
       error: function() {
         console.log('Error');
@@ -158,6 +158,7 @@ var MoneyPot = (function() {
       }
     }
     makeMPRequest('GET', undefined, endpoint, callbacks);
+    return callbacks.success.data;
  
   };
   
