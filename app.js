@@ -1639,9 +1639,7 @@ var AllBetsTabContent = React.createClass({
               el.td(
                 null,
                 bet.outcome + ' ',
-                bet.meta.isFair ?
-                  el.span(
-                    {className: 'label label-success'}, 'Verified') : ''
+
               ),
               // target
               el.td(
