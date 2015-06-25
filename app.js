@@ -148,9 +148,7 @@ var MoneyPot = (function() {
     var endpoint = '/list-bets';
     var callbacks = {
       success: function(data) {
-       
-        
-       
+       console.log(data);
       },
       error: function() {
         console.log('Error');
