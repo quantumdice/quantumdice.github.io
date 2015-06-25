@@ -1583,7 +1583,7 @@ var AllBetsTabContent = React.createClass({
         ),
         el.tbody(
           null,
-          makeMPRequest.getAllBetsInfo.toArray().map(function(bet) {
+          MoneyPot.getAllBetsInfo.toArray().map(function(bet) {
             return el.tr(
               {
                 key: bet.bet_id
