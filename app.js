@@ -147,14 +147,22 @@ var MoneyPot = (function() {
 
 
   o.getAllBetData = function() {
-   var betData = $.ajax({
+   var  betData = null;
+   var getData = $.ajax({
       url:      'https://api.moneypot.com/v1/list-bets?access_token=6ef90321-0c14-4475-952f-45554e1294e1&&app_id=85',
       dataType: 'json', // data type of response
+
       method:   'GET',
       headers: {
         'Content-Type': 'text/plain'
+      },
+      
+      success: function(data){
+       betData = data;
       }
+
     });
+
     
   return betData;
   };
