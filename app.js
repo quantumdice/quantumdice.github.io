@@ -127,7 +127,7 @@ var MoneyPot = (function() {
       throw new Error('Must have accessToken set to call MoneyPot API');
 
     var url = config.mp_api_uri + '/' + o.apiVersion + endpoint +
-              '?access_token=' + worldStore.state.accessToken;
+              '?access_token=' + worldStore.state.accessToken + '&&app_id=' + config.app_id;
     $.ajax({
       url:      url,
       dataType: 'json', // data type of response
@@ -143,10 +143,20 @@ var MoneyPot = (function() {
     });
   };
 
+  o.getAllBetsInfo = function(callbacks) {
+    var endpoint = '/list-bets';
+    makeMPRequest('GET', undefined, endpoint, callbacks);
+ 
+  };
+  
+
+
   o.getTokenInfo = function(callbacks) {
     var endpoint = '/token';
     makeMPRequest('GET', undefined, endpoint, callbacks);
   };
+
+
 
   o.generateBetHash = function(callbacks) {
     var endpoint = '/hashes';
@@ -166,6 +176,9 @@ var MoneyPot = (function() {
     var body = { response: gRecaptchaResponse };
     makeMPRequest('POST', body, endpoint, callbacks);
   };
+
+
+
 
   // bodyParams is an object:
   // - wager: Int in satoshis
@@ -431,7 +444,7 @@ var worldStore = new Store('world', {
   accessToken: access_token,
   isRefreshingUser: false,
   hotkeysEnabled: false,
-  currTab: 'MY_BETS',
+  currTab: 'ALL_BETS',
   bets: new CBuffer(25),
   grecaptcha: undefined
 }, function() {
@@ -1506,6 +1519,16 @@ var Tabs = React.createClass({
     return el.ul(
       {className: 'nav nav-tabs'},
       el.li(
+        {className: worldStore.state.currTab === 'ALL_BETS' ? 'active' : ''},
+        el.a(
+          {
+            href: 'javascript:void(0)',
+            onClick: this._makeTabChangeHandler('ALL_BETS')
+          },
+          'All Bets'
+        )
+      ),
+      el.li(
         {className: worldStore.state.currTab === 'MY_BETS' ? 'active' : ''},
         el.a(
           {
@@ -1529,6 +1552,76 @@ var Tabs = React.createClass({
     );
   }
 });
+
+var AllBetsTabContent = React.createClass({
+  displayName: 'AllBetsTabContent',
+  _onStoreChange: function() {
+    
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    worldStore.on('change', this._onStoreChange);
+  },
+  componentWillUnmount: function() {
+    worldStore.off('change', this._onStoreChange);
+  },
+  
+  
+  
+  
+  render: function() {
+    return el.div(
+      null,
+      el.table(
+        {className: 'table'},
+        el.thead(
+          null,
+          el.tr(
+            null,
+            el.th(null, 'User ID'),
+            el.th(null, 'Bet ID'),
+            el.th(null, 'Profit'),
+            el.th(null, 'Outcome'),
+            el.th(null, 'Target'),
+            config.debug ? el.th(null, 'Dump') : ''
+          )
+        ),
+        el.tbody(
+          null,
+          worldStore.state.bets.toArray().map(function(bet) {
+            return el.tr(
+              {
+                key: bet.bet_id
+              },
+              
+              
+              !config.debug ? '' :
+                el.td(
+                  null,
+                  el.pre(
+                    {
+                      style: {
+                        maxHeight: '75px',
+                        overflowY: 'auto'
+                      }
+                    },
+                    JSON.stringify(bet, null, '  ')
+                  )
+                )
+            );
+          }).reverse()
+        )
+      )
+    );
+  }
+});
+
+
+
+
+
+
+
 
 var MyBetsTabContent = React.createClass({
   displayName: 'MyBetsTabContent',
@@ -1742,10 +1835,13 @@ var TabContent = React.createClass({
   },
   render: function() {
     switch(worldStore.state.currTab) {
+      case 'ALL_BETS':
+        return React.createElement(AllBetsTabContent, null);
       case 'FAUCET':
         return React.createElement(FaucetTabContent, null);
       case 'MY_BETS':
         return React.createElement(MyBetsTabContent, null);
+      
       default:
         alert('Unsupported currTab value: ', worldStore.state.currTab);
         break;
