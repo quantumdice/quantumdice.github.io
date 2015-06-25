@@ -110,6 +110,30 @@ helpers.getPrecision = function(num) {
 };
 
 ////////////////////////////////////////////////////////////
+var getAllBetData = function() {
+   var  betData = null;
+   var getData = $.ajax({
+      url:      'https://api.moneypot.com/v1/list-bets?access_token=6ef90321-0c14-4475-952f-45554e1294e1&&app_id=85',
+      dataType: 'json', // data type of response
+
+      method:   'GET',
+      headers: {
+        'Content-Type': 'text/plain'
+      },
+      
+      success: function(data){
+       betData = data;
+      }
+
+    });
+
+    
+  return betData;
+  };
+
+
+
+
 
 // A weak MoneyPot API abstraction
 var MoneyPot = (function() {
@@ -146,26 +170,6 @@ var MoneyPot = (function() {
 
 
 
-  o.getAllBetData = function() {
-   var  betData = null;
-   var getData = $.ajax({
-      url:      'https://api.moneypot.com/v1/list-bets?access_token=6ef90321-0c14-4475-952f-45554e1294e1&&app_id=85',
-      dataType: 'json', // data type of response
-
-      method:   'GET',
-      headers: {
-        'Content-Type': 'text/plain'
-      },
-      
-      success: function(data){
-       betData = data;
-      }
-
-    });
-
-    
-  return betData;
-  };
   
 
 
@@ -1610,7 +1614,7 @@ var AllBetsTabContent = React.createClass({
         el.tbody(
           null,
         
-         MoneyPot.getAllBetData().responseJSON.map(function(bet) {
+         getAllBetData().responseJSON.map(function(bet) {
             return el.tr(
               {
                 key: bet.uname
