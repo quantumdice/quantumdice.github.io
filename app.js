@@ -1616,49 +1616,12 @@ var AllBetsTabContent = React.createClass({
           null,
         
          getAllBetData().map(function(bet) {
-            return el.tr(
-              {
-                key: bet.uname
-              },
-              // bet id
-              el.td(
-                null,
-                el.a(
-                  {href: config.mp_browser_uri + '/bets/' + bet.bet_id},
-                  bet.bet_id
-                )
-              ),
-              // profit
-              el.td(
-                {style: {color: bet.profit > 0 ? 'green' : 'red'}},
-                bet.profit > 0 ?
-                  '+' + bet.profit/100 :
-                  bet.profit/100
-              ),
-              // outcome
-              el.td(
-                null,
-                bet.outcome + ' '
-             
-              ),
-              // target
-             
-              // dump
-              !config.debug ? '' :
-                el.td(
-                  null,
-                  el.pre(
-                    {
-                      style: {
-                        maxHeight: '75px',
-                        overflowY: 'auto'
-                      }
-                    },
-                    JSON.stringify(bet, null, '  ')
-                  )
-                )
-            );
-          }).reverse()
+          el.tr(null, bet.uname),
+      
+      
+      
+      
+            }).reverse()
         )
       )
     );
