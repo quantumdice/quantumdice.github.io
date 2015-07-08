@@ -1625,8 +1625,8 @@ var AllBetsTabContent = React.createClass({
                el.td(
                 {style: {color: bet.profit > 0 ? 'green' : 'red'}},
                 bet.profit > 0 ?
-                  '+' + bet.profit/100 :
-                  bet.profit/100
+                  '+' + bet.profit/100  + 'bits' :
+                  bet.profit/100  + 'bits'
               ),
                         
         el.td(
@@ -1647,7 +1647,7 @@ var AllBetsTabContent = React.createClass({
       
       
       
-            }).reverse()
+            })
         )
       )
     );
@@ -1707,8 +1707,8 @@ var MyBetsTabContent = React.createClass({
               el.td(
                 {style: {color: bet.profit > 0 ? 'green' : 'red'}},
                 bet.profit > 0 ?
-                  '+' + bet.profit/100 :
-                  bet.profit/100
+                  '+' + bet.profit/100 + 'bits' :
+                  bet.profit/100 + 'bits'
               ),
               // outcome
               el.td(
