@@ -1621,7 +1621,13 @@ var AllBetsTabContent = React.createClass({
           
           el.td(null, bet.uname),
           el.td(null, bet.id),
-          el.td(null, bet.profit),
+               el.td(
+                {style: {color: bet.profit > 0 ? 'green' : 'red'}},
+                bet.profit > 0 ?
+                  '+' + bet.profit/100 :
+                  bet.profit/100
+              ),
+                        
           el.td(null, bet.outcome),
           el.td(null, bet.target)
             
