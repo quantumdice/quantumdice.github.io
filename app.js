@@ -1645,7 +1645,7 @@ var AllBetsTabContent = React.createClass({
       
       
       
-            })},3000);
+            })},3000)
             
         )
       )
