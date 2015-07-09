@@ -1590,7 +1590,7 @@ var AllBetsTabContent = React.createClass({
   },
  
   drawTable: function(){
-  el.div(
+  return el.div(
       null,
       el.table(
         {className: 'table'},
@@ -1647,8 +1647,7 @@ var AllBetsTabContent = React.createClass({
   },
   
   render: function() {
-      
-    return drawTable();
+      drawTable();
 }
     
 });
