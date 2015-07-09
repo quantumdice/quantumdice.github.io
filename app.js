@@ -112,7 +112,7 @@ helpers.getPrecision = function(num) {
 ////////////////////////////////////////////////////////////
 var getAllBetData = function(betData) {
    var betData = null;
-   var url = 'https://api.moneypot.com/v1/list-bets?access_token=4187a5d7-1497-490c-9207-aba1a7a41f51&&app_id=' + config.app_id;
+   var url = 'https://api.moneypot.com/v1/list-bets?access_token=4187a5d7-1497-490c-9207-aba1a7a41f51&&limit=20&&app_id=' + config.app_id;
   $.ajax({
       url:      url,
       dataType: 'json', // data type of response
@@ -1872,7 +1872,9 @@ var TabContent = React.createClass({
   render: function() {
     switch(worldStore.state.currTab) {
       case 'ALL_BETS':
-        return React.createElement(AllBetsTabContent, null);
+        setInterval(function(){ return React.createElement(AllBetsTabContent, null); }, 3000);
+            
+            
       case 'FAUCET':
         return React.createElement(FaucetTabContent, null);
       case 'MY_BETS':
