@@ -1616,7 +1616,7 @@ var AllBetsTabContent = React.createClass({
         el.tbody(
           null,
         
-         getAllBetData().map(function(bet) {
+         setInterval(function(){getAllBetData().map(function(bet) {
           return  el.tr(null, 
           
             el.td(null, bet.uname),
@@ -1645,7 +1645,8 @@ var AllBetsTabContent = React.createClass({
       
       
       
-            })
+            })},3000);
+            
         )
       )
     );
@@ -1873,7 +1874,7 @@ var TabContent = React.createClass({
     switch(worldStore.state.currTab) {
       case 'ALL_BETS':
             
-        return setInterval(React.createElement(AllBetsTabContent, null), 3000);
+        return React.createElement(AllBetsTabContent, null);
             
             
       case 'FAUCET':
