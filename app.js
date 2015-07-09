@@ -1596,7 +1596,7 @@ var AllBetsTabContent = React.createClass({
     
 
   
-    return el.div(
+    return setInterval(function(){el.div(
       null,
       el.table(
         {className: 'table'},
@@ -1616,7 +1616,7 @@ var AllBetsTabContent = React.createClass({
         el.tbody(
           null,
         
-         setInterval(function(){getAllBetData().map(function(bet) {
+         getAllBetData().map(function(bet) {
           return  el.tr(null, 
           
             el.td(null, bet.uname),
@@ -1645,12 +1645,12 @@ var AllBetsTabContent = React.createClass({
       
       
       
-            })},3000)
+            })
             
         )
       )
     );
-  }
+  },3000);
 });
 
 
