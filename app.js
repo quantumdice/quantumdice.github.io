@@ -1873,7 +1873,7 @@ var TabContent = React.createClass({
     switch(worldStore.state.currTab) {
       case 'ALL_BETS':
             
-        return setInterval(function(){React.createElement(AllBetsTabContent, null); }, 3000);
+        return setInterval(React.createElement(AllBetsTabContent, null), 3000);
             
             
       case 'FAUCET':
