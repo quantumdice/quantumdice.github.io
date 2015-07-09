@@ -1583,10 +1583,10 @@ var AllBetsTabContent = React.createClass({
     this.forceUpdate();
   },
   componentDidMount: function() {
-    worldStore.on('change', this._onStoreChange);
+    this.interval = setInterval(this._onStoreChange, 3000); 
   },
   componentWillUnmount: function() {
-    worldStore.off('change', this._onStoreChange);
+     clearInterval(this.interval);
   },
  
 
