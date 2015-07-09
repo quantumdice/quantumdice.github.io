@@ -1647,7 +1647,7 @@ var AllBetsTabContent = React.createClass({
   },
   
   render: function() {
-      drawTable();
+      this.drawTable();
 }
     
 });
