@@ -1589,14 +1589,8 @@ var AllBetsTabContent = React.createClass({
     worldStore.off('change', this._onStoreChange);
   },
  
-  
-  
-  render: function() {
-   
-    
-
-  
-    return setInterval(function(){el.div(
+  drawTable: function(){
+  el.div(
       null,
       el.table(
         {className: 'table'},
@@ -1650,7 +1644,12 @@ var AllBetsTabContent = React.createClass({
         )
       )
     );
-  },3000);
+  },
+  
+  render: function() {
+    return setInterval(this.drawTable(), 3000);
+}
+    
 });
 
 
