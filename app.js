@@ -1577,7 +1577,7 @@ var Tabs = React.createClass({
   }
 });
 
-var AllBetsTabContent =   React.createClass({
+var AllBetsTabContent = React.createClass({
   displayName: 'AllBetsTabContent',
   _onStoreChange: function() {
     this.forceUpdate();
@@ -1873,7 +1873,8 @@ var TabContent = React.createClass({
     switch(worldStore.state.currTab) {
       case 'ALL_BETS':
             
-        return setInterval(React.createElement(AllBetsTabContent, null), 3000);
+        return setInterval(function(){React.createElement(AllBetsTabContent, null); }, 3000);
+            
             
       case 'FAUCET':
         return React.createElement(FaucetTabContent, null);
