@@ -1622,7 +1622,15 @@ var AllBetsTabContent = React.createClass({
             el.td(null, bet.uname),
                
                         
-            el.td(null, bet.id),
+            el.td(null, 
+                 
+                  el.a(
+                  {href: config.mp_browser_uri + '/bets/' + bet.bet_id},
+                  bet.bet_id
+                )
+                 
+                 
+                 ),
             el.td(null, bet.wager/100 + ' bits'), 
                         
             el.td(
