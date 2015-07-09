@@ -1604,11 +1604,11 @@ var AllBetsTabContent = React.createClass({
           null,
           el.tr(
             null,
-            el.th(null, 'User ID'),
+            el.th(null, 'Player'),
             el.th(null, 'Bet ID'),
+            el.th(null, 'Wager'),
             el.th(null, 'Profit'),
-            el.th(null, 'Outcome'),
-            el.th(null, 'Target'),
+           
             config.debug ? el.th(null, 'Dump') : ''
           )
         ),
@@ -1619,29 +1619,19 @@ var AllBetsTabContent = React.createClass({
          getAllBetData().map(function(bet) {
           return  el.tr(null, 
           
-          el.td(null, bet.uname),
+            el.td(null, bet.uname),
+               
                         
-          el.td(null, bet.id),
-               el.td(
+            el.td(null, bet.id),
+            el.td({style: {color: bet.profit > 0 ? 'green' : 'red'}}, bet.wager/100 + ' bits'), 
+                        
+            el.td(
                 {style: {color: bet.profit > 0 ? 'green' : 'red'}},
                 bet.profit > 0 ?
                   '+' + bet.profit/100  + ' bits' :
                   bet.profit/100  + ' bits'
-              ),
-                        
-        el.td(
-                null,
-                bet.outcome + ' ',
-                  el.span(
-                    {className: 'label label-success'}, 'Verified')
-              ),                        
-     
-                        
-                        
-                        
-                        
-          el.td(null, bet.target)
-            
+              )
+   
             
             )
       
