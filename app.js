@@ -1647,7 +1647,7 @@ var AllBetsTabContent = React.createClass({
   },
   
   render: function() {
-    return setInterval(this.drawTable(), 3000);
+    return this.drawTable();
 }
     
 });
