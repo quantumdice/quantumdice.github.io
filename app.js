@@ -1625,8 +1625,8 @@ var AllBetsTabContent = React.createClass({
             el.td(null, 
                  
                   el.a(
-                  {href: config.mp_browser_uri + '/bets/' + bet.bet_id},
-                  bet.bet_id
+                  {href: 'https://www.moneypot.com/bets/' + bet.id},
+                  bet.id
                 )
                  
                  
