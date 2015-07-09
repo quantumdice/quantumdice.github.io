@@ -1873,10 +1873,7 @@ var TabContent = React.createClass({
   render: function() {
     switch(worldStore.state.currTab) {
       case 'ALL_BETS':
-            
-        return React.createElement(AllBetsTabContent, null);
-            
-            
+        return React.createElement(AllBetsTabContent, null);    
       case 'FAUCET':
         return React.createElement(FaucetTabContent, null);
       case 'MY_BETS':
