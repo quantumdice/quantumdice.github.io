@@ -1589,8 +1589,9 @@ var AllBetsTabContent = React.createClass({
     worldStore.off('change', this._onStoreChange);
   },
  
-  drawTable: function(){
-  return el.div(
+
+  render: function() {
+      return el.div(
       null,
       el.table(
         {className: 'table'},
@@ -1644,11 +1645,8 @@ var AllBetsTabContent = React.createClass({
         )
       )
     );
-  },
-  
-  render: function() {
-      this.drawTable();
-}
+  }
+
     
 });
 
