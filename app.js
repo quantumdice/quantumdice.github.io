@@ -54,7 +54,7 @@ helpers.multiplierToWinProb = function(multiplier) {
   console.assert(typeof multiplier === 'number');
   console.assert(multiplier > 0);
 
-  return 0.9999 / multiplier;
+  return 0.9998 / multiplier;
 };
 
 helpers.calcNumber = function(cond, winProb) {
