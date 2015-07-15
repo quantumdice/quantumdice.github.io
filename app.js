@@ -988,10 +988,15 @@ var BetBoxChance = React.createClass({
     // Just show '--' if chance can't be calculated
     var innerNode;
     if (isError) {
-      innerNode = el.span(
+        
+        innerNode = el.span(
+        {className: 'lead'},
+        ' ' + (winProb * 100).toFixed(2).toString() + '%'
+      );
+      /*innerNode = el.span(
         {className: 'lead'},
         ' --'
-      );
+      );*/
     } else {
       innerNode = el.span(
         {className: 'lead'},
