@@ -73,7 +73,8 @@ helpers.multiplierToWinProb = function(multiplier, edge) {
   console.assert(typeof multiplier === 'number');
   console.assert(multiplier > 0);
 
-  return (1 - (0.1*edge)) / multiplier;
+    return 0.9998 / multiplier;
+  //return (1 - (0.1*edge)) / multiplier;
     
 };
 
