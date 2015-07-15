@@ -49,12 +49,31 @@ var genUuid = function() {
 
 var helpers = {};
 
+helpers.randomHouseEdge = function(multiplier,wager){
+     console.assert(typeof multiplier === 'number');
+     console.assert(typeof wager === 'number');
+  
+    if (multiplier*wager <= 20000){
+        return 0.5 + (0.5*Math.random());
+    }
+    
+    if (multiplier*wager < 200000 && multiplier*wager > 20000){
+        return 0.1 + (0.4*Math.random());
+    }
+    
+    if (multiplier*wager <2000000 && multiplier*wager > 200000){
+        return 0.01 + (0.09*Math.random());
+    
+    }
+
+};
+
 // Number -> Number in range (0, 1)
-helpers.multiplierToWinProb = function(multiplier) {
+helpers.multiplierToWinProb = function(multiplier, edge) {
   console.assert(typeof multiplier === 'number');
   console.assert(multiplier > 0);
 
-  return 0.9998 / multiplier;
+  return (1 - (0.1*edge)) / multiplier;
     
 };
 
@@ -981,7 +1000,9 @@ var BetBoxChance = React.createClass({
   //
   render: function() {
     // 0.00 to 1.00
-    var winProb = helpers.multiplierToWinProb(betStore.state.multiplier.num);
+    var houseEdge = helpers.randomHouseEdge(betStore.state.multiplier.num, betStore.state.wager.num);
+    
+    var winProb = helpers.multiplierToWinProb(betStore.state.multiplier.num, houseEdge);
 
     var isError = betStore.state.multiplier.error || betStore.state.wager.error;
 
