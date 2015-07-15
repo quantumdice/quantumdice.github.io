@@ -1035,10 +1035,18 @@ var BetBoxProfit = React.createClass({
 
     var innerNode;
     if (betStore.state.multiplier.error || betStore.state.wager.error) {
-      innerNode = el.span(
+        innerNode = el.span(
+        {
+          className: 'lead',
+          style: { color: '#39b54a' }
+        },
+        '+' + profit.toFixed(2)
+      );
+        
+        /*innerNode = el.span(
         {className: 'lead'},
         '--'
-      );
+      );*/
     } else {
       innerNode = el.span(
         {
