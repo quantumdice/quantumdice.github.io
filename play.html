@@ -1,14 +1,156 @@
-<!doctype html>
-<head>
-  <title>Quantum Dice - Powered by MoneyPot</title>
-  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
-</head>
-<body>
-  <div id="app"></div>
-  <script src="node_modules/react/dist/react.js"></script>
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Quantum Dice</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-xlarge.css" />
+        
+        
+        <script src="node_modules/react/dist/react.js"></script>
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+		<header id="header" style="height: 70px;top: 0px;width: 25%;background-color: #202222;">
+				<h2 style="margin-bottom: 0px;padding-top: 0px;margin-left: 2cm;margin-top: 15px;"><a href="index.html" style="
+    padding-top: 0px; border: solid 1px; border-radius:6px; background-color:#056B1D;
+" class="button small">Quantum Dice</a></h2>
+              
+			</header>
+        
+  <section id="one" class="wrapper style1 align-center" style="
+    padding-top: 0px;
+    padding-bottom: 250px;
+    margin-bottom: 0px;
+">
+            <section id="navbar" class="align-right" style="width=margin-right:15px;margin-bottom: 40px;padding-top: 20px;background-color: #202222;height: 70px;"></section>	
+      
+      <div class = "row">
+      <div id="outcomestats" style="
+    width: 400px;
+    height: 260px;
+    margin-left: 90px;
+    margin-top: 35px;
+    border: solid 1px;
+    border-radius:  6px;
+    padding-left: 0px;
+
+                              
+                                         ">
+          
+          <h2 id="outcomeanim" style="margin-top:10px;font-size:100px;margin-bottom: 0px;" >0.00</h2>
+    <div class="row">       
+    <h2 class="align-left" style="margin-left:20px;margin-bottom: 0px;">Target</h2>
+    <h2 class="align-left" style="margin-left:20px;margin-bottom: 0px;" id="targetoutcome">0.00</h2>
+          </div>
+    <div class="row">       
+    <h2 class="align-left" style="margin-left:20px;margin-bottom: 0px;">Profit</h2>
+    <h2 class="align-left" style="margin-left: 31px;margin-bottom: 0px;" id="profitoutcome">0.00</h2>
+          </div>
+          
+          
+          </div> 
+     <div class="row" id="betbox" style="
+    width: 650px;
+    height: 260px;
+    margin-left: 35px;
+    margin-top: 35px;
+    border: solid 1px;
+    border-radius:  6px;
+    padding-left: 0px;
+
+">
+
+<div id='betboxwager'></div>
+<div id='betboxmultiplier'></div>
+<div id='betboxprofit'></div>
+<div id='betboxchance'></div>
+     
+</div>
+          
+   
+      
+    </div>  
+      
+      <div id = 'betboxbutton' style="
+    width: 630px;
+    height: 100px;
+    margin-left: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+"></div>
+      
+      <div class = "row">
+      
+      <div id = "Tabs" style="
+    width: 400px;
+    height: 230px;
+    margin-left: 90px;
+
+    padding-left: 0px;
+
+">
+          
+          <div id = "navtabs" class = "row"></div>
+         <div id="tabcontent" class="row" style="
+    margin-left: 15px;
+    margin-top: 20px;
+    width: 450px;
+"></div>
+          
+          
+          
+          
+          
+          
+          
+          
+          </div>
+          
+      <div id = "chatbox" style="
+    width: 650px;
+    height: 230px;
+    margin-left: 180px;
+                                 
+    border: solid 1px;
+    border-radius:  6px;
+    padding-left: 0px;
+
+">
+          
+          
+          </div>
+      
+      
+      </div>
+      
+      
+      
+      
+        </section>
+           		<footer id="footer">
+				<div class="container">
+					<div class="row">
+					
+						
+					</div>
+					<ul class="copyright">
+						<li>&copy; Quantum Dice 2015. All rights reserved.</li>
+						<li>Visit on <a href="https://www.moneypot.com/apps/85-quantum-dice">MoneyPot</a></li>
+					</ul>
+				</div>
+			</footer>
+
+
+                  <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/CBuffer/cbuffer.js"></script>
   <script src="vendor/cryptojs-sha256-3.1.2.js"></script>
   <script src="node_modules/socket.io-client/socket.io.js"></script>
@@ -16,6 +158,7 @@
   <script src="node_modules/wolfy87-eventemitter/EventEmitter.js"></script>
   <script src="node_modules/bootstrap/js/tooltip.js"></script>
   <script src="node_modules/bootstrap/js/popover.js"></script>
-  <script src="app.js" type="text/javascript"></script>
+  <script src="magic.js" type="text/javascript"></script>
   <script src="//www.google.com/recaptcha/api.js?render=explicit&onload=onRecaptchaLoad" async defer></script>
-</body>
+	</body>
+</html>
