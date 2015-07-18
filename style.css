@@ -1,21 +1,17 @@
-body {
-    margin-top: 20px;
-    background-color: #ffffe5;
-    color: black;
-
-    
-}
-
-.navbar {
-    
- background-color: #fff2e5;
 
 
+.navbar-right {
+  float: right!important;
+  margin-right: -15px;
 }
 
 .navbar-default {
 margin-bottom:20px;
 
+}
+
+div {
+  display: block;
 }
 
 .navbar .navbar-brand {
@@ -27,10 +23,6 @@ margin-bottom:20px;
     text-decoration: underline;
 }
 
-.panel{
-    background-color: #fff2e5;
-    
-}
 
 
 a {

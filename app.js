@@ -1,1 +1,2141 @@
-var _0xeba3=["\x51\x75\x61\x6E\x74\x75\x6D\x20\x44\x69\x63\x65","\x36\x4C\x64\x4E\x76\x67\x67\x54\x41\x41\x41\x41\x41\x4E\x64\x33\x63\x6E\x2D\x41\x44\x35\x34\x67\x51\x46\x4F\x59\x46\x75\x34\x53\x69\x33\x46\x59\x53\x50\x71\x30","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x71\x64\x69\x63\x65\x2E\x6E\x65\x74\x2F\x70\x6C\x61\x79","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x6D\x6F\x6E\x65\x79\x70\x6F\x74\x2E\x63\x6F\x6D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x6D\x6F\x6E\x65\x79\x70\x6F\x74\x2E\x63\x6F\x6D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x2D\x63\x68\x61\x74\x2D\x73\x65\x72\x76\x65\x72\x2E\x68\x65\x72\x6F\x6B\x75\x61\x70\x70\x2E\x63\x6F\x6D","\x66\x6F\x72\x63\x65\x5F\x68\x74\x74\x70\x73\x5F\x72\x65\x64\x69\x72\x65\x63\x74","\x70\x72\x6F\x74\x6F\x63\x6F\x6C","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x68\x74\x74\x70\x73\x3A","\x68\x72\x65\x66","\x6C\x65\x6E\x67\x74\x68","\x73\x75\x62\x73\x74\x72\x69\x6E\x67","\x68\x6F\x73\x74","\x74\x65\x73\x74","\x44\x4F\x4D","\x72\x61\x6E\x64\x6F\x6D","\x78","\x72\x65\x70\x6C\x61\x63\x65","\x78\x78\x78\x78\x78\x78\x78\x78\x2D\x78\x78\x78\x78\x2D\x34\x78\x78\x78\x2D\x79\x78\x78\x78\x2D\x78\x78\x78\x78\x78\x78\x78\x78\x78\x78\x78\x78","\x72\x61\x6E\x64\x6F\x6D\x48\x6F\x75\x73\x65\x45\x64\x67\x65","\x6E\x75\x6D\x62\x65\x72","\x61\x73\x73\x65\x72\x74","\x6D\x75\x6C\x74\x69\x70\x6C\x69\x65\x72\x54\x6F\x57\x69\x6E\x50\x72\x6F\x62","\x63\x61\x6C\x63\x4E\x75\x6D\x62\x65\x72","\x3C","\x3E","\x72\x6F\x6C\x65\x54\x6F\x4C\x61\x62\x65\x6C\x45\x6C\x65\x6D\x65\x6E\x74","\x6C\x61\x62\x65\x6C\x20\x6C\x61\x62\x65\x6C\x2D\x64\x61\x6E\x67\x65\x72","\x4D\x50\x20\x53\x74\x61\x66\x66","\x73\x70\x61\x6E","\x61\x64\x6D\x69\x6E","\x6C\x61\x62\x65\x6C\x20\x6C\x61\x62\x65\x6C\x2D\x69\x6E\x66\x6F","\x4D\x6F\x64","\x6D\x6F\x64","\x6C\x61\x62\x65\x6C\x20\x6C\x61\x62\x65\x6C\x2D\x70\x72\x69\x6D\x61\x72\x79","\x4F\x77\x6E\x65\x72","\x6F\x77\x6E\x65\x72","","\x67\x65\x74\x48\x61\x73\x68\x50\x61\x72\x61\x6D\x73","\x20","\x68\x61\x73\x68","\x65\x78\x65\x63","\x67\x65\x74\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x6D\x61\x74\x63\x68","\x6D\x61\x78","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x6D\x6F\x6E\x65\x79\x70\x6F\x74\x2E\x63\x6F\x6D\x2F\x76\x31\x2F\x6C\x69\x73\x74\x2D\x62\x65\x74\x73\x3F\x61\x63\x63\x65\x73\x73\x5F\x74\x6F\x6B\x65\x6E\x3D\x34\x31\x38\x37\x61\x35\x64\x37\x2D\x31\x34\x39\x37\x2D\x34\x39\x30\x63\x2D\x39\x32\x30\x37\x2D\x61\x62\x61\x31\x61\x37\x61\x34\x31\x66\x35\x31\x26\x26\x6C\x69\x6D\x69\x74\x3D\x32\x30\x26\x26\x61\x70\x70\x5F\x69\x64\x3D","\x61\x70\x70\x5F\x69\x64","\x6A\x73\x6F\x6E","\x47\x45\x54","\x74\x65\x78\x74\x2F\x70\x6C\x61\x69\x6E","\x61\x6A\x61\x78","\x61\x70\x69\x56\x65\x72\x73\x69\x6F\x6E","\x76\x31","\x61\x63\x63\x65\x73\x73\x54\x6F\x6B\x65\x6E","\x73\x74\x61\x74\x65","\x4D\x75\x73\x74\x20\x68\x61\x76\x65\x20\x61\x63\x63\x65\x73\x73\x54\x6F\x6B\x65\x6E\x20\x73\x65\x74\x20\x74\x6F\x20\x63\x61\x6C\x6C\x20\x4D\x6F\x6E\x65\x79\x50\x6F\x74\x20\x41\x50\x49","\x6D\x70\x5F\x61\x70\x69\x5F\x75\x72\x69","\x2F","\x3F\x61\x63\x63\x65\x73\x73\x5F\x74\x6F\x6B\x65\x6E\x3D","\x26\x26\x61\x70\x70\x5F\x69\x64\x3D","\x73\x74\x72\x69\x6E\x67\x69\x66\x79","\x73\x75\x63\x63\x65\x73\x73","\x65\x72\x72\x6F\x72","\x63\x6F\x6D\x70\x6C\x65\x74\x65","\x67\x65\x74\x54\x6F\x6B\x65\x6E\x49\x6E\x66\x6F","\x2F\x74\x6F\x6B\x65\x6E","\x67\x65\x6E\x65\x72\x61\x74\x65\x42\x65\x74\x48\x61\x73\x68","\x2F\x68\x61\x73\x68\x65\x73","\x50\x4F\x53\x54","\x67\x65\x74\x44\x65\x70\x6F\x73\x69\x74\x41\x64\x64\x72\x65\x73\x73","\x2F\x64\x65\x70\x6F\x73\x69\x74\x2D\x61\x64\x64\x72\x65\x73\x73","\x63\x6C\x61\x69\x6D\x46\x61\x75\x63\x65\x74","\x48\x69\x74\x74\x69\x6E\x67\x20\x50\x4F\x53\x54\x20\x2F\x63\x6C\x61\x69\x6D\x2D\x66\x61\x75\x63\x65\x74","\x6C\x6F\x67","\x2F\x63\x6C\x61\x69\x6D\x2D\x66\x61\x75\x63\x65\x74","\x70\x6C\x61\x63\x65\x53\x69\x6D\x70\x6C\x65\x44\x69\x63\x65\x42\x65\x74","\x2F\x62\x65\x74\x73\x2F\x73\x69\x6D\x70\x6C\x65\x2D\x64\x69\x63\x65","\x63\x61\x6C\x6C\x62\x61\x63\x6B\x73","\x72\x65\x67\x69\x73\x74\x65\x72\x43\x61\x6C\x6C\x62\x61\x63\x6B","\x5B\x44\x69\x73\x70\x61\x74\x63\x68\x65\x72\x5D\x20\x72\x65\x67\x69\x73\x74\x65\x72\x69\x6E\x67\x20\x63\x61\x6C\x6C\x62\x61\x63\x6B\x20\x66\x6F\x72\x3A","\x70\x75\x73\x68","\x73\x65\x6E\x64\x41\x63\x74\x69\x6F\x6E","\x5B\x44\x69\x73\x70\x61\x74\x63\x68\x65\x72\x5D\x20\x72\x65\x63\x65\x69\x76\x65\x64\x20\x61\x63\x74\x69\x6F\x6E\x3A","\x55\x6E\x73\x75\x70\x70\x6F\x72\x74\x65\x64\x20\x61\x63\x74\x69\x6F\x6E\x4E\x61\x6D\x65\x3A\x20","\x66\x6F\x72\x45\x61\x63\x68","\x65\x6D\x69\x74\x74\x65\x72","\x63\x61\x6C\x6C","\x6F\x6E","\x6F\x66\x66","\x61\x63\x63\x65\x73\x73\x5F\x74\x6F\x6B\x65\x6E","\x5B\x74\x6F\x6B\x65\x6E\x20\x6D\x61\x6E\x61\x67\x65\x72\x5D\x20\x61\x63\x63\x65\x73\x73\x5F\x74\x6F\x6B\x65\x6E\x20\x69\x6E\x20\x68\x61\x73\x68\x20\x70\x61\x72\x61\x6D\x73","\x65\x78\x70\x69\x72\x65\x73\x5F\x69\x6E","\x6E\x6F\x77","\x73\x65\x74\x49\x74\x65\x6D","\x65\x78\x70\x69\x72\x65\x73\x5F\x61\x74","\x5B\x74\x6F\x6B\x65\x6E\x20\x6D\x61\x6E\x61\x67\x65\x72\x5D\x20\x61\x63\x63\x65\x73\x73\x5F\x74\x6F\x6B\x65\x6E\x20\x69\x6E\x20\x6C\x6F\x63\x61\x6C\x53\x74\x6F\x72\x61\x67\x65","\x72\x65\x6D\x6F\x76\x65\x49\x74\x65\x6D","\x5B\x74\x6F\x6B\x65\x6E\x20\x6D\x61\x6E\x61\x67\x65\x72\x5D\x20\x6E\x6F\x20\x61\x63\x63\x65\x73\x73\x20\x74\x6F\x6B\x65\x6E","\x68\x69\x73\x74\x6F\x72\x79","\x72\x65\x70\x6C\x61\x63\x65\x53\x74\x61\x74\x65","\x74\x69\x74\x6C\x65","\x23","\x63\x68\x61\x74","\x49\x4E\x49\x54\x5F\x43\x48\x41\x54","\x5B\x43\x68\x61\x74\x53\x74\x6F\x72\x65\x5D\x20\x72\x65\x63\x65\x69\x76\x65\x64\x20\x49\x4E\x49\x54\x5F\x43\x48\x41\x54","\x69\x64","\x6D\x61\x70","\x72\x6F\x6F\x6D","\x6D\x65\x73\x73\x61\x67\x65\x73","\x61\x70\x70\x6C\x79","\x6C\x6F\x61\x64\x69\x6E\x67\x49\x6E\x69\x74\x69\x61\x6C\x4D\x65\x73\x73\x61\x67\x65\x73","\x75\x73\x65\x72\x4C\x69\x73\x74","\x75\x73\x65\x72\x73","\x63\x68\x61\x6E\x67\x65","\x65\x6D\x69\x74","\x69\x6E\x69\x74","\x4E\x45\x57\x5F\x4D\x45\x53\x53\x41\x47\x45","\x5B\x43\x68\x61\x74\x53\x74\x6F\x72\x65\x5D\x20\x72\x65\x63\x65\x69\x76\x65\x64\x20\x4E\x45\x57\x5F\x4D\x45\x53\x53\x41\x47\x45","\x6E\x65\x77\x5F\x6D\x65\x73\x73\x61\x67\x65","\x54\x4F\x47\x47\x4C\x45\x5F\x43\x48\x41\x54\x5F\x55\x53\x45\x52\x4C\x49\x53\x54","\x5B\x43\x68\x61\x74\x53\x74\x6F\x72\x65\x5D\x20\x72\x65\x63\x65\x69\x76\x65\x64\x20\x54\x4F\x47\x47\x4C\x45\x5F\x43\x48\x41\x54\x5F\x55\x53\x45\x52\x4C\x49\x53\x54","\x73\x68\x6F\x77\x55\x73\x65\x72\x4C\x69\x73\x74","\x55\x53\x45\x52\x5F\x4A\x4F\x49\x4E\x45\x44","\x5B\x43\x68\x61\x74\x53\x74\x6F\x72\x65\x5D\x20\x72\x65\x63\x65\x69\x76\x65\x64\x20\x55\x53\x45\x52\x5F\x4A\x4F\x49\x4E\x45\x44\x3A","\x75\x6E\x61\x6D\x65","\x55\x53\x45\x52\x5F\x4C\x45\x46\x54","\x5B\x43\x68\x61\x74\x53\x74\x6F\x72\x65\x5D\x20\x72\x65\x63\x65\x69\x76\x65\x64\x20\x55\x53\x45\x52\x5F\x4C\x45\x46\x54\x3A","\x4E\x45\x57\x5F\x53\x59\x53\x54\x45\x4D\x5F\x4D\x45\x53\x53\x41\x47\x45","\x5B\x43\x68\x61\x74\x53\x74\x6F\x72\x65\x5D\x20\x72\x65\x63\x65\x69\x76\x65\x64\x20\x4E\x45\x57\x5F\x53\x59\x53\x54\x45\x4D\x5F\x4D\x45\x53\x53\x41\x47\x45","\x5B\x53\x59\x53\x54\x45\x4D\x5D","\x53\x45\x4E\x44\x5F\x4D\x45\x53\x53\x41\x47\x45","\x5B\x43\x68\x61\x74\x53\x74\x6F\x72\x65\x5D\x20\x72\x65\x63\x65\x69\x76\x65\x64\x20\x53\x45\x4E\x44\x5F\x4D\x45\x53\x53\x41\x47\x45","\x77\x61\x69\x74\x69\x6E\x67\x46\x6F\x72\x53\x65\x72\x76\x65\x72","\x62\x65\x74","\x31","\x32\x2E\x30\x30","\x53\x45\x54\x5F\x4E\x45\x58\x54\x5F\x48\x41\x53\x48","\x6E\x65\x78\x74\x48\x61\x73\x68","\x55\x50\x44\x41\x54\x45\x5F\x57\x41\x47\x45\x52","\x77\x61\x67\x65\x72","\x6D\x65\x72\x67\x65","\x73\x74\x72","\x49\x4E\x56\x41\x4C\x49\x44\x5F\x57\x41\x47\x45\x52","\x62\x61\x6C\x61\x6E\x63\x65","\x75\x73\x65\x72","\x43\x41\x4E\x4E\x4F\x54\x5F\x41\x46\x46\x4F\x52\x44\x5F\x57\x41\x47\x45\x52","\x6E\x75\x6D","\x55\x50\x44\x41\x54\x45\x5F\x4D\x55\x4C\x54\x49\x50\x4C\x49\x45\x52","\x6D\x75\x6C\x74\x69\x70\x6C\x69\x65\x72","\x77\x6F\x72\x6C\x64","\x41\x4C\x4C\x5F\x42\x45\x54\x53","\x55\x50\x44\x41\x54\x45\x5F\x55\x53\x45\x52","\x55\x53\x45\x52\x5F\x4C\x4F\x47\x49\x4E","\x75\x73\x65\x72\x5F\x75\x70\x64\x61\x74\x65","\x55\x53\x45\x52\x5F\x4C\x4F\x47\x4F\x55\x54","\x65\x6D\x70\x74\x79","\x62\x65\x74\x73","\x53\x54\x41\x52\x54\x5F\x4C\x4F\x41\x44\x49\x4E\x47","\x69\x73\x4C\x6F\x61\x64\x69\x6E\x67","\x53\x54\x4F\x50\x5F\x4C\x4F\x41\x44\x49\x4E\x47","\x43\x48\x41\x4E\x47\x45\x5F\x54\x41\x42","\x73\x74\x72\x69\x6E\x67","\x63\x75\x72\x72\x54\x61\x62","\x4E\x45\x57\x5F\x42\x45\x54","\x6F\x62\x6A\x65\x63\x74","\x54\x4F\x47\x47\x4C\x45\x5F\x48\x4F\x54\x4B\x45\x59\x53","\x68\x6F\x74\x6B\x65\x79\x73\x45\x6E\x61\x62\x6C\x65\x64","\x44\x49\x53\x41\x42\x4C\x45\x5F\x48\x4F\x54\x4B\x45\x59\x53","\x53\x54\x41\x52\x54\x5F\x52\x45\x46\x52\x45\x53\x48\x49\x4E\x47\x5F\x55\x53\x45\x52","\x69\x73\x52\x65\x66\x72\x65\x73\x68\x69\x6E\x67\x55\x73\x65\x72","\x53\x75\x63\x63\x65\x73\x73\x66\x75\x6C\x6C\x79\x20\x6C\x6F\x61\x64\x65\x64\x20\x75\x73\x65\x72\x20\x66\x72\x6F\x6D\x20\x74\x6F\x6B\x65\x6E\x73\x20\x65\x6E\x64\x70\x6F\x69\x6E\x74","\x61\x75\x74\x68","\x45\x72\x72\x6F\x72\x3A","\x53\x54\x4F\x50\x5F\x52\x45\x46\x52\x45\x53\x48\x49\x4E\x47\x5F\x55\x53\x45\x52","\x47\x52\x45\x43\x41\x50\x54\x43\x48\x41\x5F\x4C\x4F\x41\x44\x45\x44","\x67\x72\x65\x63\x61\x70\x74\x63\x68\x61","\x67\x72\x65\x63\x61\x70\x74\x63\x68\x61\x5F\x6C\x6F\x61\x64\x65\x64","\x55\x73\x65\x72\x42\x6F\x78","\x66\x6F\x72\x63\x65\x55\x70\x64\x61\x74\x65","\x6D\x70\x5F\x62\x72\x6F\x77\x73\x65\x72\x5F\x75\x72\x69","\x2F\x64\x69\x61\x6C\x6F\x67\x2F\x77\x69\x74\x68\x64\x72\x61\x77\x3F\x61\x70\x70\x5F\x69\x64\x3D","\x6D\x61\x6E\x61\x67\x65\x2D\x61\x75\x74\x68","\x2C","\x6A\x6F\x69\x6E","\x77\x69\x64\x74\x68\x3D\x34\x32\x30","\x68\x65\x69\x67\x68\x74\x3D\x33\x35\x30","\x6C\x65\x66\x74\x3D\x31\x30\x30","\x74\x6F\x70\x3D\x31\x30\x30","\x6F\x70\x65\x6E","\x66\x6F\x63\x75\x73","\x2F\x64\x69\x61\x6C\x6F\x67\x2F\x64\x65\x70\x6F\x73\x69\x74\x3F\x61\x70\x70\x5F\x69\x64\x3D","\x6E\x61\x76\x62\x61\x72\x2D\x74\x65\x78\x74","\x4C\x6F\x61\x64\x69\x6E\x67\x2E\x2E\x2E","\x70","\x62\x74\x6E\x2D\x67\x72\x6F\x75\x70\x20\x6E\x61\x76\x62\x61\x72\x2D\x6C\x65\x66\x74\x20\x62\x74\x6E\x2D\x67\x72\x6F\x75\x70\x2D\x78\x73","\x62\x75\x74\x74\x6F\x6E","\x62\x74\x6E\x20\x6E\x61\x76\x62\x61\x72\x2D\x62\x74\x6E\x20\x62\x74\x6E\x2D\x78\x73\x20","\x62\x74\x6E\x2D\x73\x75\x63\x63\x65\x73\x73","\x62\x74\x6E\x2D\x64\x65\x66\x61\x75\x6C\x74","\x5F\x6F\x70\x65\x6E\x44\x65\x70\x6F\x73\x69\x74\x50\x6F\x70\x75\x70","\x44\x65\x70\x6F\x73\x69\x74","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x64\x65\x66\x61\x75\x6C\x74\x20\x6E\x61\x76\x62\x61\x72\x2D\x62\x74\x6E\x20\x62\x74\x6E\x2D\x78\x73","\x5F\x6F\x70\x65\x6E\x57\x69\x74\x68\x64\x72\x61\x77\x50\x6F\x70\x75\x70","\x57\x69\x74\x68\x64\x72\x61\x77","\x64\x69\x76","\x35\x70\x78","\x20\x62\x69\x74\x73","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x6C\x69\x6E\x6B\x20\x6E\x61\x76\x62\x61\x72\x2D\x62\x74\x6E\x20\x6E\x61\x76\x62\x61\x72\x2D\x6C\x65\x66\x74\x20","\x20\x72\x6F\x74\x61\x74\x65","\x52\x65\x66\x72\x65\x73\x68\x20\x42\x61\x6C\x61\x6E\x63\x65","\x5F\x6F\x6E\x52\x65\x66\x72\x65\x73\x68\x55\x73\x65\x72","\x31\x30\x70\x78","\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x20\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x2D\x72\x65\x66\x72\x65\x73\x68","\x4C\x6F\x67\x67\x65\x64\x20\x69\x6E\x20\x61\x73\x20","\x63\x6F\x64\x65","\x5F\x6F\x6E\x4C\x6F\x67\x6F\x75\x74","\x6E\x61\x76\x62\x61\x72\x2D\x62\x74\x6E\x20\x62\x74\x6E\x20\x62\x74\x6E\x2D\x64\x65\x66\x61\x75\x6C\x74","\x4C\x6F\x67\x6F\x75\x74","\x2F\x6F\x61\x75\x74\x68\x2F\x61\x75\x74\x68\x6F\x72\x69\x7A\x65","\x3F\x61\x70\x70\x5F\x69\x64\x3D","\x26\x72\x65\x64\x69\x72\x65\x63\x74\x5F\x75\x72\x69\x3D","\x72\x65\x64\x69\x72\x65\x63\x74\x5F\x75\x72\x69","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x64\x65\x66\x61\x75\x6C\x74","\x4C\x6F\x67\x69\x6E\x20\x77\x69\x74\x68\x20\x4D\x6F\x6E\x65\x79\x70\x6F\x74","\x61","\x6E\x61\x76\x62\x61\x72\x2D\x72\x69\x67\x68\x74","\x63\x72\x65\x61\x74\x65\x43\x6C\x61\x73\x73","\x4E\x61\x76\x62\x61\x72","\x6E\x61\x76\x62\x61\x72\x20\x6E\x61\x76\x62\x61\x72\x2D\x64\x65\x66\x61\x75\x6C\x74","\x6E\x61\x76\x62\x61\x72","\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72\x2D\x66\x6C\x75\x69\x64","\x6E\x61\x76\x62\x61\x72\x2D\x68\x65\x61\x64\x65\x72","\x6E\x61\x76\x62\x61\x72\x2D\x62\x72\x61\x6E\x64","\x61\x70\x70\x5F\x6E\x61\x6D\x65","\x6E\x61\x76\x20\x6E\x61\x76\x62\x61\x72\x2D\x6E\x61\x76","\x2F\x61\x70\x70\x73\x2F","\x5F\x62\x6C\x61\x6E\x6B","\x56\x69\x65\x77\x20\x6F\x6E\x20\x4D\x6F\x6E\x65\x79\x70\x6F\x74\x20","\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x20\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x2D\x6E\x65\x77\x2D\x77\x69\x6E\x64\x6F\x77","\x6C\x69","\x75\x6C","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x43\x68\x61\x74\x42\x6F\x78\x49\x6E\x70\x75\x74","\x76\x61\x6C\x75\x65","\x74\x61\x72\x67\x65\x74","\x73\x65\x74\x53\x74\x61\x74\x65","\x74\x65\x78\x74","\x77\x68\x69\x63\x68","\x74\x72\x69\x6D","\x72\x6F\x77","\x63\x6F\x6C\x2D\x6D\x64\x2D\x39","\x37\x70\x78","\x74\x65\x78\x74\x2D\x6D\x75\x74\x65\x64","\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x20\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x2D\x72\x65\x66\x72\x65\x73\x68\x20\x72\x6F\x74\x61\x74\x65","\x20\x4C\x6F\x61\x64\x69\x6E\x67\x2E\x2E\x2E","\x63\x68\x61\x74\x2D\x69\x6E\x70\x75\x74","\x66\x6F\x72\x6D\x2D\x63\x6F\x6E\x74\x72\x6F\x6C","\x43\x6C\x69\x63\x6B\x20\x68\x65\x72\x65\x20\x61\x6E\x64\x20\x62\x65\x67\x69\x6E\x20\x74\x79\x70\x69\x6E\x67\x2E\x2E\x2E","\x4C\x6F\x67\x69\x6E\x20\x74\x6F\x20\x63\x68\x61\x74","\x5F\x6F\x6E\x43\x68\x61\x6E\x67\x65","\x5F\x6F\x6E\x4B\x65\x79\x50\x72\x65\x73\x73","\x5F\x6F\x6E\x46\x6F\x63\x75\x73","\x69\x6E\x70\x75\x74","\x63\x6F\x6C\x2D\x6D\x64\x2D\x33","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x64\x65\x66\x61\x75\x6C\x74\x20\x62\x74\x6E\x2D\x62\x6C\x6F\x63\x6B","\x5F\x6F\x6E\x53\x65\x6E\x64","\x53\x65\x6E\x64","\x43\x68\x61\x74\x55\x73\x65\x72\x4C\x69\x73\x74","\x70\x61\x6E\x65\x6C\x20\x70\x61\x6E\x65\x6C\x2D\x64\x65\x66\x61\x75\x6C\x74","\x70\x61\x6E\x65\x6C\x2D\x68\x65\x61\x64\x69\x6E\x67","\x55\x73\x65\x72\x4C\x69\x73\x74","\x70\x61\x6E\x65\x6C\x2D\x62\x6F\x64\x79","\x72\x6F\x6C\x65","\x76\x61\x6C\x75\x65\x73","\x43\x68\x61\x74\x42\x6F\x78","\x67\x65\x74\x44\x4F\x4D\x4E\x6F\x64\x65","\x63\x68\x61\x74\x4C\x69\x73\x74\x52\x65\x66","\x72\x65\x66\x73","\x73\x63\x72\x6F\x6C\x6C\x48\x65\x69\x67\x68\x74","\x73\x63\x72\x6F\x6C\x6C\x54\x6F\x70","\x69\x6E\x6E\x65\x72\x48\x65\x69\x67\x68\x74","\x44\x69\x73\x74\x61\x6E\x63\x65\x46\x72\x6F\x6D\x42\x6F\x74\x74\x6F\x6D\x3A","\x63\x68\x61\x74\x2D\x62\x6F\x78","\x63\x68\x61\x74\x2D\x6C\x69\x73\x74\x20\x6C\x69\x73\x74\x2D\x75\x6E\x73\x74\x79\x6C\x65\x64","\x3A","\x74\x6F\x41\x72\x72\x61\x79","\x70\x61\x6E\x65\x6C\x2D\x66\x6F\x6F\x74\x65\x72","\x74\x65\x78\x74\x2D\x72\x69\x67\x68\x74\x20\x74\x65\x78\x74\x2D\x6D\x75\x74\x65\x64","\x2D\x31\x35\x70\x78","\x55\x73\x65\x72\x73\x20\x6F\x6E\x6C\x69\x6E\x65\x3A\x20","\x6B\x65\x79\x73","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x64\x65\x66\x61\x75\x6C\x74\x20\x62\x74\x6E\x2D\x78\x73","\x5F\x6F\x6E\x55\x73\x65\x72\x4C\x69\x73\x74\x54\x6F\x67\x67\x6C\x65","\x48\x69\x64\x65","\x53\x68\x6F\x77","\x42\x65\x74\x42\x6F\x78\x43\x68\x61\x6E\x63\x65","\x6C\x65\x61\x64","\x74\x6F\x46\x69\x78\x65\x64","\x25","\x62\x6F\x6C\x64","\x43\x68\x61\x6E\x63\x65\x3A","\x42\x65\x74\x42\x6F\x78\x50\x72\x6F\x66\x69\x74","\x23\x33\x39\x62\x35\x34\x61","\x2B","\x50\x72\x6F\x66\x69\x74\x3A\x20","\x42\x65\x74\x42\x6F\x78\x4D\x75\x6C\x74\x69\x70\x6C\x69\x65\x72","\x49\x4E\x56\x41\x4C\x49\x44\x5F\x4D\x55\x4C\x54\x49\x50\x4C\x49\x45\x52","\x4D\x55\x4C\x54\x49\x50\x4C\x49\x45\x52\x5F\x54\x4F\x4F\x5F\x4C\x4F\x57","\x4D\x55\x4C\x54\x49\x50\x4C\x49\x45\x52\x5F\x54\x4F\x4F\x5F\x48\x49\x47\x48","\x4D\x55\x4C\x54\x49\x50\x4C\x49\x45\x52\x5F\x54\x4F\x4F\x5F\x50\x52\x45\x43\x49\x53\x45","\x4D\x75\x6C\x74\x69\x70\x6C\x69\x65\x72\x20\x63\x68\x61\x6E\x67\x65\x64","\x59\x6F\x75\x20\x65\x6E\x74\x65\x72\x65\x64","\x61\x73\x20\x79\x6F\x75\x72\x20\x6D\x75\x6C\x74\x69\x70\x6C\x69\x65\x72","\x66\x6F\x72\x6D\x2D\x67\x72\x6F\x75\x70","\x72\x65\x64","\x4D\x75\x6C\x74\x69\x70\x6C\x69\x65\x72\x3A","\x73\x74\x72\x6F\x6E\x67","\x69\x6E\x70\x75\x74\x2D\x67\x72\x6F\x75\x70","\x66\x6F\x72\x6D\x2D\x63\x6F\x6E\x74\x72\x6F\x6C\x20\x69\x6E\x70\x75\x74\x2D\x6C\x67","\x5F\x6F\x6E\x4D\x75\x6C\x74\x69\x70\x6C\x69\x65\x72\x43\x68\x61\x6E\x67\x65","\x69\x6E\x70\x75\x74\x2D\x67\x72\x6F\x75\x70\x2D\x61\x64\x64\x6F\x6E","\x42\x65\x74\x42\x6F\x78\x57\x61\x67\x65\x72","\x72\x6F\x75\x6E\x64","\x66\x6C\x6F\x6F\x72","\x30","\x57\x61\x67\x65\x72\x3A","\x5F\x6F\x6E\x57\x61\x67\x65\x72\x43\x68\x61\x6E\x67\x65","\x42\x69\x74\x73","\x62\x74\x6E\x2D\x67\x72\x6F\x75\x70\x20\x62\x74\x6E\x2D\x67\x72\x6F\x75\x70\x2D\x6A\x75\x73\x74\x69\x66\x69\x65\x64","\x62\x74\x6E\x2D\x67\x72\x6F\x75\x70","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x64\x65\x66\x61\x75\x6C\x74\x20\x62\x74\x6E\x2D\x6D\x64","\x5F\x6F\x6E\x48\x61\x6C\x76\x65\x57\x61\x67\x65\x72","\x31\x2F\x32\x78\x20","\x58","\x6B\x62\x64","\x5F\x6F\x6E\x44\x6F\x75\x62\x6C\x65\x57\x61\x67\x65\x72","\x32\x78\x20","\x43","\x5F\x6F\x6E\x4D\x61\x78\x57\x61\x67\x65\x72","\x4D\x61\x78","\x42\x65\x74\x42\x6F\x78\x42\x75\x74\x74\x6F\x6E","\x50\x6C\x61\x63\x69\x6E\x67\x20\x62\x65\x74\x2E\x2E\x2E","\x53\x75\x63\x63\x65\x73\x73\x66\x75\x6C\x6C\x79\x20\x70\x6C\x61\x63\x65\x64\x20\x62\x65\x74\x3A","\x6D\x65\x74\x61","\x73\x65\x63\x72\x65\x74","\x7C","\x73\x61\x6C\x74","\x6E\x65\x78\x74\x5F\x68\x61\x73\x68","\x70\x72\x6F\x66\x69\x74","\x45\x72\x72\x6F\x72","\x72\x65\x73\x70\x6F\x6E\x73\x65\x4A\x53\x4F\x4E","\x49\x6E\x74\x65\x72\x6E\x61\x6C\x20\x45\x72\x72\x6F\x72","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x6C\x67\x20\x62\x74\x6E\x2D\x62\x6C\x6F\x63\x6B\x20\x62\x74\x6E\x2D\x64\x65\x66\x61\x75\x6C\x74","\x59\x6F\x75\x20\x63\x61\x6E\x6E\x6F\x74\x20\x61\x66\x66\x6F\x72\x64\x20\x77\x61\x67\x65\x72","\x49\x6E\x76\x61\x6C\x69\x64\x20\x77\x61\x67\x65\x72","\x49\x6E\x76\x61\x6C\x69\x64\x20\x6D\x75\x6C\x74\x69\x70\x6C\x69\x65\x72","\x4D\x75\x6C\x74\x69\x70\x6C\x69\x65\x72\x20\x74\x6F\x6F\x20\x70\x72\x65\x63\x69\x73\x65","\x4D\x75\x6C\x74\x69\x70\x6C\x69\x65\x72\x20\x74\x6F\x6F\x20\x68\x69\x67\x68","\x4D\x75\x6C\x74\x69\x70\x6C\x69\x65\x72\x20\x74\x6F\x6F\x20\x6C\x6F\x77","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x6C\x67\x20\x62\x74\x6E\x2D\x62\x6C\x6F\x63\x6B\x20\x62\x74\x6E\x2D\x64\x61\x6E\x67\x65\x72","\x49\x6E\x76\x61\x6C\x69\x64\x20\x62\x65\x74","\x63\x6F\x6C\x2D\x78\x73\x2D\x36","\x62\x65\x74\x2D\x68\x69","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x6C\x67\x20\x62\x74\x6E\x2D\x70\x72\x69\x6D\x61\x72\x79\x20\x62\x74\x6E\x2D\x62\x6C\x6F\x63\x6B","\x42\x65\x74\x20\x48\x69\x20","\x48","\x62\x65\x74\x2D\x6C\x6F","\x42\x65\x74\x20\x4C\x6F\x20","\x4C","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x6C\x67\x20\x62\x74\x6E\x2D\x62\x6C\x6F\x63\x6B\x20\x62\x74\x6E\x2D\x73\x75\x63\x63\x65\x73\x73","\x4C\x6F\x67\x69\x6E\x20\x77\x69\x74\x68\x20\x4D\x6F\x6E\x65\x79\x50\x6F\x74","\x63\x6F\x6C\x2D\x6D\x64\x2D\x32","\x31\x35\x70\x78","\x63\x6F\x6C\x2D\x6D\x64\x2D\x38","\x48\x6F\x74\x6B\x65\x79\x54\x6F\x67\x67\x6C\x65","\x74\x65\x78\x74\x2D\x63\x65\x6E\x74\x65\x72","\x62\x74\x6E\x20\x62\x74\x6E\x2D\x64\x65\x66\x61\x75\x6C\x74\x20\x62\x74\x6E\x2D\x73\x6D","\x5F\x6F\x6E\x43\x6C\x69\x63\x6B","\x48\x6F\x74\x6B\x65\x79\x73\x3A\x20","\x6C\x61\x62\x65\x6C\x20\x6C\x61\x62\x65\x6C\x2D\x73\x75\x63\x63\x65\x73\x73","\x4F\x4E","\x6C\x61\x62\x65\x6C\x20\x6C\x61\x62\x65\x6C\x2D\x64\x65\x66\x61\x75\x6C\x74","\x4F\x46\x46","\x42\x65\x74\x42\x6F\x78","\x63\x6F\x6C\x2D\x78\x73\x2D\x31\x32","\x68\x72","\x63\x6F\x6C\x2D\x73\x6D\x2D\x36","\x70\x61\x6E\x65\x6C\x2D\x66\x6F\x6F\x74\x65\x72\x20\x63\x6C\x65\x61\x72\x66\x69\x78","\x54\x61\x62\x73","\x6E\x61\x76\x20\x6E\x61\x76\x2D\x74\x61\x62\x73","\x61\x63\x74\x69\x76\x65","\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3A\x76\x6F\x69\x64\x28\x30\x29","\x41\x6C\x6C\x20\x42\x65\x74\x73","\x4D\x59\x5F\x42\x45\x54\x53","\x4D\x79\x20\x42\x65\x74\x73","\x72\x65\x63\x61\x70\x74\x63\x68\x61\x5F\x73\x69\x74\x65\x6B\x65\x79","\x46\x41\x55\x43\x45\x54","\x46\x61\x75\x63\x65\x74\x20","\x41\x6C\x6C\x42\x65\x74\x73\x54\x61\x62\x43\x6F\x6E\x74\x65\x6E\x74","\x69\x6E\x74\x65\x72\x76\x61\x6C","\x74\x61\x62\x6C\x65","\x50\x6C\x61\x79\x65\x72","\x74\x68","\x42\x65\x74\x20\x49\x44","\x57\x61\x67\x65\x72","\x50\x72\x6F\x66\x69\x74","\x64\x65\x62\x75\x67","\x44\x75\x6D\x70","\x74\x72","\x74\x68\x65\x61\x64","\x74\x64","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x6D\x6F\x6E\x65\x79\x70\x6F\x74\x2E\x63\x6F\x6D\x2F\x62\x65\x74\x73\x2F","\x67\x72\x65\x65\x6E","\x74\x62\x6F\x64\x79","\x4D\x79\x42\x65\x74\x73\x54\x61\x62\x43\x6F\x6E\x74\x65\x6E\x74","\x49\x44","\x4F\x75\x74\x63\x6F\x6D\x65","\x54\x61\x72\x67\x65\x74","\x72\x65\x76\x65\x72\x73\x65","\x62\x65\x74\x5F\x69\x64","\x2F\x62\x65\x74\x73\x2F","\x6F\x75\x74\x63\x6F\x6D\x65","\x69\x73\x46\x61\x69\x72","\x56\x65\x72\x69\x66\x69\x65\x64","\x63\x6F\x6E\x64","\x37\x35\x70\x78","\x61\x75\x74\x6F","\x20\x20","\x70\x72\x65","\x46\x61\x75\x63\x65\x74\x54\x61\x62\x43\x6F\x6E\x74\x65\x6E\x74","\x53\x48\x4F\x57\x5F\x52\x45\x43\x41\x50\x54\x43\x48\x41","\x72\x65\x63\x61\x70\x74\x63\x68\x61\x2D\x74\x61\x72\x67\x65\x74","\x5F\x6F\x6E\x52\x65\x63\x61\x70\x74\x63\x68\x61\x53\x75\x62\x6D\x69\x74","\x72\x65\x6E\x64\x65\x72","\x72\x65\x63\x61\x70\x74\x63\x68\x61\x20\x73\x75\x62\x6D\x69\x74\x74\x65\x64\x3A\x20","\x57\x41\x49\x54\x49\x4E\x47\x5F\x46\x4F\x52\x5F\x53\x45\x52\x56\x45\x52","\x61\x6D\x6F\x75\x6E\x74","\x53\x55\x43\x43\x45\x53\x53\x46\x55\x4C\x4C\x59\x5F\x43\x4C\x41\x49\x4D\x45\x44","\x46\x41\x55\x43\x45\x54\x5F\x41\x4C\x52\x45\x41\x44\x59\x5F\x43\x4C\x41\x49\x4D\x45\x44","\x41\x4C\x52\x45\x41\x44\x59\x5F\x43\x4C\x41\x49\x4D\x45\x44","\x59\x6F\x75\x20\x6D\x75\x73\x74\x20\x6C\x6F\x67\x69\x6E\x20\x74\x6F\x20\x63\x6C\x61\x69\x6D\x20\x66\x61\x75\x63\x65\x74","\x53\x75\x63\x63\x65\x73\x73\x66\x75\x6C\x6C\x79\x20\x63\x6C\x61\x69\x6D\x65\x64\x20","\x63\x6C\x61\x69\x6D\x41\x6D\x6F\x75\x6E\x74","\x20\x62\x69\x74\x73\x2E","\x20\x59\x6F\x75\x20\x63\x61\x6E\x20\x63\x6C\x61\x69\x6D\x20\x61\x67\x61\x69\x6E\x20\x69\x6E\x20\x35\x20\x6D\x69\x6E\x75\x74\x65\x73\x2E","\x55\x6E\x68\x61\x6E\x64\x6C\x65\x64\x20\x66\x61\x75\x63\x65\x74\x20\x73\x74\x61\x74\x65","\x66\x61\x75\x63\x65\x74\x53\x74\x61\x74\x65","\x54\x61\x62\x43\x6F\x6E\x74\x65\x6E\x74","\x55\x6E\x73\x75\x70\x70\x6F\x72\x74\x65\x64\x20\x63\x75\x72\x72\x54\x61\x62\x20\x76\x61\x6C\x75\x65\x3A\x20","\x46\x6F\x6F\x74\x65\x72","\x74\x65\x78\x74\x2D\x63\x65\x6E\x74\x65\x72\x20\x74\x65\x78\x74\x2D\x6D\x75\x74\x65\x64","\x32\x30\x30\x70\x78","\x50\x6F\x77\x65\x72\x65\x64\x20\x62\x79\x20","\x4D\x6F\x6E\x65\x79\x70\x6F\x74","\x41\x70\x70","\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x63\x6F\x6C\x2D\x73\x6D\x2D\x35","\x63\x6F\x6C\x2D\x73\x6D\x2D\x37","\x61\x70\x70","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x43\x6F\x6E\x6E\x65\x63\x74\x69\x6E\x67\x20\x74\x6F\x20\x63\x68\x61\x74\x20\x73\x65\x72\x76\x65\x72\x2E\x20\x41\x63\x63\x65\x73\x73\x54\x6F\x6B\x65\x6E\x3A","\x63\x68\x61\x74\x5F\x75\x72\x69","\x63\x6F\x6E\x6E\x65\x63\x74","\x5B\x73\x6F\x63\x6B\x65\x74\x5D\x20\x43\x6F\x6E\x6E\x65\x63\x74\x65\x64","\x64\x69\x73\x63\x6F\x6E\x6E\x65\x63\x74","\x5B\x73\x6F\x63\x6B\x65\x74\x5D\x20\x44\x69\x73\x63\x6F\x6E\x6E\x65\x63\x74\x65\x64","\x73\x79\x73\x74\x65\x6D\x5F\x6D\x65\x73\x73\x61\x67\x65","\x5B\x73\x6F\x63\x6B\x65\x74\x5D\x20\x52\x65\x63\x65\x69\x76\x65\x64\x20\x73\x79\x73\x74\x65\x6D\x20\x6D\x65\x73\x73\x61\x67\x65\x3A","\x5B\x73\x6F\x63\x6B\x65\x74\x5D\x20\x52\x65\x63\x65\x69\x76\x65\x64\x20\x63\x68\x61\x74\x20\x6D\x65\x73\x73\x61\x67\x65\x3A","\x75\x73\x65\x72\x5F\x6D\x75\x74\x65\x64","\x5B\x73\x6F\x63\x6B\x65\x74\x5D\x20\x55\x73\x65\x72\x20\x6D\x75\x74\x65\x64\x3A","\x75\x73\x65\x72\x5F\x75\x6E\x6D\x75\x74\x65\x64","\x5B\x73\x6F\x63\x6B\x65\x74\x5D\x20\x55\x73\x65\x72\x20\x75\x6E\x6D\x75\x74\x65\x64\x3A","\x75\x73\x65\x72\x5F\x6A\x6F\x69\x6E\x65\x64","\x5B\x73\x6F\x63\x6B\x65\x74\x5D\x20\x55\x73\x65\x72\x20\x6A\x6F\x69\x6E\x65\x64\x3A","\x75\x73\x65\x72\x5F\x6C\x65\x66\x74","\x5B\x73\x6F\x63\x6B\x65\x74\x5D\x20\x55\x73\x65\x72\x20\x6C\x65\x66\x74\x3A","\x63\x6C\x69\x65\x6E\x74\x5F\x65\x72\x72\x6F\x72","\x5B\x73\x6F\x63\x6B\x65\x74\x5D\x20\x43\x6C\x69\x65\x6E\x74\x20\x65\x72\x72\x6F\x72\x3A","\x77\x61\x72\x6E","\x5B\x73\x6F\x63\x6B\x65\x74\x5D\x20\x41\x75\x74\x68\x20\x66\x61\x69\x6C\x75\x72\x65\x3A","\x5B\x73\x6F\x63\x6B\x65\x74\x5D\x20\x41\x75\x74\x68\x20\x73\x75\x63\x63\x65\x73\x73\x3A","\x6B\x65\x79\x64\x6F\x77\x6E","\x73\x74\x6F\x70\x50\x72\x6F\x70\x61\x67\x61\x74\x69\x6F\x6E","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x63\x6C\x69\x63\x6B","\x23\x62\x65\x74\x2D\x6C\x6F","\x23\x62\x65\x74\x2D\x68\x69","\x6D\x65\x73\x73\x61\x67\x65","\x6F\x72\x69\x67\x69\x6E","\x64\x61\x74\x61","\x55\x50\x44\x41\x54\x45\x5F\x42\x41\x4C\x41\x4E\x43\x45","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"];var config={app_id:85,app_name:_0xeba3[0],recaptcha_sitekey:_0xeba3[1],redirect_uri:_0xeba3[2],mp_browser_uri:_0xeba3[3],mp_api_uri:_0xeba3[4],chat_uri:_0xeba3[5],debug:isRunningLocally(),force_https_redirect:!isRunningLocally()};if(config[_0xeba3[6]]&&window[_0xeba3[8]][_0xeba3[7]]!==_0xeba3[9]){window[_0xeba3[8]][_0xeba3[10]]=_0xeba3[9]+window[_0xeba3[8]][_0xeba3[10]][_0xeba3[12]](window[_0xeba3[8]][_0xeba3[7]][_0xeba3[11]])};var socket;function isRunningLocally(){return /^localhost/[_0xeba3[14]](window[_0xeba3[8]][_0xeba3[13]])}var el=React[_0xeba3[15]];var genUuid=function(){return _0xeba3[19][_0xeba3[18]](/[xy]/g,function(_0xe62ax6){var _0xe62ax7=Math[_0xeba3[16]]()*16|0,_0xe62ax8=_0xe62ax6==_0xeba3[17]?_0xe62ax7:(_0xe62ax7&0x3|0x8);return _0xe62ax8.toString(16);})};var helpers={};helpers[_0xeba3[20]]=function(_0xe62axa,_0xe62axb){console[_0xeba3[22]]( typeof _0xe62axa===_0xeba3[21]);console[_0xeba3[22]]( typeof _0xe62axb===_0xeba3[21]);if(_0xe62axa*_0xe62axb<=20000){return 0.5+(0.5*Math[_0xeba3[16]]())};if(_0xe62axa*_0xe62axb<200000&&_0xe62axa*_0xe62axb>20000){return 0.1+(0.4*Math[_0xeba3[16]]())};if(_0xe62axa*_0xe62axb<2000000&&_0xe62axa*_0xe62axb>200000){return 0.01+(0.09*Math[_0xeba3[16]]())};};helpers[_0xeba3[23]]=function(_0xe62axa,_0xe62axc){console[_0xeba3[22]]( typeof _0xe62axa===_0xeba3[21]);console[_0xeba3[22]](_0xe62axa>0);return 0.9998/_0xe62axa;};helpers[_0xeba3[24]]=function(_0xe62axd,_0xe62axe){console[_0xeba3[22]](_0xe62axd===_0xeba3[25]||_0xe62axd===_0xeba3[26]);console[_0xeba3[22]]( typeof _0xe62axe===_0xeba3[21]);if(_0xe62axd===_0xeba3[25]){return _0xe62axe*100}else {return 99.99-(_0xe62axe*100)};};helpers[_0xeba3[27]]=function(_0xe62axf){switch(_0xe62axf){case _0xeba3[31]:return el[_0xeba3[30]]({className:_0xeba3[28]},_0xeba3[29]);;case _0xeba3[34]:return el[_0xeba3[30]]({className:_0xeba3[32]},_0xeba3[33]);;case _0xeba3[37]:return el[_0xeba3[30]]({className:_0xeba3[35]},_0xeba3[36]);;default:return _0xeba3[38];;}};helpers[_0xeba3[39]]=function(){var _0xe62ax10={};var _0xe62ax11,_0xe62ax12=/\+/g,_0xe62ax7=/([^&;=]+)=?([^&;]*)/g,_0xe62ax13=function(_0xe62ax15){return decodeURIComponent(_0xe62ax15[_0xeba3[18]](_0xe62ax12,_0xeba3[40]))},_0xe62ax14=window[_0xeba3[8]][_0xeba3[41]][_0xeba3[12]](1);while(_0xe62ax11=_0xe62ax7[_0xeba3[42]](_0xe62ax14)){_0xe62ax10[_0xe62ax13(_0xe62ax11[1])]=_0xe62ax13(_0xe62ax11[2])};return _0xe62ax10;};helpers[_0xeba3[43]]=function(_0xe62ax16){var _0xe62ax17=(_0xeba3[38]+_0xe62ax16)[_0xeba3[44]](/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);if(!_0xe62ax17){return 0};return Math[_0xeba3[45]](0,(_0xe62ax17[1]?_0xe62ax17[1][_0xeba3[11]]:0)-(_0xe62ax17[2]?+_0xe62ax17[2]:0));};var getAllBetData=function(_0xe62ax19){var _0xe62ax19=null;var _0xe62ax1a=_0xeba3[46]+config[_0xeba3[47]];$[_0xeba3[51]]({url:_0xe62ax1a,dataType:_0xeba3[48],async:false,method:_0xeba3[49],headers:{"\x43\x6F\x6E\x74\x65\x6E\x74\x2D\x54\x79\x70\x65":_0xeba3[50]},success:function(_0xe62ax1b){_0xe62ax19=_0xe62ax1b}});return _0xe62ax19;};var MoneyPot=(function(){var _0xe62ax1d={};_0xe62ax1d[_0xeba3[52]]=_0xeba3[53];var _0xe62ax1e=function(){};var _0xe62ax1f=function(_0xe62ax20,_0xe62ax21,_0xe62ax22,_0xe62ax23){if(!worldStore[_0xeba3[55]][_0xeba3[54]]){throw  new Error(_0xeba3[56])};var _0xe62ax1a=config[_0xeba3[57]]+_0xeba3[58]+_0xe62ax1d[_0xeba3[52]]+_0xe62ax22+_0xeba3[59]+worldStore[_0xeba3[55]][_0xeba3[54]]+_0xeba3[60]+config[_0xeba3[47]];$[_0xeba3[51]]({url:_0xe62ax1a,dataType:_0xeba3[48],method:_0xe62ax20,data:_0xe62ax21?JSON[_0xeba3[61]](_0xe62ax21):undefined,headers:{"\x43\x6F\x6E\x74\x65\x6E\x74\x2D\x54\x79\x70\x65":_0xeba3[50]},success:_0xe62ax23[_0xeba3[62]]||_0xe62ax1e,error:_0xe62ax23[_0xeba3[63]]||_0xe62ax1e,complete:_0xe62ax23[_0xeba3[64]]||_0xe62ax1e});};_0xe62ax1d[_0xeba3[65]]=function(_0xe62ax23){var _0xe62ax22=_0xeba3[66];_0xe62ax1f(_0xeba3[49],undefined,_0xe62ax22,_0xe62ax23);};_0xe62ax1d[_0xeba3[67]]=function(_0xe62ax23){var _0xe62ax22=_0xeba3[68];_0xe62ax1f(_0xeba3[69],undefined,_0xe62ax22,_0xe62ax23);};_0xe62ax1d[_0xeba3[70]]=function(_0xe62ax23){var _0xe62ax22=_0xeba3[71];_0xe62ax1f(_0xeba3[49],undefined,_0xe62ax22,_0xe62ax23);};_0xe62ax1d[_0xeba3[72]]=function(_0xe62ax24,_0xe62ax23){console[_0xeba3[74]](_0xeba3[73]);var _0xe62ax22=_0xeba3[75];var _0xe62ax25={response:_0xe62ax24};_0xe62ax1f(_0xeba3[69],_0xe62ax25,_0xe62ax22,_0xe62ax23);};_0xe62ax1d[_0xeba3[76]]=function(_0xe62ax21,_0xe62ax23){var _0xe62ax22=_0xeba3[77];_0xe62ax1f(_0xeba3[69],_0xe62ax21,_0xe62ax22,_0xe62ax23);};return _0xe62ax1d;})();var Dispatcher= new (function(){this[_0xeba3[78]]={};var _0xe62ax27=this;this[_0xeba3[79]]=function(_0xe62ax28,_0xe62ax29){console[_0xeba3[74]](_0xeba3[80],_0xe62ax28);if(!_0xe62ax27[_0xeba3[78]][_0xe62ax28]){_0xe62ax27[_0xeba3[78]][_0xe62ax28]=[_0xe62ax29]}else {_0xe62ax27[_0xeba3[78]][_0xe62ax28][_0xeba3[81]](_0xe62ax29)};};this[_0xeba3[82]]=function(_0xe62ax28,_0xe62ax2a){console[_0xeba3[74]](_0xeba3[83],_0xe62ax28,_0xe62ax2a);if(!_0xe62ax27[_0xeba3[78]][_0xe62ax28]){throw  new Error(_0xeba3[84]+_0xe62ax28)};_0xe62ax27[_0xeba3[78]][_0xe62ax28][_0xeba3[85]](function(_0xe62ax29){_0xe62ax29(_0xe62ax2a)});};});var Store=function(_0xe62ax2c,_0xe62ax2d,_0xe62ax2e){this[_0xeba3[55]]=_0xe62ax2d;this[_0xeba3[86]]= new EventEmitter();_0xe62ax2e[_0xeba3[87]](this);var _0xe62ax27=this;this[_0xeba3[88]]=function(_0xe62ax2f,_0xe62ax29){_0xe62ax27[_0xeba3[86]][_0xeba3[88]](_0xe62ax2f,_0xe62ax29)};this[_0xeba3[89]]=function(_0xe62ax2f,_0xe62ax29){_0xe62ax27[_0xeba3[86]][_0xeba3[89]](_0xe62ax2f,_0xe62ax29)};};var access_token,expires_in,expires_at;if(helpers[_0xeba3[39]]()[_0xeba3[90]]){console[_0xeba3[74]](_0xeba3[91]);access_token=helpers[_0xeba3[39]]()[_0xeba3[90]];expires_in=helpers[_0xeba3[39]]()[_0xeba3[92]];expires_at= new Date(Date[_0xeba3[93]]()+(expires_in*1000));localStorage[_0xeba3[94]](_0xeba3[90],access_token);localStorage[_0xeba3[94]](_0xeba3[95],expires_at);}else {if(localStorage[_0xeba3[90]]){console[_0xeba3[74]](_0xeba3[96]);expires_at=localStorage[_0xeba3[95]];if(expires_at&& new Date(expires_at)> new Date(Date[_0xeba3[93]]()+(1000*60*60*24*7))){access_token=localStorage[_0xeba3[90]]}else {localStorage[_0xeba3[97]](_0xeba3[95]);localStorage[_0xeba3[97]](_0xeba3[90]);};}else {console[_0xeba3[74]](_0xeba3[98])}};if(window[_0xeba3[99]]&&window[_0xeba3[99]][_0xeba3[100]]){window[_0xeba3[99]][_0xeba3[100]]({},document[_0xeba3[101]],_0xeba3[58])}else {window[_0xeba3[8]][_0xeba3[41]]=_0xeba3[102]};var chatStore= new Store(_0xeba3[103],{messages: new CBuffer(250),waitingForServer:false,userList:{},showUserList:false,loadingInitialMessages:true},function(){var _0xe62ax27=this;Dispatcher[_0xeba3[79]](_0xeba3[104],function(_0xe62ax1b){console[_0xeba3[74]](_0xeba3[105]);var _0xe62ax34=_0xe62ax1b[_0xeba3[108]][_0xeba3[99]][_0xeba3[107]](function(_0xe62ax35){_0xe62ax35[_0xeba3[106]]=genUuid();return _0xe62ax35;});_0xe62ax27[_0xeba3[55]][_0xeba3[109]][_0xeba3[81]][_0xeba3[110]](_0xe62ax27[_0xeba3[55]][_0xeba3[109]],_0xe62ax34);_0xe62ax27[_0xeba3[55]][_0xeba3[111]]=false;_0xe62ax27[_0xeba3[55]][_0xeba3[112]]=_0xe62ax1b[_0xeba3[108]][_0xeba3[113]];_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[116]);});Dispatcher[_0xeba3[79]](_0xeba3[117],function(_0xe62ax35){console[_0xeba3[74]](_0xeba3[118]);_0xe62ax35[_0xeba3[106]]=genUuid();_0xe62ax27[_0xeba3[55]][_0xeba3[109]][_0xeba3[81]](_0xe62ax35);_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[119]);});Dispatcher[_0xeba3[79]](_0xeba3[120],function(){console[_0xeba3[74]](_0xeba3[121]);_0xe62ax27[_0xeba3[55]][_0xeba3[122]]=!_0xe62ax27[_0xeba3[55]][_0xeba3[122]];_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[123],function(_0xe62ax36){console[_0xeba3[74]](_0xeba3[124],_0xe62ax36);_0xe62ax27[_0xeba3[55]][_0xeba3[112]][_0xe62ax36[_0xeba3[125]]]=_0xe62ax36;_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[126],function(_0xe62ax36){console[_0xeba3[74]](_0xeba3[127],_0xe62ax36);delete _0xe62ax27[_0xeba3[55]][_0xeba3[112]][_0xe62ax36[_0xeba3[125]]];_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[128],function(_0xe62ax37){console[_0xeba3[74]](_0xeba3[129]);_0xe62ax27[_0xeba3[55]][_0xeba3[109]][_0xeba3[81]]({id:genUuid(),text:_0xe62ax37,user:{uname:_0xeba3[130]}});_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[119]);});Dispatcher[_0xeba3[79]](_0xeba3[131],function(_0xe62ax37){console[_0xeba3[74]](_0xeba3[132]);_0xe62ax27[_0xeba3[55]][_0xeba3[133]]=true;_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);socket[_0xeba3[115]](_0xeba3[119],_0xe62ax37);});});var betStore= new Store(_0xeba3[134],{nextHash:undefined,wager:{str:_0xeba3[135],num:1,error:undefined},multiplier:{str:_0xeba3[136],num:2.00,error:undefined},hotkeysEnabled:false},function(){var _0xe62ax27=this;Dispatcher[_0xeba3[79]](_0xeba3[137],function(_0xe62ax39){_0xe62ax27[_0xeba3[55]][_0xeba3[138]]=_0xe62ax39;_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[139],function(_0xe62ax3a){_0xe62ax27[_0xeba3[55]][_0xeba3[140]]=_[_0xeba3[141]]({},_0xe62ax27[_0xeba3[55]][_0xeba3[140]],_0xe62ax3a);var _0xe62ax3b=parseInt(_0xe62ax27[_0xeba3[55]][_0xeba3[140]][_0xeba3[142]],10);if(isFinite(_0xe62ax3b)){_0xe62ax3b=Math[_0xeba3[45]](_0xe62ax3b,1);_0xe62ax27[_0xeba3[55]][_0xeba3[140]][_0xeba3[142]]=_0xe62ax3b.toString();};if(isNaN(_0xe62ax3b)||/[^\d]/[_0xeba3[14]](_0xe62ax3b.toString())){_0xe62ax27[_0xeba3[55]][_0xeba3[140]][_0xeba3[63]]=_0xeba3[143]}else {if(_0xe62ax3b*100>worldStore[_0xeba3[55]][_0xeba3[145]][_0xeba3[144]]){_0xe62ax27[_0xeba3[55]][_0xeba3[140]][_0xeba3[63]]=_0xeba3[146];_0xe62ax27[_0xeba3[55]][_0xeba3[140]][_0xeba3[147]]=_0xe62ax3b;}else {_0xe62ax27[_0xeba3[55]][_0xeba3[140]][_0xeba3[63]]=null;_0xe62ax27[_0xeba3[55]][_0xeba3[140]][_0xeba3[142]]=_0xe62ax3b.toString();_0xe62ax27[_0xeba3[55]][_0xeba3[140]][_0xeba3[147]]=_0xe62ax3b;}};_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[148],function(_0xe62ax3c){_0xe62ax27[_0xeba3[55]][_0xeba3[149]]=_[_0xeba3[141]]({},_0xe62ax27[_0xeba3[55]][_0xeba3[149]],_0xe62ax3c);_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});});var worldStore= new Store(_0xeba3[150],{isLoading:true,user:undefined,accessToken:access_token,isRefreshingUser:false,hotkeysEnabled:false,currTab:_0xeba3[151],bets: new CBuffer(25),allBets: new CBuffer(25),grecaptcha:undefined},function(){var _0xe62ax27=this;Dispatcher[_0xeba3[79]](_0xeba3[152],function(_0xe62ax1b){_0xe62ax27[_0xeba3[55]][_0xeba3[145]]=_[_0xeba3[141]]({},_0xe62ax27[_0xeba3[55]][_0xeba3[145]],_0xe62ax1b);_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[153],function(_0xe62ax36){_0xe62ax27[_0xeba3[55]][_0xeba3[145]]=_0xe62ax36;_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[154]);});Dispatcher[_0xeba3[79]](_0xeba3[155],function(){_0xe62ax27[_0xeba3[55]][_0xeba3[145]]=undefined;_0xe62ax27[_0xeba3[55]][_0xeba3[54]]=undefined;localStorage[_0xeba3[97]](_0xeba3[95]);localStorage[_0xeba3[97]](_0xeba3[90]);_0xe62ax27[_0xeba3[55]][_0xeba3[157]][_0xeba3[156]]();_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[158],function(){_0xe62ax27[_0xeba3[55]][_0xeba3[159]]=true;_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[160],function(){_0xe62ax27[_0xeba3[55]][_0xeba3[159]]=false;_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[161],function(_0xe62ax3e){console[_0xeba3[22]]( typeof _0xe62ax3e===_0xeba3[162]);_0xe62ax27[_0xeba3[55]][_0xeba3[163]]=_0xe62ax3e;_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[164],function(_0xe62ax3f){console[_0xeba3[22]]( typeof _0xe62ax3f===_0xeba3[165]);_0xe62ax27[_0xeba3[55]][_0xeba3[157]][_0xeba3[81]](_0xe62ax3f);_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[166],function(){_0xe62ax27[_0xeba3[55]][_0xeba3[167]]=!_0xe62ax27[_0xeba3[55]][_0xeba3[167]];_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[168],function(){_0xe62ax27[_0xeba3[55]][_0xeba3[167]]=false;_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[169],function(){_0xe62ax27[_0xeba3[55]][_0xeba3[170]]=true;_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);MoneyPot[_0xeba3[65]]({success:function(_0xe62ax1b){console[_0xeba3[74]](_0xeba3[171],_0xe62ax1b);var _0xe62ax36=_0xe62ax1b[_0xeba3[172]][_0xeba3[145]];_0xe62ax27[_0xeba3[55]][_0xeba3[145]]=_0xe62ax36;_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[154]);},error:function(_0xe62ax40){console[_0xeba3[74]](_0xeba3[173],_0xe62ax40)},complete:function(){Dispatcher[_0xeba3[82]](_0xeba3[174])}});});Dispatcher[_0xeba3[79]](_0xeba3[174],function(){_0xe62ax27[_0xeba3[55]][_0xeba3[170]]=false;_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[114],_0xe62ax27[_0xeba3[55]]);});Dispatcher[_0xeba3[79]](_0xeba3[175],function(_0xe62ax41){_0xe62ax27[_0xeba3[55]][_0xeba3[176]]=_0xe62ax41;_0xe62ax27[_0xeba3[86]][_0xeba3[115]](_0xeba3[177]);});});var UserBox=React[_0xeba3[227]]({displayName:_0xeba3[178],_onStoreChange:function(){this[_0xeba3[179]]()},componentDidMount:function(){worldStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);betStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);},componentWillUnount:function(){worldStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);betStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);},_onLogout:function(){Dispatcher[_0xeba3[82]](_0xeba3[155])},_onRefreshUser:function(){Dispatcher[_0xeba3[82]](_0xeba3[169])},_openWithdrawPopup:function(){var _0xe62ax43=config[_0xeba3[180]]+_0xeba3[181]+config[_0xeba3[47]];var _0xe62ax44=_0xeba3[182];var _0xe62ax45=[_0xeba3[185],_0xeba3[186],_0xeba3[187],_0xeba3[188]][_0xeba3[184]](_0xeba3[183]);var _0xe62ax46=window[_0xeba3[189]](_0xe62ax43,_0xe62ax44,_0xe62ax45);_0xe62ax46[_0xeba3[190]]();return false;},_openDepositPopup:function(){var _0xe62ax43=config[_0xeba3[180]]+_0xeba3[191]+config[_0xeba3[47]];var _0xe62ax44=_0xeba3[182];var _0xe62ax45=[_0xeba3[185],_0xeba3[186],_0xeba3[187],_0xeba3[188]][_0xeba3[184]](_0xeba3[183]);var _0xe62ax46=window[_0xeba3[189]](_0xe62ax43,_0xe62ax44,_0xe62ax45);_0xe62ax46[_0xeba3[190]]();return false;},render:function(){var _0xe62ax47;if(worldStore[_0xeba3[55]][_0xeba3[159]]){_0xe62ax47=el[_0xeba3[194]]({className:_0xeba3[192]},_0xeba3[193])}else {if(worldStore[_0xeba3[55]][_0xeba3[145]]){_0xe62ax47=el[_0xeba3[205]](null,el[_0xeba3[205]]({className:_0xeba3[195]},el[_0xeba3[196]]({type:_0xeba3[196],className:_0xeba3[197]+(betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[63]]===_0xeba3[146]?_0xeba3[198]:_0xeba3[199]),onClick:this[_0xeba3[200]]},_0xeba3[201]),el[_0xeba3[196]]({type:_0xeba3[196],className:_0xeba3[202],onClick:this[_0xeba3[203]]},_0xeba3[204])),el[_0xeba3[30]]({className:_0xeba3[192],style:{marginRight:_0xeba3[206]}},worldStore[_0xeba3[55]][_0xeba3[145]][_0xeba3[144]]/100+_0xeba3[207]),el[_0xeba3[196]]({className:_0xeba3[208]+(worldStore[_0xeba3[55]][_0xeba3[170]]?_0xeba3[209]:_0xeba3[38]),title:_0xeba3[210],disabled:worldStore[_0xeba3[55]][_0xeba3[170]],onClick:this[_0xeba3[211]],style:{paddingLeft:0,paddingRight:0,marginRight:_0xeba3[212]}},el[_0xeba3[30]]({className:_0xeba3[213]})),el[_0xeba3[30]]({className:_0xeba3[192]},_0xeba3[214],el[_0xeba3[215]](null,worldStore[_0xeba3[55]][_0xeba3[145]][_0xeba3[125]])),el[_0xeba3[196]]({type:_0xeba3[196],onClick:this[_0xeba3[216]],className:_0xeba3[217]},_0xeba3[218]))}else {_0xe62ax47=el[_0xeba3[194]]({className:_0xeba3[192]},el[_0xeba3[225]]({href:config[_0xeba3[180]]+_0xeba3[219]+_0xeba3[220]+config[_0xeba3[47]]+_0xeba3[221]+config[_0xeba3[222]],className:_0xeba3[223]},_0xeba3[224]))}};return el[_0xeba3[205]]({className:_0xeba3[226]},_0xe62ax47);}});var Navbar=React[_0xeba3[227]]({displayName:_0xeba3[228],render:function(){return el[_0xeba3[205]]({className:_0xeba3[229]},el[_0xeba3[205]]({className:_0xeba3[230]},el[_0xeba3[205]]({className:_0xeba3[231]},el[_0xeba3[205]]({className:_0xeba3[232]},el[_0xeba3[225]]({className:_0xeba3[233],href:_0xeba3[58]},config[_0xeba3[234]])),el[_0xeba3[241]]({className:_0xeba3[235]},el[_0xeba3[240]](null,el[_0xeba3[225]]({href:config[_0xeba3[180]]+_0xeba3[236]+config[_0xeba3[47]],target:_0xeba3[237]},_0xeba3[238],el[_0xeba3[30]]({className:_0xeba3[239]})))),React[_0xeba3[242]](UserBox,null))))}});var ChatBoxInput=React[_0xeba3[227]]({displayName:_0xeba3[243],_onStoreChange:function(){this[_0xeba3[179]]()},componentDidMount:function(){chatStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);worldStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);},componentWillUnmount:function(){chatStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);worldStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);},getInitialState:function(){return {text:_0xeba3[38]}},_onChange:function(_0xe62ax11){this[_0xeba3[246]]({text:_0xe62ax11[_0xeba3[245]][_0xeba3[244]]})},_onSend:function(){var _0xe62ax27=this;Dispatcher[_0xeba3[82]](_0xeba3[131],this[_0xeba3[55]][_0xeba3[247]]);this[_0xeba3[246]]({text:_0xeba3[38]});},_onFocus:function(){if(worldStore[_0xeba3[55]][_0xeba3[167]]){Dispatcher[_0xeba3[82]](_0xeba3[168])}},_onKeyPress:function(_0xe62ax11){var _0xe62ax4a=13;if(_0xe62ax11[_0xeba3[248]]===_0xe62ax4a){if(this[_0xeba3[55]][_0xeba3[247]][_0xeba3[249]]()[_0xeba3[11]]>0){this._onSend()}};},render:function(){return (el[_0xeba3[205]]({className:_0xeba3[250]},el[_0xeba3[205]]({className:_0xeba3[251]},chatStore[_0xeba3[55]][_0xeba3[111]]?el[_0xeba3[205]]({style:{marginTop:_0xeba3[252]},className:_0xeba3[253]},el[_0xeba3[30]]({className:_0xeba3[254]}),_0xeba3[255]):el[_0xeba3[263]]({id:_0xeba3[256],className:_0xeba3[257],type:_0xeba3[247],value:this[_0xeba3[55]][_0xeba3[247]],placeholder:worldStore[_0xeba3[55]][_0xeba3[145]]?_0xeba3[258]:_0xeba3[259],onChange:this[_0xeba3[260]],onKeyPress:this[_0xeba3[261]],onFocus:this[_0xeba3[262]],ref:_0xeba3[263],disabled:!worldStore[_0xeba3[55]][_0xeba3[145]]||chatStore[_0xeba3[55]][_0xeba3[111]]})),el[_0xeba3[205]]({className:_0xeba3[264]},el[_0xeba3[196]]({type:_0xeba3[196],className:_0xeba3[265],onClick:this[_0xeba3[266]]},_0xeba3[267]))))}});var ChatUserList=React[_0xeba3[227]]({displayName:_0xeba3[268],render:function(){return (el[_0xeba3[205]]({className:_0xeba3[269]},el[_0xeba3[205]]({className:_0xeba3[270]},_0xeba3[271]),el[_0xeba3[205]]({className:_0xeba3[272]},el[_0xeba3[241]]({},_[_0xeba3[274]](chatStore[_0xeba3[55]][_0xeba3[112]])[_0xeba3[107]](function(_0xe62ax4c){return el[_0xeba3[240]]({key:_0xe62ax4c[_0xeba3[125]]},helpers[_0xeba3[27]](_0xe62ax4c[_0xeba3[273]]),_0xeba3[40]+_0xe62ax4c[_0xeba3[125]])})))))}});var ChatBox=React[_0xeba3[227]]({displayName:_0xeba3[275],_onStoreChange:function(){this[_0xeba3[179]]()},_onNewMessage:function(){var _0xe62ax4e=this[_0xeba3[278]][_0xeba3[277]][_0xeba3[276]]();var _0xe62ax4f=function(){var _0xe62ax50=_0xe62ax4e[_0xeba3[279]]-($(_0xe62ax4e)[_0xeba3[280]]()+$(_0xe62ax4e)[_0xeba3[281]]());console[_0xeba3[74]](_0xeba3[282],_0xe62ax50);return _0xe62ax50<=100;};if(_0xe62ax4f()){this._scrollChat()};},_scrollChat:function(){var _0xe62ax4e=this[_0xeba3[278]][_0xeba3[277]][_0xeba3[276]]();$(_0xe62ax4e)[_0xeba3[280]](_0xe62ax4e[_0xeba3[279]]);},componentDidMount:function(){chatStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);chatStore[_0xeba3[88]](_0xeba3[119],this._onNewMessage);chatStore[_0xeba3[88]](_0xeba3[116],this._scrollChat);},componentWillUnmount:function(){chatStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);chatStore[_0xeba3[89]](_0xeba3[119],this._onNewMessage);chatStore[_0xeba3[89]](_0xeba3[116],this._scrollChat);},_onUserListToggle:function(){Dispatcher[_0xeba3[82]](_0xeba3[120])},render:function(){return el[_0xeba3[205]]({id:_0xeba3[283]},el[_0xeba3[205]]({className:_0xeba3[269]},el[_0xeba3[205]]({className:_0xeba3[272]},el[_0xeba3[241]]({className:_0xeba3[284],ref:_0xeba3[277]},chatStore[_0xeba3[55]][_0xeba3[109]][_0xeba3[286]]()[_0xeba3[107]](function(_0xe62ax51){return el[_0xeba3[240]]({key:_0xe62ax51[_0xeba3[106]]},helpers[_0xeba3[27]](_0xe62ax51[_0xeba3[145]][_0xeba3[273]]),_0xeba3[40],el[_0xeba3[215]](null,_0xe62ax51[_0xeba3[145]][_0xeba3[125]]+_0xeba3[285]),el[_0xeba3[30]](null,_0xeba3[40]+_0xe62ax51[_0xeba3[247]]))}))),el[_0xeba3[205]]({className:_0xeba3[287]},React[_0xeba3[242]](ChatBoxInput,null))),el[_0xeba3[194]]({className:_0xeba3[288],style:{marginTop:_0xeba3[289]}},_0xeba3[290]+Object[_0xeba3[291]](chatStore[_0xeba3[55]][_0xeba3[112]])[_0xeba3[11]]+_0xeba3[40],el[_0xeba3[196]]({className:_0xeba3[292],onClick:this[_0xeba3[293]]},chatStore[_0xeba3[55]][_0xeba3[122]]?_0xeba3[294]:_0xeba3[295])),chatStore[_0xeba3[55]][_0xeba3[122]]?React[_0xeba3[242]](ChatUserList,null):_0xeba3[38])}});var BetBoxChance=React[_0xeba3[227]]({displayName:_0xeba3[296],_onStoreChange:function(){this[_0xeba3[179]]()},componentDidMount:function(){betStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);worldStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);},componentWillUnmount:function(){betStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);worldStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);},render:function(){var _0xe62ax53=helpers[_0xeba3[20]](betStore[_0xeba3[55]][_0xeba3[149]][_0xeba3[147]],betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[147]]);var _0xe62axe=helpers[_0xeba3[23]](betStore[_0xeba3[55]][_0xeba3[149]][_0xeba3[147]],_0xe62ax53);var _0xe62ax54=betStore[_0xeba3[55]][_0xeba3[149]][_0xeba3[63]]||betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[63]];var _0xe62ax47;if(_0xe62ax54){_0xe62ax47=el[_0xeba3[30]]({className:_0xeba3[297]},_0xeba3[40]+(_0xe62axe*100)[_0xeba3[298]](2).toString()+_0xeba3[299])}else {_0xe62ax47=el[_0xeba3[30]]({className:_0xeba3[297]},_0xeba3[40]+(_0xe62axe*100)[_0xeba3[298]](2).toString()+_0xeba3[299])};return el[_0xeba3[205]]({},el[_0xeba3[30]]({className:_0xeba3[297],style:{fontWeight:_0xeba3[300]}},_0xeba3[301]),_0xe62ax47);}});var BetBoxProfit=React[_0xeba3[227]]({displayName:_0xeba3[302],_onStoreChange:function(){this[_0xeba3[179]]()},componentDidMount:function(){betStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);worldStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);},componentWillUnmount:function(){betStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);worldStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);},render:function(){var _0xe62ax56=betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[147]]*(betStore[_0xeba3[55]][_0xeba3[149]][_0xeba3[147]]-1);var _0xe62ax47;if(betStore[_0xeba3[55]][_0xeba3[149]][_0xeba3[63]]||betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[63]]){_0xe62ax47=el[_0xeba3[30]]({className:_0xeba3[297],style:{color:_0xeba3[303]}},_0xeba3[304]+_0xe62ax56[_0xeba3[298]](2))}else {_0xe62ax47=el[_0xeba3[30]]({className:_0xeba3[297],style:{color:_0xeba3[303]}},_0xeba3[304]+_0xe62ax56[_0xeba3[298]](2))};return el[_0xeba3[205]](null,el[_0xeba3[30]]({className:_0xeba3[297],style:{fontWeight:_0xeba3[300]}},_0xeba3[305]),_0xe62ax47);}});var BetBoxMultiplier=React[_0xeba3[227]]({displayName:_0xeba3[306],_onStoreChange:function(){this[_0xeba3[179]]()},componentDidMount:function(){betStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);worldStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);},componentWillUnmount:function(){betStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);worldStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);},_validateMultiplier:function(_0xe62ax58){var _0xe62ax16=parseFloat(_0xe62ax58,10);var _0xe62ax59=/^(\d*\.)?\d+$/;if(isNaN(_0xe62ax16)||!_0xe62ax59[_0xeba3[14]](_0xe62ax58)){Dispatcher[_0xeba3[82]](_0xeba3[148],{error:_0xeba3[307]})}else {if(_0xe62ax16<1.01){Dispatcher[_0xeba3[82]](_0xeba3[148],{error:_0xeba3[308]})}else {if(_0xe62ax16>9900){Dispatcher[_0xeba3[82]](_0xeba3[148],{error:_0xeba3[309]})}else {if(helpers[_0xeba3[43]](_0xe62ax16)>2){Dispatcher[_0xeba3[82]](_0xeba3[148],{error:_0xeba3[310]})}else {Dispatcher[_0xeba3[82]](_0xeba3[148],{num:_0xe62ax16,error:null})}}}};},_onMultiplierChange:function(_0xe62ax11){console[_0xeba3[74]](_0xeba3[311]);var _0xe62ax5a=_0xe62ax11[_0xeba3[245]][_0xeba3[244]];console[_0xeba3[74]](_0xeba3[312],_0xe62ax5a,_0xeba3[313]);Dispatcher[_0xeba3[82]](_0xeba3[148],{str:_0xe62ax5a});this._validateMultiplier(_0xe62ax5a);},render:function(){return el[_0xeba3[205]]({className:_0xeba3[314]},el[_0xeba3[194]]({className:_0xeba3[297]},el[_0xeba3[317]]({style:betStore[_0xeba3[55]][_0xeba3[149]][_0xeba3[63]]?{color:_0xeba3[315]}:{}},_0xeba3[316])),el[_0xeba3[205]]({className:_0xeba3[318]},el[_0xeba3[263]]({type:_0xeba3[247],value:betStore[_0xeba3[55]][_0xeba3[149]][_0xeba3[142]],className:_0xeba3[319],onChange:this[_0xeba3[320]],disabled:!!worldStore[_0xeba3[55]][_0xeba3[159]]}),el[_0xeba3[30]]({className:_0xeba3[321]},_0xeba3[17])))}});var BetBoxWager=React[_0xeba3[227]]({displayName:_0xeba3[322],_onStoreChange:function(){this[_0xeba3[179]]()},_onBalanceChange:function(){Dispatcher[_0xeba3[82]](_0xeba3[139],{})},componentDidMount:function(){betStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);worldStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);worldStore[_0xeba3[88]](_0xeba3[154],this._onBalanceChange);},componentWillUnmount:function(){betStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);worldStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);worldStore[_0xeba3[89]](_0xeba3[154],this._onBalanceChange);},_onWagerChange:function(_0xe62ax11){var _0xe62ax5a=_0xe62ax11[_0xeba3[245]][_0xeba3[244]];Dispatcher[_0xeba3[82]](_0xeba3[139],{str:_0xe62ax5a});},_onHalveWager:function(){var _0xe62ax3a=Math[_0xeba3[323]](betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[147]]/2);Dispatcher[_0xeba3[82]](_0xeba3[139],{str:_0xe62ax3a.toString()});},_onDoubleWager:function(){var _0xe62ax3b=betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[147]]*2;Dispatcher[_0xeba3[82]](_0xeba3[139],{str:_0xe62ax3b.toString()});},_onMaxWager:function(){var _0xe62ax5c;if(worldStore[_0xeba3[55]][_0xeba3[145]]){_0xe62ax5c=Math[_0xeba3[324]](worldStore[_0xeba3[55]][_0xeba3[145]][_0xeba3[144]]/100)}else {_0xe62ax5c=42000};Dispatcher[_0xeba3[82]](_0xeba3[139],{str:_0xe62ax5c.toString()});},render:function(){var _0xe62ax5d={borderBottomLeftRadius:_0xeba3[325],borderBottomRightRadius:_0xeba3[325]};var _0xe62ax5e={borderTopLeftRadius:_0xeba3[325]};var _0xe62ax5f={borderTopRightRadius:_0xeba3[325]};return el[_0xeba3[205]]({className:_0xeba3[314]},el[_0xeba3[194]]({className:_0xeba3[297]},el[_0xeba3[317]](betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[63]]?{style:{color:_0xeba3[315]}}:null,_0xeba3[326])),el[_0xeba3[263]]({value:betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[142]],type:_0xeba3[247],className:_0xeba3[319],style:_0xe62ax5d,onChange:this[_0xeba3[327]],disabled:!!worldStore[_0xeba3[55]][_0xeba3[159]],placeholder:_0xeba3[328]}),el[_0xeba3[205]]({className:_0xeba3[329]},el[_0xeba3[205]]({className:_0xeba3[330]},el[_0xeba3[196]]({className:_0xeba3[331],type:_0xeba3[196],style:_0xe62ax5e,onClick:this[_0xeba3[332]]},_0xeba3[333],worldStore[_0xeba3[55]][_0xeba3[167]]?el[_0xeba3[335]](null,_0xeba3[334]):_0xeba3[38])),el[_0xeba3[205]]({className:_0xeba3[330]},el[_0xeba3[196]]({className:_0xeba3[331],type:_0xeba3[196],onClick:this[_0xeba3[336]]},_0xeba3[337],worldStore[_0xeba3[55]][_0xeba3[167]]?el[_0xeba3[335]](null,_0xeba3[338]):_0xeba3[38])),el[_0xeba3[205]]({className:_0xeba3[330]},el[_0xeba3[196]]({className:_0xeba3[331],type:_0xeba3[196],style:_0xe62ax5f,onClick:this[_0xeba3[339]]},_0xeba3[340]))));}});var BetBoxButton=React[_0xeba3[227]]({displayName:_0xeba3[341],_onStoreChange:function(){this[_0xeba3[179]]()},componentDidMount:function(){worldStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);betStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange);},componentWillUnmount:function(){worldStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);betStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange);},getInitialState:function(){return {waitingForServer:false}},_makeBetHandler:function(_0xe62axd){var _0xe62ax27=this;console[_0xeba3[22]](_0xe62axd===_0xeba3[25]||_0xe62axd===_0xeba3[26]);return function(_0xe62ax11){console[_0xeba3[74]](_0xeba3[342]);_0xe62ax27[_0xeba3[246]]({waitingForServer:true});var _0xe62ax61=betStore[_0xeba3[55]][_0xeba3[138]];console[_0xeba3[22]]( typeof _0xe62ax61===_0xeba3[162]);var _0xe62ax62=betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[147]]*100;var _0xe62axa=betStore[_0xeba3[55]][_0xeba3[149]][_0xeba3[147]];var _0xe62ax63=_0xe62ax62*_0xe62axa;var _0xe62ax64=helpers[_0xeba3[24]](_0xe62axd,helpers[_0xeba3[23]](_0xe62axa));var _0xe62ax65={wager:_0xe62ax62,client_seed:0,hash:_0xe62ax61,cond:_0xe62axd,target:_0xe62ax64,payout:_0xe62ax63};MoneyPot[_0xeba3[76]](_0xe62ax65,{success:function(_0xe62ax3f){console[_0xeba3[74]](_0xeba3[343],_0xe62ax3f);_0xe62ax3f[_0xeba3[344]]={cond:_0xe62axd,number:_0xe62ax64,hash:_0xe62ax61,isFair:CryptoJS.SHA256(_0xe62ax3f[_0xeba3[345]]+_0xeba3[346]+_0xe62ax3f[_0xeba3[347]]).toString()===_0xe62ax61};Dispatcher[_0xeba3[82]](_0xeba3[164],_0xe62ax3f);Dispatcher[_0xeba3[82]](_0xeba3[137],_0xe62ax3f[_0xeba3[348]]);Dispatcher[_0xeba3[82]](_0xeba3[152],{balance:worldStore[_0xeba3[55]][_0xeba3[145]][_0xeba3[144]]+_0xe62ax3f[_0xeba3[349]]});},error:function(_0xe62ax66){console[_0xeba3[74]](_0xeba3[350]);if(_0xe62ax66[_0xeba3[351]]&&_0xe62ax66[_0xeba3[351]]){alert(_0xe62ax66[_0xeba3[351]][_0xeba3[63]])}else {alert(_0xeba3[352])};},complete:function(){_0xe62ax27[_0xeba3[246]]({waitingForServer:false});Dispatcher[_0xeba3[82]](_0xeba3[139],{str:betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[142]]});}});};},render:function(){var _0xe62ax47;var _0xe62ax67=betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[63]]||betStore[_0xeba3[55]][_0xeba3[149]][_0xeba3[63]];if(worldStore[_0xeba3[55]][_0xeba3[159]]){_0xe62ax47=el[_0xeba3[196]]({type:_0xeba3[196],disabled:true,className:_0xeba3[353]},_0xeba3[193])}else {if(_0xe62ax67){var _0xe62ax68={"\x43\x41\x4E\x4E\x4F\x54\x5F\x41\x46\x46\x4F\x52\x44\x5F\x57\x41\x47\x45\x52":_0xeba3[354],"\x49\x4E\x56\x41\x4C\x49\x44\x5F\x57\x41\x47\x45\x52":_0xeba3[355],"\x49\x4E\x56\x41\x4C\x49\x44\x5F\x4D\x55\x4C\x54\x49\x50\x4C\x49\x45\x52":_0xeba3[356],"\x4D\x55\x4C\x54\x49\x50\x4C\x49\x45\x52\x5F\x54\x4F\x4F\x5F\x50\x52\x45\x43\x49\x53\x45":_0xeba3[357],"\x4D\x55\x4C\x54\x49\x50\x4C\x49\x45\x52\x5F\x54\x4F\x4F\x5F\x48\x49\x47\x48":_0xeba3[358],"\x4D\x55\x4C\x54\x49\x50\x4C\x49\x45\x52\x5F\x54\x4F\x4F\x5F\x4C\x4F\x57":_0xeba3[359]};_0xe62ax47=el[_0xeba3[196]]({type:_0xeba3[196],disabled:true,className:_0xeba3[360]},_0xe62ax68[_0xe62ax67]||_0xeba3[361]);}else {if(worldStore[_0xeba3[55]][_0xeba3[145]]){_0xe62ax47=el[_0xeba3[205]]({className:_0xeba3[250]},el[_0xeba3[205]]({className:_0xeba3[362]},el[_0xeba3[196]]({id:_0xeba3[363],type:_0xeba3[196],className:_0xeba3[364],onClick:this._makeBetHandler(_0xeba3[26]),disabled:!!this[_0xeba3[55]][_0xeba3[133]]},_0xeba3[365],worldStore[_0xeba3[55]][_0xeba3[167]]?el[_0xeba3[335]](null,_0xeba3[366]):_0xeba3[38])),el[_0xeba3[205]]({className:_0xeba3[362]},el[_0xeba3[196]]({id:_0xeba3[367],type:_0xeba3[196],className:_0xeba3[364],onClick:this._makeBetHandler(_0xeba3[25]),disabled:!!this[_0xeba3[55]][_0xeba3[133]]},_0xeba3[368],worldStore[_0xeba3[55]][_0xeba3[167]]?el[_0xeba3[335]](null,_0xeba3[369]):_0xeba3[38])))}else {_0xe62ax47=el[_0xeba3[225]]({href:config[_0xeba3[180]]+_0xeba3[219]+_0xeba3[220]+config[_0xeba3[47]]+_0xeba3[221]+config[_0xeba3[222]],className:_0xeba3[370]},_0xeba3[371])}}};return el[_0xeba3[205]](null,el[_0xeba3[205]]({className:_0xeba3[372]},(this[_0xeba3[55]][_0xeba3[133]])?el[_0xeba3[30]]({className:_0xeba3[254],style:{marginTop:_0xeba3[373]}}):_0xeba3[38]),el[_0xeba3[205]]({className:_0xeba3[374]},_0xe62ax47));}});var HotkeyToggle=React[_0xeba3[227]]({displayName:_0xeba3[375],_onClick:function(){Dispatcher[_0xeba3[82]](_0xeba3[166])},render:function(){return (el[_0xeba3[205]]({className:_0xeba3[376]},el[_0xeba3[196]]({type:_0xeba3[196],className:_0xeba3[377],onClick:this[_0xeba3[378]],style:{marginTop:_0xeba3[289]}},_0xeba3[379],worldStore[_0xeba3[55]][_0xeba3[167]]?el[_0xeba3[30]]({className:_0xeba3[380]},_0xeba3[381]):el[_0xeba3[30]]({className:_0xeba3[382]},_0xeba3[383]))))}});var BetBox=React[_0xeba3[227]]({displayName:_0xeba3[384],_onStoreChange:function(){this[_0xeba3[179]]()},componentDidMount:function(){worldStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange)},componentWillUnmount:function(){worldStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange)},render:function(){return el[_0xeba3[205]](null,el[_0xeba3[205]]({className:_0xeba3[269]},el[_0xeba3[205]]({className:_0xeba3[272]},el[_0xeba3[205]]({className:_0xeba3[250]},el[_0xeba3[205]]({className:_0xeba3[362]},React[_0xeba3[242]](BetBoxWager,null)),el[_0xeba3[205]]({className:_0xeba3[362]},React[_0xeba3[242]](BetBoxMultiplier,null)),el[_0xeba3[205]]({className:_0xeba3[250]},el[_0xeba3[205]]({className:_0xeba3[385]},el[_0xeba3[386]](null))),el[_0xeba3[205]](null,el[_0xeba3[205]]({className:_0xeba3[387]},React[_0xeba3[242]](BetBoxProfit,null)),el[_0xeba3[205]]({className:_0xeba3[387]},React[_0xeba3[242]](BetBoxChance,null))))),el[_0xeba3[205]]({className:_0xeba3[388]},React[_0xeba3[242]](BetBoxButton,null))),React[_0xeba3[242]](HotkeyToggle,null))}});var Tabs=React[_0xeba3[227]]({displayName:_0xeba3[389],_onStoreChange:function(){this[_0xeba3[179]]()},componentDidMount:function(){worldStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange)},componentWillUnmount:function(){worldStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange)},_makeTabChangeHandler:function(_0xe62ax3e){var _0xe62ax27=this;return function(){Dispatcher[_0xeba3[82]](_0xeba3[161],_0xe62ax3e)};},render:function(){return el[_0xeba3[241]]({className:_0xeba3[390]},el[_0xeba3[240]]({className:worldStore[_0xeba3[55]][_0xeba3[163]]===_0xeba3[151]?_0xeba3[391]:_0xeba3[38]},el[_0xeba3[225]]({href:_0xeba3[392],onClick:this._makeTabChangeHandler(_0xeba3[151])},_0xeba3[393])),el[_0xeba3[240]]({className:worldStore[_0xeba3[55]][_0xeba3[163]]===_0xeba3[394]?_0xeba3[391]:_0xeba3[38]},el[_0xeba3[225]]({href:_0xeba3[392],onClick:this._makeTabChangeHandler(_0xeba3[394])},_0xeba3[395])),!config[_0xeba3[396]]?_0xeba3[38]:el[_0xeba3[240]]({className:worldStore[_0xeba3[55]][_0xeba3[163]]===_0xeba3[397]?_0xeba3[391]:_0xeba3[38]},el[_0xeba3[225]]({href:_0xeba3[392],onClick:this._makeTabChangeHandler(_0xeba3[397])},el[_0xeba3[30]](null,_0xeba3[398]))))}});var AllBetsTabContent=React[_0xeba3[227]]({displayName:_0xeba3[399],_onStoreChange:function(){this[_0xeba3[179]]()},componentDidMount:function(){this[_0xeba3[400]]=setInterval(this._onStoreChange,7500)},componentWillUnmount:function(){clearInterval(this[_0xeba3[400]])},render:function(){return el[_0xeba3[205]](null,el[_0xeba3[401]]({className:_0xeba3[401]},el[_0xeba3[410]](null,el[_0xeba3[409]](null,el[_0xeba3[403]](null,_0xeba3[402]),el[_0xeba3[403]](null,_0xeba3[404]),el[_0xeba3[403]](null,_0xeba3[405]),el[_0xeba3[403]](null,_0xeba3[406]),config[_0xeba3[407]]?el[_0xeba3[403]](null,_0xeba3[408]):_0xeba3[38])),el[_0xeba3[414]](null,getAllBetData()[_0xeba3[107]](function(_0xe62ax3f){return el[_0xeba3[409]](null,el[_0xeba3[411]](null,_0xe62ax3f[_0xeba3[125]]),el[_0xeba3[411]](null,el[_0xeba3[225]]({href:_0xeba3[412]+_0xe62ax3f[_0xeba3[106]]},_0xe62ax3f[_0xeba3[106]])),el[_0xeba3[411]](null,_0xe62ax3f[_0xeba3[140]]/100+_0xeba3[207]),el[_0xeba3[411]]({style:{color:_0xe62ax3f[_0xeba3[349]]>0?_0xeba3[413]:_0xeba3[315]}},_0xe62ax3f[_0xeba3[349]]>0?_0xeba3[304]+_0xe62ax3f[_0xeba3[349]]/100+_0xeba3[207]:_0xe62ax3f[_0xeba3[349]]/100+_0xeba3[207]))}))))}});var MyBetsTabContent=React[_0xeba3[227]]({displayName:_0xeba3[415],_onStoreChange:function(){this[_0xeba3[179]]()},componentDidMount:function(){worldStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange)},componentWillUnmount:function(){worldStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange)},render:function(){return el[_0xeba3[205]](null,el[_0xeba3[401]]({className:_0xeba3[401]},el[_0xeba3[410]](null,el[_0xeba3[409]](null,el[_0xeba3[403]](null,_0xeba3[416]),el[_0xeba3[403]](null,_0xeba3[406]),el[_0xeba3[403]](null,_0xeba3[417]),el[_0xeba3[403]](null,_0xeba3[418]),config[_0xeba3[407]]?el[_0xeba3[403]](null,_0xeba3[408]):_0xeba3[38])),el[_0xeba3[414]](null,worldStore[_0xeba3[55]][_0xeba3[157]][_0xeba3[286]]()[_0xeba3[107]](function(_0xe62ax3f){return el[_0xeba3[409]]({key:_0xe62ax3f[_0xeba3[420]]},el[_0xeba3[411]](null,el[_0xeba3[225]]({href:config[_0xeba3[180]]+_0xeba3[421]+_0xe62ax3f[_0xeba3[420]]},_0xe62ax3f[_0xeba3[420]])),el[_0xeba3[411]]({style:{color:_0xe62ax3f[_0xeba3[349]]>0?_0xeba3[413]:_0xeba3[315]}},_0xe62ax3f[_0xeba3[349]]>0?_0xeba3[304]+_0xe62ax3f[_0xeba3[349]]/100+_0xeba3[207]:_0xe62ax3f[_0xeba3[349]]/100+_0xeba3[207]),el[_0xeba3[411]](null,_0xe62ax3f[_0xeba3[422]]+_0xeba3[40],_0xe62ax3f[_0xeba3[344]][_0xeba3[423]]?el[_0xeba3[30]]({className:_0xeba3[380]},_0xeba3[424]):_0xeba3[38]),el[_0xeba3[411]](null,_0xe62ax3f[_0xeba3[344]][_0xeba3[425]]+_0xeba3[40]+_0xe62ax3f[_0xeba3[344]][_0xeba3[21]][_0xeba3[298]](2)),!config[_0xeba3[407]]?_0xeba3[38]:el[_0xeba3[411]](null,el[_0xeba3[429]]({style:{maxHeight:_0xeba3[426],overflowY:_0xeba3[427]}},JSON[_0xeba3[61]](_0xe62ax3f,null,_0xeba3[428]))))})[_0xeba3[419]]())))}});var FaucetTabContent=React[_0xeba3[227]]({displayName:_0xeba3[430],getInitialState:function(){return {faucetState:_0xeba3[431],claimAmount:undefined}},_renderRecaptcha:function(){worldStore[_0xeba3[55]][_0xeba3[176]][_0xeba3[434]](_0xeba3[432],{sitekey:config[_0xeba3[396]],callback:this[_0xeba3[433]]})},_onRecaptchaSubmit:function(_0xe62ax6f){var _0xe62ax27=this;console[_0xeba3[74]](_0xeba3[435],_0xe62ax6f);_0xe62ax27[_0xeba3[246]]({faucetState:_0xeba3[436]});MoneyPot[_0xeba3[72]](_0xe62ax6f,{success:function(_0xe62ax1b){Dispatcher[_0xeba3[82]](_0xeba3[152],{balance:worldStore[_0xeba3[55]][_0xeba3[145]][_0xeba3[144]]+_0xe62ax1b[_0xeba3[437]]});_0xe62ax27[_0xeba3[246]]({faucetState:_0xeba3[438],claimAmount:_0xe62ax1b[_0xeba3[437]]});},error:function(_0xe62ax66,_0xe62ax70,_0xe62ax71){if(_0xe62ax66[_0xeba3[351]]&&_0xe62ax66[_0xeba3[351]][_0xeba3[63]]===_0xeba3[439]){_0xe62ax27[_0xeba3[246]]({faucetState:_0xeba3[440]})}}});},componentDidMount:function(){if(worldStore[_0xeba3[55]][_0xeba3[176]]){this._renderRecaptcha()};worldStore[_0xeba3[88]](_0xeba3[177],this._renderRecaptcha);},componentWillUnmount:function(){worldStore[_0xeba3[89]](_0xeba3[177],this._renderRecaptcha)},render:function(){if(!worldStore[_0xeba3[55]][_0xeba3[145]]){return el[_0xeba3[194]]({className:_0xeba3[297]},_0xeba3[441])};var _0xe62ax47;switch(this[_0xeba3[55]][_0xeba3[447]]){case _0xeba3[431]:_0xe62ax47=el[_0xeba3[205]]({id:_0xeba3[432]},!!worldStore[_0xeba3[55]][_0xeba3[176]]?_0xeba3[38]:_0xeba3[193]);break ;;case _0xeba3[438]:_0xe62ax47=el[_0xeba3[205]](null,_0xeba3[442]+this[_0xeba3[55]][_0xeba3[443]]/100+_0xeba3[444]+_0xeba3[445]);break ;;case _0xeba3[440]:_0xe62ax47=el[_0xeba3[205]](null,_0xeba3[440]);break ;;case _0xeba3[436]:_0xe62ax47=el[_0xeba3[205]](null,_0xeba3[436]);break ;;default:alert(_0xeba3[446]);return ;;};return el[_0xeba3[205]](null,_0xe62ax47);}});var TabContent=React[_0xeba3[227]]({displayName:_0xeba3[448],_onStoreChange:function(){this[_0xeba3[179]]()},componentDidMount:function(){worldStore[_0xeba3[88]](_0xeba3[114],this._onStoreChange)},componentWillUnmount:function(){worldStore[_0xeba3[89]](_0xeba3[114],this._onStoreChange)},render:function(){switch(worldStore[_0xeba3[55]][_0xeba3[163]]){case _0xeba3[151]:return React[_0xeba3[242]](AllBetsTabContent,null);;case _0xeba3[397]:return React[_0xeba3[242]](FaucetTabContent,null);;case _0xeba3[394]:return React[_0xeba3[242]](MyBetsTabContent,null);;default:alert(_0xeba3[449],worldStore[_0xeba3[55]][_0xeba3[163]]);break ;;}}});var Footer=React[_0xeba3[227]]({displayName:_0xeba3[450],render:function(){return el[_0xeba3[205]]({className:_0xeba3[451],style:{marginTop:_0xeba3[452]}},_0xeba3[453],el[_0xeba3[225]]({href:_0xeba3[3]},_0xeba3[454]))}});var App=React[_0xeba3[227]]({displayName:_0xeba3[455],render:function(){return el[_0xeba3[205]]({className:_0xeba3[456]},React[_0xeba3[242]](Navbar,null),el[_0xeba3[205]]({className:_0xeba3[250]},el[_0xeba3[205]]({className:_0xeba3[457]},React[_0xeba3[242]](BetBox,null)),el[_0xeba3[205]]({className:_0xeba3[458]},React[_0xeba3[242]](ChatBox,null))),el[_0xeba3[205]]({style:{marginTop:_0xeba3[373]}},React[_0xeba3[242]](Tabs,null)),React[_0xeba3[242]](TabContent,null),React[_0xeba3[242]](Footer,null))}});React[_0xeba3[434]](React[_0xeba3[242]](App,null),document[_0xeba3[460]](_0xeba3[459]));if(!worldStore[_0xeba3[55]][_0xeba3[54]]){Dispatcher[_0xeba3[82]](_0xeba3[160]);connectToChatServer();}else {MoneyPot[_0xeba3[65]]({success:function(_0xe62ax1b){console[_0xeba3[74]](_0xeba3[171],_0xe62ax1b);var _0xe62ax36=_0xe62ax1b[_0xeba3[172]][_0xeba3[145]];Dispatcher[_0xeba3[82]](_0xeba3[153],_0xe62ax36);},error:function(_0xe62ax40){console[_0xeba3[74]](_0xeba3[173],_0xe62ax40)},complete:function(){Dispatcher[_0xeba3[82]](_0xeba3[160]);connectToChatServer();}});MoneyPot[_0xeba3[67]]({success:function(_0xe62ax1b){Dispatcher[_0xeba3[82]](_0xeba3[137],_0xe62ax1b[_0xeba3[41]])}});};function connectToChatServer(){console[_0xeba3[74]](_0xeba3[461],worldStore[_0xeba3[55]][_0xeba3[54]]);socket=io(config[_0xeba3[462]]);socket[_0xeba3[88]](_0xeba3[463],function(){console[_0xeba3[74]](_0xeba3[464]);socket[_0xeba3[88]](_0xeba3[465],function(){console[_0xeba3[74]](_0xeba3[466])});socket[_0xeba3[88]](_0xeba3[467],function(_0xe62ax37){console[_0xeba3[74]](_0xeba3[468],_0xe62ax37);Dispatcher[_0xeba3[82]](_0xeba3[128],_0xe62ax37);});socket[_0xeba3[88]](_0xeba3[119],function(_0xe62ax35){console[_0xeba3[74]](_0xeba3[469],_0xe62ax35);Dispatcher[_0xeba3[82]](_0xeba3[117],_0xe62ax35);});socket[_0xeba3[88]](_0xeba3[470],function(_0xe62ax1b){console[_0xeba3[74]](_0xeba3[471],_0xe62ax1b)});socket[_0xeba3[88]](_0xeba3[472],function(_0xe62ax1b){console[_0xeba3[74]](_0xeba3[473],_0xe62ax1b)});socket[_0xeba3[88]](_0xeba3[474],function(_0xe62ax36){console[_0xeba3[74]](_0xeba3[475],_0xe62ax36);Dispatcher[_0xeba3[82]](_0xeba3[123],_0xe62ax36);});socket[_0xeba3[88]](_0xeba3[476],function(_0xe62ax36){console[_0xeba3[74]](_0xeba3[477],_0xe62ax36);Dispatcher[_0xeba3[82]](_0xeba3[126],_0xe62ax36);});socket[_0xeba3[88]](_0xeba3[478],function(_0xe62ax37){console[_0xeba3[480]](_0xeba3[479],_0xe62ax37)});var _0xe62ax76;if(worldStore[_0xeba3[55]][_0xeba3[54]]){_0xe62ax76=CryptoJS.SHA256(worldStore[_0xeba3[55]][_0xeba3[54]]).toString()};var _0xe62ax77={app_id:config[_0xeba3[47]],hashed_token:_0xe62ax76};socket[_0xeba3[115]](_0xeba3[172],_0xe62ax77,function(_0xe62ax40,_0xe62ax1b){if(_0xe62ax40){console[_0xeba3[74]](_0xeba3[481],_0xe62ax40);return ;};console[_0xeba3[74]](_0xeba3[482],_0xe62ax1b);Dispatcher[_0xeba3[82]](_0xeba3[104],_0xe62ax1b);});});}function onRecaptchaLoad(){Dispatcher[_0xeba3[82]](_0xeba3[175],grecaptcha)}$(document)[_0xeba3[88]](_0xeba3[483],function(_0xe62ax11){var _0xe62ax79=72,_0xe62ax7a=76,_0xe62ax7b=67,_0xe62ax7c=88,_0xe62ax7d=_0xe62ax11[_0xeba3[248]];if(!worldStore[_0xeba3[55]][_0xeba3[167]]){return };if(_0xe62ax7d!==_0xe62ax79&&_0xe62ax7d!==_0xe62ax7a&&_0xe62ax7d!==_0xe62ax7c&&_0xe62ax7d!==_0xe62ax7b){return };_0xe62ax11[_0xeba3[484]]();_0xe62ax11[_0xeba3[485]]();switch(_0xe62ax7d){case _0xe62ax7b:var _0xe62ax7e=betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[147]]*2;Dispatcher[_0xeba3[82]](_0xeba3[139],{num:_0xe62ax7e,str:_0xe62ax7e.toString()});break ;;case _0xe62ax7c:var _0xe62ax7f=Math[_0xeba3[324]](betStore[_0xeba3[55]][_0xeba3[140]][_0xeba3[147]]/2);Dispatcher[_0xeba3[82]](_0xeba3[139],{num:_0xe62ax7f,str:_0xe62ax7f.toString()});break ;;case _0xe62ax7a:$(_0xeba3[487])[_0xeba3[486]]();break ;;case _0xe62ax79:$(_0xeba3[488])[_0xeba3[486]]();break ;;default:return ;;};});window[_0xeba3[493]](_0xeba3[489],function(_0xe62ax80){if(_0xe62ax80[_0xeba3[490]]===config[_0xeba3[180]]&&_0xe62ax80[_0xeba3[491]]===_0xeba3[492]){Dispatcher[_0xeba3[82]](_0xeba3[169])}},false);
+// Untitled Dice v0.0.6
+
+// Customize these configuration settings:
+
+var config = {
+  // - Your app's id on moneypot.com
+  app_id: 85,                             // <----------------------------- EDIT ME!
+  // - Displayed in the navbar
+  app_name: 'Quantum Dice',
+  // - For your faucet to work, you must register your site at Recaptcha
+  // - https://www.google.com/recaptcha/intro/index.html
+  recaptcha_sitekey: '6LdNvggTAAAAANd3cn-AD54gQFOYFu4Si3FYSPq0',  // <----- EDIT ME!
+  redirect_uri: 'https://qdice.net/play',
+  mp_browser_uri: 'https://www.moneypot.com',
+  mp_api_uri: 'https://api.moneypot.com',
+  chat_uri: 'https://a-chat-server.herokuapp.com',
+  // - Show debug output only if running on localhost
+  debug: isRunningLocally(),
+  // - Set this to true if you want users that come to http:// to be redirected
+  //   to https://
+  //force_https_redirect: !isRunningLocally()
+};
+
+////////////////////////////////////////////////////////////
+// You shouldn't have to edit anything below this line
+////////////////////////////////////////////////////////////
+
+if (config.force_https_redirect && window.location.protocol !== "https:") {
+  window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+}
+
+// Hoist it. It's impl'd at bottom of page.
+var socket;
+
+// :: Bool
+function isRunningLocally() {
+  return /^localhost/.test(window.location.host);
+}
+
+var el = React.DOM;
+
+// Generates UUID for uniquely tagging components
+var genUuid = function() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+    return v.toString(16);
+  });
+};
+
+var helpers = {};
+
+helpers.randomHouseEdge = function(multiplier,wager){
+     console.assert(typeof multiplier === 'number');
+     console.assert(typeof wager === 'number');
+  
+    if (multiplier*wager <= 20000){
+        return 0.5 + (0.5*Math.random());
+    }
+    
+    if (multiplier*wager < 200000 && multiplier*wager > 20000){
+        return 0.1 + (0.4*Math.random());
+    }
+    
+    if (multiplier*wager <2000000 && multiplier*wager > 200000){
+        return 0.01 + (0.09*Math.random());
+    
+    }
+
+};
+
+// Number -> Number in range (0, 1)
+helpers.multiplierToWinProb = function(multiplier, edge) {
+  console.assert(typeof multiplier === 'number');
+  console.assert(multiplier > 0);
+
+    return 0.9998 / multiplier;
+  //return (1 - (0.1*edge)) / multiplier;
+    
+};
+
+helpers.calcNumber = function(cond, winProb) {
+  console.assert(cond === '<' || cond === '>');
+  console.assert(typeof winProb === 'number');
+
+  if (cond === '<') {
+    return winProb * 100;
+  } else {
+    return 99.99 - (winProb * 100);
+  }
+};
+
+helpers.roleToLabelElement = function(role) {
+  switch(role) {
+    case 'admin':
+      return el.span({className: 'label label-danger'}, 'MP Staff');
+    case 'mod':
+      return el.span({className: 'label label-info'}, 'Mod');
+    case 'owner':
+      return el.span({className: 'label label-primary'}, 'Owner');
+    default:
+      return '';
+  }
+};
+
+// -> Object
+helpers.getHashParams = function() {
+  var hashParams = {};
+  var e,
+      a = /\+/g,  // Regex for replacing addition symbol with a space
+      r = /([^&;=]+)=?([^&;]*)/g,
+      d = function (s) { return decodeURIComponent(s.replace(a, " ")); },
+      q = window.location.hash.substring(1);
+  while (e = r.exec(q))
+    hashParams[d(e[1])] = d(e[2]);
+  return hashParams;
+};
+
+// getPrecision('1') -> 0
+// getPrecision('.05') -> 2
+// getPrecision('25e-100') -> 100
+// getPrecision('2.5e-99') -> 100
+helpers.getPrecision = function(num) {
+  var match = (''+num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+  if (!match) { return 0; }
+  return Math.max(
+    0,
+    // Number of digits right of decimal point.
+    (match[1] ? match[1].length : 0) -
+    // Adjust for scientific notation.
+    (match[2] ? +match[2] : 0));
+};
+
+////////////////////////////////////////////////////////////
+var getAllBetData = function(betData) {
+   var betData = null;
+   var url = 'https://api.moneypot.com/v1/list-bets?access_token=4187a5d7-1497-490c-9207-aba1a7a41f51&&limit=20&&app_id=' + config.app_id;
+  $.ajax({
+      url:      url,
+      dataType: 'json', // data type of response
+      async: false, 
+      method:   'GET',
+      headers: {
+        'Content-Type': 'text/plain'
+      },
+      
+      success: function(data){
+       betData = data;
+      }
+
+    });
+    
+    return betData;
+    
+  };
+
+
+
+
+
+// A weak MoneyPot API abstraction
+var MoneyPot = (function() {
+
+  var o = {};
+
+  o.apiVersion = 'v1';
+
+  // method: 'GET' | 'POST' | ...
+  // endpoint: '/tokens/abcd-efgh-...'
+  var noop = function() {};
+  var makeMPRequest = function(method, bodyParams, endpoint, callbacks) {
+
+    if (!worldStore.state.accessToken)
+      throw new Error('Must have accessToken set to call MoneyPot API');
+
+    var url = config.mp_api_uri + '/' + o.apiVersion + endpoint +
+              '?access_token=' + worldStore.state.accessToken + '&&app_id=' + config.app_id;
+  
+    $.ajax({
+      url:      url,
+      dataType: 'json', // data type of response
+      method:   method,
+      data:     bodyParams ? JSON.stringify(bodyParams) : undefined,
+      headers: {
+        'Content-Type': 'text/plain'
+      },
+      // Callbacks
+      success:  callbacks.success  || noop,
+      error:    callbacks.error    || noop,
+      complete: callbacks.complete || noop
+    });
+  };
+
+
+
+  
+
+
+  o.getTokenInfo = function(callbacks) {
+    var endpoint = '/token';
+    makeMPRequest('GET', undefined, endpoint, callbacks);
+  };
+
+
+
+  o.generateBetHash = function(callbacks) {
+    var endpoint = '/hashes';
+    makeMPRequest('POST', undefined, endpoint, callbacks);
+  };
+
+  o.getDepositAddress = function(callbacks) {
+    var endpoint = '/deposit-address';
+    makeMPRequest('GET', undefined, endpoint, callbacks);
+  };
+
+  // gRecaptchaResponse is string response from google server
+  // `callbacks.success` signature	is fn({ claim_id: Int, amoutn: Satoshis })
+  o.claimFaucet = function(gRecaptchaResponse, callbacks) {
+    console.log('Hitting POST /claim-faucet');
+    var endpoint = '/claim-faucet';
+    var body = { response: gRecaptchaResponse };
+    makeMPRequest('POST', body, endpoint, callbacks);
+  };
+
+
+
+
+  // bodyParams is an object:
+  // - wager: Int in satoshis
+  // - client_seed: Int in range [0, 0^32)
+  // - hash: BetHash
+  // - cond: '<' | '>'
+  // - number: Int in range [0, 99.99] that cond applies to
+  // - payout: how many satoshis to pay out total on win (wager * multiplier)
+  o.placeSimpleDiceBet = function(bodyParams, callbacks) {
+    var endpoint = '/bets/simple-dice';
+    makeMPRequest('POST', bodyParams, endpoint, callbacks);
+  };
+
+  return o;
+})();
+
+////////////////////////////////////////////////////////////
+
+var Dispatcher = new (function() {
+  // Map of actionName -> [Callback]
+  this.callbacks = {};
+
+  var self = this;
+
+  // Hook up a store's callback to receive dispatched actions from dispatcher
+  //
+  // Ex: Dispatcher.registerCallback('NEW_MESSAGE', function(message) {
+  //       console.log('store received new message');
+  //       self.state.messages.push(message);
+  //       self.emitter.emit('change', self.state);
+  //     });
+  this.registerCallback = function(actionName, cb) {
+    console.log('[Dispatcher] registering callback for:', actionName);
+
+    if (!self.callbacks[actionName]) {
+      self.callbacks[actionName] = [cb];
+    } else {
+      self.callbacks[actionName].push(cb);
+    }
+  };
+
+  this.sendAction = function(actionName, payload) {
+    console.log('[Dispatcher] received action:', actionName, payload);
+
+    // Ensure this action has 1+ registered callbacks
+    if (!self.callbacks[actionName]) {
+      throw new Error('Unsupported actionName: ' + actionName);
+    }
+
+    // Dispatch payload to each registered callback for this action
+    self.callbacks[actionName].forEach(function(cb) {
+      cb(payload);
+    });
+  };
+});
+
+////////////////////////////////////////////////////////////
+
+var Store = function(storeName, initState, initCallback) {
+
+  this.state = initState;
+  this.emitter = new EventEmitter();
+
+  // Execute callback immediately once store (above state) is setup
+  // This callback should be used by the store to register its callbacks
+  // to the dispatcher upon initialization
+  initCallback.call(this);
+
+  var self = this;
+
+  // Allow components to listen to store events (i.e. its 'change' event)
+  this.on = function(eventName, cb) {
+    self.emitter.on(eventName, cb);
+  };
+
+  this.off = function(eventName, cb) {
+    self.emitter.off(eventName, cb);
+  };
+};
+
+////////////////////////////////////////////////////////////
+
+// Manage access_token //////////////////////////////////////
+//
+// - If access_token is in url, save it into localStorage.
+//   `expires_in` (seconds until expiration) will also exist in url
+//   so turn it into a date that we can compare
+
+var access_token, expires_in, expires_at;
+
+if (helpers.getHashParams().access_token) {
+  console.log('[token manager] access_token in hash params');
+  access_token = helpers.getHashParams().access_token;
+  expires_in = helpers.getHashParams().expires_in;
+  expires_at = new Date(Date.now() + (expires_in * 1000));
+
+  localStorage.setItem('access_token', access_token);
+  localStorage.setItem('expires_at', expires_at);
+} else if (localStorage.access_token) {
+  console.log('[token manager] access_token in localStorage');
+  expires_at = localStorage.expires_at;
+  // Only get access_token from localStorage if it expires
+  // in a week or more. access_tokens are valid for two weeks
+  if (expires_at && new Date(expires_at) > new Date(Date.now() + (1000 * 60 * 60 * 24 * 7))) {
+    access_token = localStorage.access_token;
+  } else {
+    localStorage.removeItem('expires_at');
+    localStorage.removeItem('access_token');
+  }
+} else {
+  console.log('[token manager] no access token');
+}
+
+// Scrub fragment params from url.
+if (window.history && window.history.replaceState) {
+  window.history.replaceState({}, document.title, "/");
+} else {
+  // For browsers that don't support html5 history api, just do it the old
+  // fashioned way that leaves a trailing '#' in the url
+  window.location.hash = '#';
+}
+
+////////////////////////////////////////////////////////////
+
+var chatStore = new Store('chat', {
+  messages: new CBuffer(250),
+  waitingForServer: false,
+  userList: {},
+  showUserList: false,
+  loadingInitialMessages: true
+}, function() {
+  var self = this;
+
+  // `data` is object received from socket auth
+  Dispatcher.registerCallback('INIT_CHAT', function(data) {
+    console.log('[ChatStore] received INIT_CHAT');
+    // Give each one unique id
+    var messages = data.room.history.map(function(message) {
+      message.id = genUuid();
+      return message;
+    });
+
+    self.state.messages.push.apply(self.state.messages, messages);
+
+    // Indicate that we're done with initial fetch
+    self.state.loadingInitialMessages = false;
+
+    // Load userList
+    self.state.userList = data.room.users;
+    self.emitter.emit('change', self.state);
+    self.emitter.emit('init');
+  });
+
+  Dispatcher.registerCallback('NEW_MESSAGE', function(message) {
+    console.log('[ChatStore] received NEW_MESSAGE');
+    message.id = genUuid();
+    self.state.messages.push(message);
+
+    self.emitter.emit('change', self.state);
+    self.emitter.emit('new_message');
+  });
+
+  Dispatcher.registerCallback('TOGGLE_CHAT_USERLIST', function() {
+    console.log('[ChatStore] received TOGGLE_CHAT_USERLIST');
+    self.state.showUserList = !self.state.showUserList;
+    self.emitter.emit('change', self.state);
+  });
+
+  // user is { id: Int, uname: String, role: 'admin' | 'mod' | 'owner' | 'member' }
+  Dispatcher.registerCallback('USER_JOINED', function(user) {
+    console.log('[ChatStore] received USER_JOINED:', user);
+    self.state.userList[user.uname] = user;
+    self.emitter.emit('change', self.state);
+  });
+
+  // user is { id: Int, uname: String, role: 'admin' | 'mod' | 'owner' | 'member' }
+  Dispatcher.registerCallback('USER_LEFT', function(user) {
+    console.log('[ChatStore] received USER_LEFT:', user);
+    delete self.state.userList[user.uname];
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('NEW_SYSTEM_MESSAGE', function(text) {
+    console.log('[ChatStore] received NEW_SYSTEM_MESSAGE');
+    self.state.messages.push({
+      id: genUuid(),
+      text: text,
+      user: {uname: '[SYSTEM]'}
+    });
+    self.emitter.emit('change', self.state);
+    self.emitter.emit('new_message');
+  });
+
+  // Message is { text: String }
+  Dispatcher.registerCallback('SEND_MESSAGE', function(text) {
+    console.log('[ChatStore] received SEND_MESSAGE');
+    self.state.waitingForServer = true;
+    self.emitter.emit('change', self.state);
+    socket.emit('new_message', text);
+  });
+});
+
+var betStore = new Store('bet', {
+  nextHash: undefined,
+  wager: {
+    str: '1',
+    num: 1,
+    error: undefined
+  },
+  multiplier: {
+    str: '2.00',
+    num: 2.00,
+    error: undefined
+  },
+  hotkeysEnabled: false
+}, function() {
+  var self = this;
+
+  Dispatcher.registerCallback('SET_NEXT_HASH', function(hexString) {
+    self.state.nextHash = hexString;
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('UPDATE_WAGER', function(newWager) {
+    self.state.wager = _.merge({}, self.state.wager, newWager);
+
+    var n = parseInt(self.state.wager.str, 10);
+
+    // If n is a number, ensure it's at least 1 bit
+    if (isFinite(n)) {
+      n = Math.max(n, 1);
+      self.state.wager.str = n.toString();
+    }
+
+    // Ensure wagerString is a number
+    if (isNaN(n) || /[^\d]/.test(n.toString())) {
+      self.state.wager.error = 'INVALID_WAGER';
+    // Ensure user can afford balance
+    } else if (n * 100 > worldStore.state.user.balance) {
+      self.state.wager.error = 'CANNOT_AFFORD_WAGER';
+      self.state.wager.num = n;
+    } else {
+      // wagerString is valid
+      self.state.wager.error = null;
+      self.state.wager.str = n.toString();
+      self.state.wager.num = n;
+    }
+
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('UPDATE_MULTIPLIER', function(newMult) {
+    self.state.multiplier = _.merge({}, self.state.multiplier, newMult);
+    self.emitter.emit('change', self.state);
+  });
+});
+
+// The general store that holds all things until they are separated
+// into smaller stores for performance.
+var worldStore = new Store('world', {
+  isLoading: true,
+  user: undefined,
+  accessToken: access_token,
+  isRefreshingUser: false,
+  hotkeysEnabled: false,
+  currTab: 'ALL_BETS',
+  bets: new CBuffer(25),
+  allBets: new CBuffer(25),
+  grecaptcha: undefined
+}, function() {
+  var self = this;
+
+  // TODO: Consider making these emit events unique to each callback
+  // for more granular reaction.
+
+  // data is object, note, assumes user is already an object
+  Dispatcher.registerCallback('UPDATE_USER', function(data) {
+    self.state.user = _.merge({}, self.state.user, data);
+    self.emitter.emit('change', self.state);
+  });
+
+  // deprecate in favor of SET_USER
+  Dispatcher.registerCallback('USER_LOGIN', function(user) {
+    self.state.user = user;
+    self.emitter.emit('change', self.state);
+    self.emitter.emit('user_update');
+  });
+
+  // Replace with CLEAR_USER
+  Dispatcher.registerCallback('USER_LOGOUT', function() {
+    self.state.user = undefined;
+    self.state.accessToken = undefined;
+    localStorage.removeItem('expires_at');
+    localStorage.removeItem('access_token');
+    self.state.bets.empty();
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('START_LOADING', function() {
+    self.state.isLoading = true;
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('STOP_LOADING', function() {
+    self.state.isLoading = false;
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('CHANGE_TAB', function(tabName) {
+    console.assert(typeof tabName === 'string');
+    self.state.currTab = tabName;
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('NEW_BET', function(bet) {
+    console.assert(typeof bet === 'object');
+    self.state.bets.push(bet);
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('TOGGLE_HOTKEYS', function() {
+    self.state.hotkeysEnabled = !self.state.hotkeysEnabled;
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('DISABLE_HOTKEYS', function() {
+    self.state.hotkeysEnabled = false;
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('START_REFRESHING_USER', function() {
+    self.state.isRefreshingUser = true;
+    self.emitter.emit('change', self.state);
+    MoneyPot.getTokenInfo({
+      success: function(data) {
+        console.log('Successfully loaded user from tokens endpoint', data);
+        var user = data.auth.user;
+        self.state.user = user;
+        self.emitter.emit('change', self.state);
+        self.emitter.emit('user_update');
+      },
+      error: function(err) {
+        console.log('Error:', err);
+      },
+      complete: function() {
+        Dispatcher.sendAction('STOP_REFRESHING_USER');
+      }
+    });
+  });
+
+  Dispatcher.registerCallback('STOP_REFRESHING_USER', function() {
+    self.state.isRefreshingUser = false;
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('GRECAPTCHA_LOADED', function(_grecaptcha) {
+    self.state.grecaptcha = _grecaptcha;
+    self.emitter.emit('grecaptcha_loaded');
+  });
+
+});
+
+////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////
+
+var UserBox = React.createClass({
+  displayName: 'UserBox',
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    worldStore.on('change', this._onStoreChange);
+    betStore.on('change', this._onStoreChange);
+  },
+  componentWillUnount: function() {
+    worldStore.off('change', this._onStoreChange);
+    betStore.off('change', this._onStoreChange);
+  },
+  _onLogout: function() {
+    Dispatcher.sendAction('USER_LOGOUT');
+  },
+  _onRefreshUser: function() {
+    Dispatcher.sendAction('START_REFRESHING_USER');
+  },
+  _openWithdrawPopup: function() {
+    var windowUrl = config.mp_browser_uri + '/dialog/withdraw?app_id=' + config.app_id;
+    var windowName = 'manage-auth';
+    var windowOpts = [
+      'width=420',
+      'height=350',
+      'left=100',
+      'top=100'
+    ].join(',');
+    var windowRef = window.open(windowUrl, windowName, windowOpts);
+    windowRef.focus();
+    return false;
+  },
+  _openDepositPopup: function() {
+    var windowUrl = config.mp_browser_uri + '/dialog/deposit?app_id=' + config.app_id;
+    var windowName = 'manage-auth';
+    var windowOpts = [
+      'width=420',
+      'height=350',
+      'left=100',
+      'top=100'
+    ].join(',');
+    var windowRef = window.open(windowUrl, windowName, windowOpts);
+    windowRef.focus();
+    return false;
+  },
+  render: function() {
+
+    var innerNode;
+    if (worldStore.state.isLoading) {
+      innerNode = el.p(
+        {className: 'navbar-text'},
+        'Loading...'
+      );
+    } else if (worldStore.state.user) {
+      innerNode = el.div(
+        null,
+        // Deposit/Withdraw popup buttons
+        el.div(
+          {className: 'btn-group navbar-left btn-group-xs'},
+          el.button(
+            {
+              type: 'button',
+              className: 'btn navbar-btn btn-xs ' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
+              onClick: this._openDepositPopup
+            },
+            'Deposit'
+          ),
+          el.button(
+            {
+              type: 'button',
+              className: 'btn btn-default navbar-btn btn-xs',
+              onClick: this._openWithdrawPopup
+            },
+            'Withdraw'
+          )
+        ),
+        // Balance
+        el.span(
+          {
+            className: 'navbar-text',
+            style: {marginRight: '5px'}
+          },
+          worldStore.state.user.balance / 100 + ' bits'
+        ),
+        // Refresh button
+        el.button(
+          {
+            className: 'btn btn-link navbar-btn navbar-left ' + (worldStore.state.isRefreshingUser ? ' rotate' : ''),
+            title: 'Refresh Balance',
+            disabled: worldStore.state.isRefreshingUser,
+            onClick: this._onRefreshUser,
+            style: {
+              paddingLeft: 0,
+              paddingRight: 0,
+              marginRight: '10px'
+            }
+          },
+          el.span({className: 'glyphicon glyphicon-refresh'})
+        ),
+        // Logged in as...
+        el.span(
+          {className: 'navbar-text'},
+          'Logged in as ',
+          el.code(null, worldStore.state.user.uname)
+        ),
+        // Logout button
+        el.button(
+          {
+            type: 'button',
+            onClick: this._onLogout,
+            className: 'navbar-btn btn btn-default'
+          },
+          'Logout'
+        )
+      );
+    } else {
+      // User needs to login
+      innerNode = el.p(
+        {className: 'navbar-text'},
+        el.a(
+          {
+            href: config.mp_browser_uri + '/oauth/authorize' +
+              '?app_id=' + config.app_id +
+              '&redirect_uri=' + config.redirect_uri,
+            className: 'btn btn-default'
+          },
+          'Login with Moneypot'
+        )
+      );
+    }
+
+    return el.div(
+      {className: 'navbar-right'},
+      innerNode
+    );
+  }
+});
+
+var Navbar = React.createClass({
+  displayName: 'Navbar',
+  render: function() {
+    return el.div(
+        {className: 'navbar navbar-default'},
+        el.div(
+      {className: 'navbar'},
+      el.div(
+        {className: 'container-fluid'},
+        el.div(
+          {className: 'navbar-header'},
+          el.a({className: 'navbar-brand', href:'/'}, config.app_name)
+        ),
+        // Links
+        el.ul(
+          {className: 'nav navbar-nav'},
+          el.li(
+            null,
+            el.a(
+              {
+                href: config.mp_browser_uri + '/apps/' + config.app_id,
+                target: '_blank'
+              },
+              'View on Moneypot ',
+              // External site glyphicon
+              el.span(
+                {className: 'glyphicon glyphicon-new-window'}
+              )
+            )
+          )
+        ),
+        // Userbox
+        React.createElement(UserBox, null)
+      )
+    )
+    );
+  }
+});
+
+var ChatBoxInput = React.createClass({
+  displayName: 'ChatBoxInput',
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    chatStore.on('change', this._onStoreChange);
+    worldStore.on('change', this._onStoreChange);
+  },
+  componentWillUnmount: function() {
+    chatStore.off('change', this._onStoreChange);
+    worldStore.off('change', this._onStoreChange);
+  },
+  //
+  getInitialState: function() {
+    return { text: '' };
+  },
+  // Whenever input changes
+  _onChange: function(e) {
+    this.setState({ text: e.target.value });
+  },
+  // When input contents are submitted to chat server
+  _onSend: function() {
+    var self = this;
+    Dispatcher.sendAction('SEND_MESSAGE', this.state.text);
+    this.setState({ text: '' });
+  },
+  _onFocus: function() {
+    // When users click the chat input, turn off bet hotkeys so they
+    // don't accidentally bet
+    if (worldStore.state.hotkeysEnabled) {
+      Dispatcher.sendAction('DISABLE_HOTKEYS');
+    }
+  },
+  _onKeyPress: function(e) {
+    var ENTER = 13;
+    if (e.which === ENTER) {
+      if (this.state.text.trim().length > 0) {
+        this._onSend();
+      }
+    }
+  },
+  render: function() {
+    return (
+      el.div(
+        {className: 'row'},
+        el.div(
+          {className: 'col-md-9'},
+          chatStore.state.loadingInitialMessages ?
+            el.div(
+              {
+                style: {marginTop: '7px'},
+                className: 'text-muted'
+              },
+              el.span(
+                {className: 'glyphicon glyphicon-refresh rotate'}
+              ),
+              ' Loading...'
+            )
+          :
+            el.input(
+              {
+                id: 'chat-input',
+                className: 'form-control',
+                type: 'text',
+                value: this.state.text,
+                placeholder: worldStore.state.user ?
+                  'Click here and begin typing...' :
+                  'Login to chat',
+                onChange: this._onChange,
+                onKeyPress: this._onKeyPress,
+                onFocus: this._onFocus,
+                ref: 'input',
+                // TODO: disable while fetching messages
+                disabled: !worldStore.state.user || chatStore.state.loadingInitialMessages
+              }
+            )
+        ),
+        el.div(
+          {className: 'col-md-3'},
+          el.button(
+            {
+              type: 'button',
+              className: 'btn btn-default btn-block',
+              /*disabled: !worldStore.state.user ||
+                chatStore.state.waitingForServer ||
+                this.state.text.trim().length === 0,*/
+              onClick: this._onSend
+            },
+            'Send'
+          )
+        )
+      )
+    );
+  }
+});
+
+var ChatUserList = React.createClass({
+  displayName: 'ChatUserList',
+  render: function() {
+    return (
+      el.div(
+        {className: 'panel panel-default'},
+        el.div(
+          {className: 'panel-heading'},
+          'UserList'
+        ),
+        el.div(
+          {className: 'panel-body'},
+          el.ul(
+            {},
+            _.values(chatStore.state.userList).map(function(u) {
+              return el.li(
+                {
+                  key: u.uname
+                },
+                helpers.roleToLabelElement(u.role),
+                ' ' + u.uname
+              );
+            })
+          )
+        )
+      )
+    );
+  }
+});
+
+var ChatBox = React.createClass({
+  displayName: 'ChatBox',
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  // New messages should only force scroll if user is scrolled near the bottom
+  // already. This allows users to scroll back to earlier convo without being
+  // forced to scroll to bottom when new messages arrive
+  _onNewMessage: function() {
+    var node = this.refs.chatListRef.getDOMNode();
+
+    // Only scroll if user is within 100 pixels of last message
+    var shouldScroll = function() {
+      var distanceFromBottom = node.scrollHeight - ($(node).scrollTop() + $(node).innerHeight());
+      console.log('DistanceFromBottom:', distanceFromBottom);
+      return distanceFromBottom <= 100;
+    };
+
+    if (shouldScroll()) {
+      this._scrollChat();
+    }
+  },
+  _scrollChat: function() {
+    var node = this.refs.chatListRef.getDOMNode();
+    $(node).scrollTop(node.scrollHeight);
+  },
+  componentDidMount: function() {
+    chatStore.on('change', this._onStoreChange);
+    chatStore.on('new_message', this._onNewMessage);
+    chatStore.on('init', this._scrollChat);
+  },
+  componentWillUnmount: function() {
+    chatStore.off('change', this._onStoreChange);
+    chatStore.off('new_message', this._onNewMessage);
+    chatStore.off('init', this._scrollChat);
+  },
+  //
+  _onUserListToggle: function() {
+    Dispatcher.sendAction('TOGGLE_CHAT_USERLIST');
+  },
+  render: function() {
+    return el.div(
+      {id: 'chat-box'},
+      el.div(
+        {className: 'panel panel-default'},
+        el.div(
+          {className: 'panel-body'},
+          el.ul(
+            {className: 'chat-list list-unstyled', ref: 'chatListRef'},
+            chatStore.state.messages.toArray().map(function(m) {
+              return el.li(
+                {
+                  // Use message id as unique key
+                  key: m.id
+                },
+                helpers.roleToLabelElement(m.user.role),
+                ' ',
+                el.code(null, m.user.uname + ':'),
+                el.span(null, ' ' + m.text)
+              );
+            })
+          )
+        ),
+        el.div(
+          {className: 'panel-footer'},
+          React.createElement(ChatBoxInput, null)
+        )
+      ),
+      // After the chatbox panel
+      el.p(
+        {
+          className: 'text-right text-muted',
+          style: { marginTop: '-15px' }
+        },
+        'Users online: ' + Object.keys(chatStore.state.userList).length + ' ',
+        // Show/Hide userlist button
+        el.button(
+          {
+            className: 'btn btn-default btn-xs',
+            onClick: this._onUserListToggle
+          },
+          chatStore.state.showUserList ? 'Hide' : 'Show'
+        )
+      ),
+      // Show userlist
+      chatStore.state.showUserList ? React.createElement(ChatUserList, null) : ''
+    );
+  }
+});
+
+var BetBoxChance = React.createClass({
+  displayName: 'BetBoxChance',
+  // Hookup to stores
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    betStore.on('change', this._onStoreChange);
+    worldStore.on('change', this._onStoreChange);
+  },
+  componentWillUnmount: function() {
+    betStore.off('change', this._onStoreChange);
+    worldStore.off('change', this._onStoreChange);
+  },
+  //
+  render: function() {
+    // 0.00 to 1.00
+    var houseEdge = helpers.randomHouseEdge(betStore.state.multiplier.num, betStore.state.wager.num);
+    
+    var winProb = helpers.multiplierToWinProb(betStore.state.multiplier.num, houseEdge);
+
+    var isError = betStore.state.multiplier.error || betStore.state.wager.error;
+
+    // Just show '--' if chance can't be calculated
+    var innerNode;
+    if (isError) {
+        
+        innerNode = el.span(
+        {className: 'lead'},
+        ' ' + (winProb * 100).toFixed(2).toString() + '%'
+      );
+      /*innerNode = el.span(
+        {className: 'lead'},
+        ' --'
+      );*/
+    } else {
+      innerNode = el.span(
+        {className: 'lead'},
+        ' ' + (winProb * 100).toFixed(2).toString() + '%'
+      );
+    }
+
+    return el.div(
+      {},
+      el.span(
+        {className: 'lead', style: { fontWeight: 'bold' }},
+        'Chance:'
+      ),
+      innerNode
+    );
+  }
+});
+
+var BetBoxProfit = React.createClass({
+  displayName: 'BetBoxProfit',
+  // Hookup to stores
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    betStore.on('change', this._onStoreChange);
+    worldStore.on('change', this._onStoreChange);
+  },
+  componentWillUnmount: function() {
+    betStore.off('change', this._onStoreChange);
+    worldStore.off('change', this._onStoreChange);
+  },
+  //
+  render: function() {
+    var profit = betStore.state.wager.num * (betStore.state.multiplier.num - 1);
+
+    var innerNode;
+    if (betStore.state.multiplier.error || betStore.state.wager.error) {
+        innerNode = el.span(
+        {
+          className: 'lead',
+          style: { color: '#39b54a' }
+        },
+        '+' + profit.toFixed(2)
+      );
+        
+        /*innerNode = el.span(
+        {className: 'lead'},
+        '--'
+      );*/
+    } else {
+      innerNode = el.span(
+        {
+          className: 'lead',
+          style: { color: '#39b54a' }
+        },
+        '+' + profit.toFixed(2)
+      );
+    }
+
+    return el.div(
+      null,
+      el.span(
+        {className: 'lead', style: { fontWeight: 'bold' }},
+        'Profit: '
+      ),
+      innerNode
+    );
+  }
+});
+
+var BetBoxMultiplier = React.createClass({
+  displayName: 'BetBoxMultiplier',
+  // Hookup to stores
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    betStore.on('change', this._onStoreChange);
+    worldStore.on('change', this._onStoreChange);
+  },
+  componentWillUnmount: function() {
+    betStore.off('change', this._onStoreChange);
+    worldStore.off('change', this._onStoreChange);
+  },
+  //
+  _validateMultiplier: function(newStr) {
+    var num = parseFloat(newStr, 10);
+
+    // If num is a number, ensure it's at least 0.01x
+    // if (Number.isFinite(num)) {
+    //   num = Math.max(num, 0.01);
+    //   this.props.currBet.setIn(['multiplier', 'str'], num.toString());
+    // }
+
+    var isFloatRegexp = /^(\d*\.)?\d+$/;
+
+    // Ensure str is a number
+    if (isNaN(num) || !isFloatRegexp.test(newStr)) {
+      Dispatcher.sendAction('UPDATE_MULTIPLIER', { error: 'INVALID_MULTIPLIER' });
+      // Ensure multiplier is >= 1.00x
+    } else if (num < 1.01) {
+      Dispatcher.sendAction('UPDATE_MULTIPLIER', { error: 'MULTIPLIER_TOO_LOW' });
+      // Ensure multiplier is <= max allowed multiplier (100x for now)
+    } else if (num > 9900) {
+      Dispatcher.sendAction('UPDATE_MULTIPLIER', { error: 'MULTIPLIER_TOO_HIGH' });
+      // Ensure no more than 2 decimal places of precision
+    } else if (helpers.getPrecision(num) > 2) {
+      Dispatcher.sendAction('UPDATE_MULTIPLIER', { error: 'MULTIPLIER_TOO_PRECISE' });
+      // multiplier str is valid
+    } else {
+      Dispatcher.sendAction('UPDATE_MULTIPLIER', {
+        num: num,
+        error: null
+      });
+    }
+  },
+  _onMultiplierChange: function(e) {
+    console.log('Multiplier changed');
+    var str = e.target.value;
+    console.log('You entered', str, 'as your multiplier');
+    Dispatcher.sendAction('UPDATE_MULTIPLIER', { str: str });
+    this._validateMultiplier(str);
+  },
+  render: function() {
+    return el.div(
+      {className: 'form-group'},
+      el.p(
+        {className: 'lead'},
+        el.strong(
+          {
+            style: betStore.state.multiplier.error ? { color: 'red' } : {}
+          },
+          'Multiplier:')
+      ),
+      el.div(
+        {className: 'input-group'},
+        el.input(
+          {
+            type: 'text',
+            value: betStore.state.multiplier.str,
+            className: 'form-control input-lg',
+            onChange: this._onMultiplierChange,
+            disabled: !!worldStore.state.isLoading
+          }
+        ),
+        el.span(
+          {className: 'input-group-addon'},
+          'x'
+        )
+      )
+    );
+  }
+});
+
+var BetBoxWager = React.createClass({
+  displayName: 'BetBoxWager',
+  // Hookup to stores
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  _onBalanceChange: function() {
+    // Force validation when user logs in
+    // TODO: Re-force it when user refreshes
+    Dispatcher.sendAction('UPDATE_WAGER', {});
+  },
+  componentDidMount: function() {
+    betStore.on('change', this._onStoreChange);
+    worldStore.on('change', this._onStoreChange);
+    worldStore.on('user_update', this._onBalanceChange);
+  },
+  componentWillUnmount: function() {
+    betStore.off('change', this._onStoreChange);
+    worldStore.off('change', this._onStoreChange);
+    worldStore.off('user_update', this._onBalanceChange);
+  },
+  _onWagerChange: function(e) {
+    var str = e.target.value;
+    Dispatcher.sendAction('UPDATE_WAGER', { str: str });
+  },
+  _onHalveWager: function() {
+    var newWager = Math.round(betStore.state.wager.num / 2);
+    Dispatcher.sendAction('UPDATE_WAGER', { str: newWager.toString() });
+  },
+  _onDoubleWager: function() {
+    var n = betStore.state.wager.num * 2;
+    Dispatcher.sendAction('UPDATE_WAGER', { str: n.toString() });
+
+  },
+  _onMaxWager: function() {
+    // If user is logged in, use their balance as max wager
+    var balanceBits;
+    if (worldStore.state.user) {
+      balanceBits = Math.floor(worldStore.state.user.balance / 100);
+    } else {
+      balanceBits = 42000;
+    }
+    Dispatcher.sendAction('UPDATE_WAGER', { str: balanceBits.toString() });
+  },
+  //
+  render: function() {
+    var style1 = { borderBottomLeftRadius: '0', borderBottomRightRadius: '0' };
+    var style2 = { borderTopLeftRadius: '0' };
+    var style3 = { borderTopRightRadius: '0' };
+    return el.div(
+      {className: 'form-group'},
+      el.p(
+        {className: 'lead'},
+        el.strong(
+          // If wagerError, make the label red
+          betStore.state.wager.error ? { style: {color: 'red'} } : null,
+          'Wager:')
+      ),
+      el.input(
+        {
+          value: betStore.state.wager.str,
+          type: 'text',
+          className: 'form-control input-lg',
+          style: style1,
+          onChange: this._onWagerChange,
+          disabled: !!worldStore.state.isLoading,
+          placeholder: 'Bits'
+        }
+      ),
+      el.div(
+        {className: 'btn-group btn-group-justified'},
+        el.div(
+          {className: 'btn-group'},
+          el.button(
+            {
+              className: 'btn btn-default btn-md',
+              type: 'button',
+              style: style2,
+              onClick: this._onHalveWager
+            },
+            '1/2x ', worldStore.state.hotkeysEnabled ? el.kbd(null, 'X') : ''
+          )
+        ),
+        el.div(
+          {className: 'btn-group'},
+          el.button(
+            {
+              className: 'btn btn-default btn-md',
+              type: 'button',
+              onClick: this._onDoubleWager
+            },
+            '2x ', worldStore.state.hotkeysEnabled ? el.kbd(null, 'C') : ''
+          )
+        ),
+        el.div(
+          {className: 'btn-group'},
+          el.button(
+            {
+              className: 'btn btn-default btn-md',
+              type: 'button',
+              style: style3,
+              onClick: this._onMaxWager
+            },
+            'Max'
+          )
+        )
+      )
+    );
+  }
+});
+
+var BetBoxButton = React.createClass({
+  displayName: 'BetBoxButton',
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    worldStore.on('change', this._onStoreChange);
+    betStore.on('change', this._onStoreChange);
+  },
+  componentWillUnmount: function() {
+    worldStore.off('change', this._onStoreChange);
+    betStore.off('change', this._onStoreChange);
+  },
+  getInitialState: function() {
+    return { waitingForServer: false };
+  },
+  // cond is '>' or '<'
+  _makeBetHandler: function(cond) {
+    var self = this;
+
+    console.assert(cond === '<' || cond === '>');
+
+    return function(e) {
+      console.log('Placing bet...');
+
+      // Indicate that we are waiting for server response
+      self.setState({ waitingForServer: true });
+
+      var hash = betStore.state.nextHash;
+      console.assert(typeof hash === 'string');
+
+      var wagerSatoshis = betStore.state.wager.num * 100;
+      var multiplier = betStore.state.multiplier.num;
+      var payoutSatoshis = wagerSatoshis * multiplier;
+
+      var number = helpers.calcNumber(
+        cond, helpers.multiplierToWinProb(multiplier)
+      );
+
+      var params = {
+        wager: wagerSatoshis,
+        client_seed: 0, // TODO
+        hash: hash,
+        cond: cond,
+        target: number,
+        payout: payoutSatoshis
+      };
+
+      MoneyPot.placeSimpleDiceBet(params, {
+        success: function(bet) {
+          console.log('Successfully placed bet:', bet);
+          // Append to bet list
+          
+          // We don't get this info from the API, so assoc it for our use
+          bet.meta = {
+            cond: cond,
+            number: number,
+            hash: hash,
+            isFair: CryptoJS.SHA256(bet.secret + '|' + bet.salt).toString() === hash
+          };
+
+          Dispatcher.sendAction('NEW_BET', bet);
+
+          // Update next bet hash
+          Dispatcher.sendAction('SET_NEXT_HASH', bet.next_hash);
+
+          // Update user balance
+          Dispatcher.sendAction('UPDATE_USER', {
+            balance: worldStore.state.user.balance + bet.profit
+          });
+        },
+        error: function(xhr) {
+          console.log('Error');
+          if (xhr.responseJSON && xhr.responseJSON) {
+            alert(xhr.responseJSON.error);
+          } else {
+            alert('Internal Error');
+          }
+        },
+        complete: function() {
+          self.setState({ waitingForServer: false });
+          // Force re-validation of wager
+          Dispatcher.sendAction('UPDATE_WAGER', {
+            str: betStore.state.wager.str
+          });
+        }
+      });
+    };
+  },
+  render: function() {
+    var innerNode;
+
+    // TODO: Create error prop for each input
+    var error = betStore.state.wager.error || betStore.state.multiplier.error;
+
+    if (worldStore.state.isLoading) {
+      // If app is loading, then just disable button until state change
+      innerNode = el.button(
+        {type: 'button', disabled: true, className: 'btn btn-lg btn-block btn-default'},
+        'Loading...'
+      );
+    } else if (error) {
+      // If there's a betbox error, then render button in error state
+
+      var errorTranslations = {
+        'CANNOT_AFFORD_WAGER': 'You cannot afford wager',
+        'INVALID_WAGER': 'Invalid wager',
+        'INVALID_MULTIPLIER': 'Invalid multiplier',
+        'MULTIPLIER_TOO_PRECISE': 'Multiplier too precise',
+        'MULTIPLIER_TOO_HIGH': 'Multiplier too high',
+        'MULTIPLIER_TOO_LOW': 'Multiplier too low'
+      };
+
+      innerNode = el.button(
+        {type: 'button',
+         disabled: true,
+         className: 'btn btn-lg btn-block btn-danger'},
+        errorTranslations[error] || 'Invalid bet'
+      );
+    } else if (worldStore.state.user) {
+      // If user is logged in, let them submit bet
+      innerNode =
+        el.div(
+          {className: 'row'},
+          // bet hi
+          el.div(
+            {className: 'col-xs-6'},
+            el.button(
+              {
+                id: 'bet-hi',
+                type: 'button',
+                className: 'btn btn-lg btn-primary btn-block',
+                onClick: this._makeBetHandler('>'),
+                disabled: !!this.state.waitingForServer
+              },
+              'Bet Hi ', worldStore.state.hotkeysEnabled ? el.kbd(null, 'H') : ''
+            )
+          ),
+          // bet lo
+          el.div(
+            {className: 'col-xs-6'},
+            el.button(
+              {
+                id: 'bet-lo',
+                type: 'button',
+                className: 'btn btn-lg btn-primary btn-block',
+                onClick: this._makeBetHandler('<'),
+                disabled: !!this.state.waitingForServer
+              },
+              'Bet Lo ', worldStore.state.hotkeysEnabled ? el.kbd(null, 'L') : ''
+            )
+          )
+        );
+    } else {
+      // If user isn't logged in, give them link to /oauth/authorize
+      innerNode = el.a(
+        {
+          href: config.mp_browser_uri + '/oauth/authorize' +
+            '?app_id=' + config.app_id +
+            '&redirect_uri=' + config.redirect_uri,
+          className: 'btn btn-lg btn-block btn-success'
+        },
+        'Login with MoneyPot'
+      );
+    }
+
+    return el.div(
+      null,
+      el.div(
+        {className: 'col-md-2',},
+        (this.state.waitingForServer) ?
+          el.span(
+            {
+              className: 'glyphicon glyphicon-refresh rotate',
+              style: { marginTop: '15px' }
+            }
+          ) : ''
+      ),
+      el.div(
+        {className: 'col-md-8'},
+        innerNode
+      )
+    );
+  }
+});
+
+var HotkeyToggle = React.createClass({
+  displayName: 'HotkeyToggle',
+  _onClick: function() {
+    Dispatcher.sendAction('TOGGLE_HOTKEYS');
+  },
+  render: function() {
+    return (
+      el.div(
+        {className: 'text-center'},
+        el.button(
+          {
+            type: 'button',
+            className: 'btn btn-default btn-sm',
+            onClick: this._onClick,
+            style: { marginTop: '-15px' }
+          },
+          'Hotkeys: ',
+          worldStore.state.hotkeysEnabled ?
+            el.span({className: 'label label-success'}, 'ON') :
+          el.span({className: 'label label-default'}, 'OFF')
+        )
+      )
+    );
+  }
+});
+
+var BetBox = React.createClass({
+  displayName: 'BetBox',
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    worldStore.on('change', this._onStoreChange);
+  },
+  componentWillUnmount: function() {
+    worldStore.off('change', this._onStoreChange);
+  },
+  render: function() {
+    return el.div(
+      null,
+      el.div(
+        {className: 'panel panel-default'},
+        el.div(
+          {className: 'panel-body'},
+          
+          el.div(
+            {className: 'row'},
+            el.div(
+              {className: 'col-xs-6'},
+              React.createElement(BetBoxWager, null)
+            ),
+            el.div(
+              {className: 'col-xs-6'},
+              React.createElement(BetBoxMultiplier, null)
+            ),
+            // HR
+            el.div(
+              {className: 'row'},
+              el.div(
+                {className: 'col-xs-12'},
+                el.hr(null)
+              )
+            ),
+            // Bet info bar
+            el.div(
+              null,
+              el.div(
+                {className: 'col-sm-6'},
+                React.createElement(BetBoxProfit, null)
+              ),
+              el.div(
+                {className: 'col-sm-6'},
+                React.createElement(BetBoxChance, null)
+              )
+            )
+          )
+        ),
+        el.div(
+          {className: 'panel-footer clearfix'},
+          React.createElement(BetBoxButton, null)
+        )
+      ),
+      React.createElement(HotkeyToggle, null)
+    );
+  }
+});
+
+var Tabs = React.createClass({
+  displayName: 'Tabs',
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    worldStore.on('change', this._onStoreChange);
+  },
+  componentWillUnmount: function() {
+    worldStore.off('change', this._onStoreChange);
+  },
+  _makeTabChangeHandler: function(tabName) {
+    var self = this;
+    return function() {
+      Dispatcher.sendAction('CHANGE_TAB', tabName);
+    };
+  },
+  render: function() {
+    return el.ul(
+      {className: 'nav nav-tabs'},
+      el.li(
+        {className: worldStore.state.currTab === 'ALL_BETS' ? 'active' : ''},
+        el.a(
+          {
+            href: 'javascript:void(0)',
+            onClick: this._makeTabChangeHandler('ALL_BETS')
+          },
+          'All Bets'
+        )
+      ),
+      el.li(
+        {className: worldStore.state.currTab === 'MY_BETS' ? 'active' : ''},
+        el.a(
+          {
+            href: 'javascript:void(0)',
+            onClick: this._makeTabChangeHandler('MY_BETS')
+          },
+          'My Bets'
+        )
+      ),
+      !config.recaptcha_sitekey ? '' :
+        el.li(
+          {className: worldStore.state.currTab === 'FAUCET' ? 'active' : ''},
+          el.a(
+            {
+              href: 'javascript:void(0)',
+              onClick: this._makeTabChangeHandler('FAUCET')
+            },
+            el.span(null, 'Faucet ')
+          )
+        )
+    );
+  }
+});
+
+var AllBetsTabContent = React.createClass({
+  displayName: 'AllBetsTabContent',
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    this.interval = setInterval(this._onStoreChange, 7500); 
+  },
+  componentWillUnmount: function() {
+     clearInterval(this.interval);
+  },
+ 
+
+  render: function() {
+      return el.div(
+      null,
+      el.table(
+        {className: 'table'},
+        el.thead(
+          null,
+          el.tr(
+            null,
+            el.th(null, 'Player'),
+            el.th(null, 'Bet ID'),
+            el.th(null, 'Wager'),
+            el.th(null, 'Profit'),
+           
+            config.debug ? el.th(null, 'Dump') : ''
+          )
+        ),
+        
+        el.tbody(
+          null,
+        
+         getAllBetData().map(function(bet) {
+          return  el.tr(null, 
+          
+            el.td(null, bet.uname),
+               
+                        
+            el.td(null, 
+                 
+                  el.a(
+                  {href: 'https://www.moneypot.com/bets/' + bet.id},
+                  bet.id
+                )
+                 
+                 
+                 ),
+            el.td(null, bet.wager/100 + ' bits'), 
+                        
+            el.td(
+                {style: {color: bet.profit > 0 ? 'green' : 'red'}},
+                bet.profit > 0 ?
+                  '+' + bet.profit/100  + ' bits' :
+                  bet.profit/100  + ' bits'
+              )
+   
+            
+            )
+      
+      
+      
+            })
+            
+        )
+      )
+    );
+  }
+
+    
+});
+
+
+
+
+
+
+
+
+var MyBetsTabContent = React.createClass({
+  displayName: 'MyBetsTabContent',
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    worldStore.on('change', this._onStoreChange);
+  },
+  componentWillUnmount: function() {
+    worldStore.off('change', this._onStoreChange);
+  },
+  render: function() {
+    return el.div(
+      null,
+      el.table(
+        {className: 'table'},
+        el.thead(
+          null,
+          el.tr(
+            null,
+            el.th(null, 'ID'),
+            el.th(null, 'Profit'),
+            el.th(null, 'Outcome'),
+            el.th(null, 'Target'),
+            config.debug ? el.th(null, 'Dump') : ''
+          )
+        ),
+        el.tbody(
+          null,
+          worldStore.state.bets.toArray().map(function(bet) {
+            return el.tr(
+              {
+                key: bet.bet_id
+              },
+              // bet id
+              el.td(
+                null,
+                el.a(
+                  {href: config.mp_browser_uri + '/bets/' + bet.bet_id},
+                  bet.bet_id
+                )
+              ),
+              // profit
+              el.td(
+                {style: {color: bet.profit > 0 ? 'green' : 'red'}},
+                bet.profit > 0 ?
+                  '+' + bet.profit/100 + ' bits' :
+                  bet.profit/100 + ' bits'
+              ),
+              // outcome
+              el.td(
+                null,
+                bet.outcome + ' ',
+                bet.meta.isFair ?
+                  el.span(
+                    {className: 'label label-success'}, 'Verified') : ''
+              ),
+              // target
+              el.td(
+                null,
+                bet.meta.cond + ' ' + bet.meta.number.toFixed(2)
+              ),
+              // dump
+              !config.debug ? '' :
+                el.td(
+                  null,
+                  el.pre(
+                    {
+                      style: {
+                        maxHeight: '75px',
+                        overflowY: 'auto'
+                      }
+                    },
+                    JSON.stringify(bet, null, '  ')
+                  )
+                )
+            );
+          }).reverse()
+        )
+      )
+    );
+  }
+});
+
+var FaucetTabContent = React.createClass({
+  displayName: 'FaucetTabContent',
+  getInitialState: function() {
+    return {
+      // SHOW_RECAPTCHA | SUCCESSFULLY_CLAIM | ALREADY_CLAIMED | WAITING_FOR_SERVER
+      faucetState: 'SHOW_RECAPTCHA',
+      // :: Integer that's updated after the claim from the server so we
+      // can show user how much the claim was worth without hardcoding it
+      // - It will be in satoshis
+      claimAmount: undefined
+    };
+  },
+  // This function is extracted so that we can call it on update and mount
+  // when the window.grecaptcha instance loads
+  _renderRecaptcha: function() {
+    worldStore.state.grecaptcha.render(
+      'recaptcha-target',
+      {
+        sitekey: config.recaptcha_sitekey,
+        callback: this._onRecaptchaSubmit
+      }
+    );
+  },
+  // `response` is the g-recaptcha-response returned from google
+  _onRecaptchaSubmit: function(response) {
+    var self = this;
+    console.log('recaptcha submitted: ', response);
+
+    self.setState({ faucetState: 'WAITING_FOR_SERVER' });
+
+    MoneyPot.claimFaucet(response, {
+      // `data` is { claim_id: Int, amount: Satoshis }
+      success: function(data) {
+        Dispatcher.sendAction('UPDATE_USER', {
+          balance: worldStore.state.user.balance + data.amount
+        });
+        self.setState({
+          faucetState: 'SUCCESSFULLY_CLAIMED',
+          claimAmount: data.amount
+        });
+        // self.props.faucetClaimedAt.update(function() {
+        //   return new Date();
+        // });
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        if (xhr.responseJSON && xhr.responseJSON.error === 'FAUCET_ALREADY_CLAIMED') {
+          self.setState({ faucetState: 'ALREADY_CLAIMED' });
+        }
+      }
+    });
+  },
+  // This component will mount before window.grecaptcha is loaded if user
+  // clicks the Faucet tab before the recaptcha.js script loads, so don't assume
+  // we have a grecaptcha instance
+  componentDidMount: function() {
+    if (worldStore.state.grecaptcha) {
+      this._renderRecaptcha();
+    }
+
+    worldStore.on('grecaptcha_loaded', this._renderRecaptcha);
+  },
+  componentWillUnmount: function() {
+    worldStore.off('grecaptcha_loaded', this._renderRecaptcha);
+  },
+  render: function() {
+
+    // If user is not logged in, let them know only logged-in users can claim
+    if (!worldStore.state.user) {
+      return el.p(
+        {className: 'lead'},
+        'You must login to claim faucet'
+      );
+    }
+
+    var innerNode;
+    // SHOW_RECAPTCHA | SUCCESSFULLY_CLAIMED | ALREADY_CLAIMED | WAITING_FOR_SERVER
+    switch(this.state.faucetState) {
+    case 'SHOW_RECAPTCHA':
+      innerNode = el.div(
+        { id: 'recaptcha-target' },
+        !!worldStore.state.grecaptcha ? '' : 'Loading...'
+      );
+      break;
+    case 'SUCCESSFULLY_CLAIMED':
+      innerNode = el.div(
+        null,
+        'Successfully claimed ' + this.state.claimAmount/100 + ' bits.' +
+          // TODO: What's the real interval?
+          ' You can claim again in 5 minutes.'
+      );
+      break;
+    case 'ALREADY_CLAIMED':
+      innerNode = el.div(
+        null,
+        'ALREADY_CLAIMED'
+      );
+      break;
+    case 'WAITING_FOR_SERVER':
+      innerNode = el.div(
+        null,
+        'WAITING_FOR_SERVER'
+      );
+      break;
+    default:
+      alert('Unhandled faucet state');
+      return;
+    }
+
+    return el.div(
+      null,
+      innerNode
+    );
+  }
+});
+
+var TabContent = React.createClass({
+  displayName: 'TabContent',
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    worldStore.on('change', this._onStoreChange);
+  },
+  componentWillUnmount: function() {
+    worldStore.off('change', this._onStoreChange);
+  },
+  render: function() {
+    switch(worldStore.state.currTab) {
+      case 'ALL_BETS':
+        return React.createElement(AllBetsTabContent, null);    
+      case 'FAUCET':
+        return React.createElement(FaucetTabContent, null);
+      case 'MY_BETS':
+        return React.createElement(MyBetsTabContent, null);
+      
+      default:
+        alert('Unsupported currTab value: ', worldStore.state.currTab);
+        break;
+    }
+  }
+});
+
+var Footer = React.createClass({
+  displayName: 'Footer',
+  render: function() {
+    return el.div(
+      {
+        className: 'text-center text-muted',
+        style: {
+          marginTop: '200px'
+         
+        }
+        
+      },
+      
+     
+      'Powered by ',
+      
+      
+      el.a(
+        {
+          href: 'https://www.moneypot.com'
+        },
+        'Moneypot'
+      )
+    );
+  }
+});
+
+var App = React.createClass({
+  displayName: 'App',
+  render: function() {
+    return el.div(
+      {className: 'container'},
+      // Navbar
+      React.createElement(Navbar, null),
+      // BetBox & ChatBox
+      el.div(
+        {className: 'row'},
+        el.div(
+          {className: 'col-sm-5'},
+          React.createElement(BetBox, null)
+        ),
+        el.div(
+          {className: 'col-sm-7'},
+          React.createElement(ChatBox, null)
+        )
+      ),
+      // Tabs
+      el.div(
+        {style: {marginTop: '15px'}},
+        React.createElement(Tabs, null)
+      ),
+      // Tab Contents
+      React.createElement(TabContent, null),
+      // Footer
+      React.createElement(Footer, null)
+    );
+  }
+});
+
+React.render(
+  React.createElement(App, null),
+  document.getElementById('app')
+);
+
+// If not accessToken,
+// If accessToken, then
+if (!worldStore.state.accessToken) {
+  Dispatcher.sendAction('STOP_LOADING');
+  connectToChatServer();
+} else {
+  // Load user from accessToken
+  MoneyPot.getTokenInfo({
+    success: function(data) {
+      console.log('Successfully loaded user from tokens endpoint', data);
+      var user = data.auth.user;
+      Dispatcher.sendAction('USER_LOGIN', user);
+    },
+    error: function(err) {
+      console.log('Error:', err);
+    },
+    complete: function() {
+      Dispatcher.sendAction('STOP_LOADING');
+      connectToChatServer();
+    }
+  });
+  // Get next bet hash
+  MoneyPot.generateBetHash({
+    success: function(data) {
+      Dispatcher.sendAction('SET_NEXT_HASH', data.hash);
+    }
+  });
+}
+
+////////////////////////////////////////////////////////////
+// Hook up to chat server
+
+function connectToChatServer() {
+  console.log('Connecting to chat server. AccessToken:',
+              worldStore.state.accessToken);
+
+  socket = io(config.chat_uri);
+
+  socket.on('connect', function() {
+    console.log('[socket] Connected');
+
+    socket.on('disconnect', function() {
+      console.log('[socket] Disconnected');
+    });
+
+    socket.on('system_message', function(text) {
+      console.log('[socket] Received system message:', text);
+      Dispatcher.sendAction('NEW_SYSTEM_MESSAGE', text);
+    });
+
+    // message is { text: String, user: { role: String, uname: String} }
+    socket.on('new_message', function(message) {
+      console.log('[socket] Received chat message:', message);
+      Dispatcher.sendAction('NEW_MESSAGE', message);
+    });
+
+    socket.on('user_muted', function(data) {
+      console.log('[socket] User muted:', data);
+    });
+
+    socket.on('user_unmuted', function(data) {
+      console.log('[socket] User unmuted:', data);
+    });
+
+    socket.on('user_joined', function(user) {
+      console.log('[socket] User joined:', user);
+      Dispatcher.sendAction('USER_JOINED', user);
+    });
+
+    socket.on('user_left', function(user) {
+      console.log('[socket] User left:', user);
+      Dispatcher.sendAction('USER_LEFT', user);
+    });
+
+    // Received when your client doesn't comply with chat-server api
+    socket.on('client_error', function(text) {
+      console.warn('[socket] Client error:', text);
+    });
+
+    // Once we connect to chat server, we send an auth message to join
+    // this app's lobby channel.
+
+    // A hash of the current user's accessToken is only sent if you have one
+    var hashedToken;
+    if (worldStore.state.accessToken) {
+      hashedToken =  CryptoJS.SHA256(worldStore.state.accessToken).toString();
+    }
+    var authPayload = { app_id: config.app_id, hashed_token: hashedToken};
+    socket.emit('auth', authPayload, function(err, data) {
+      if (err) {
+        console.log('[socket] Auth failure:', err);
+        return;
+      }
+      console.log('[socket] Auth success:', data);
+      Dispatcher.sendAction('INIT_CHAT', data);
+    });
+  });
+}
+
+// This function is passed to the recaptcha.js script and called when
+// the script loads and exposes the window.grecaptcha object. We pass it
+// as a prop into the faucet component so that the faucet can update when
+// when grecaptcha is loaded.
+function onRecaptchaLoad() {
+  Dispatcher.sendAction('GRECAPTCHA_LOADED', grecaptcha);
+}
+
+$(document).on('keydown', function(e) {
+  var H = 72, L = 76, C = 67, X = 88, keyCode = e.which;
+
+  // Bail is hotkeys aren't currently enabled to prevent accidental bets
+  if (!worldStore.state.hotkeysEnabled) {
+    return;
+  }
+
+  // Bail if it's not a key we care about
+  if (keyCode !== H && keyCode !== L && keyCode !== X && keyCode !== C) {
+    return;
+  }
+
+  // TODO: Remind self which one I need and what they do ^_^;;
+  e.stopPropagation();
+  e.preventDefault();
+
+  switch(keyCode) {
+    case C:  // Increase wager
+      var upWager = betStore.state.wager.num * 2;
+      Dispatcher.sendAction('UPDATE_WAGER', {
+        num: upWager,
+        str: upWager.toString()
+      });
+      break;
+    case X:  // Decrease wager
+      var downWager = Math.floor(betStore.state.wager.num / 2);
+      Dispatcher.sendAction('UPDATE_WAGER', {
+        num: downWager,
+        str: downWager.toString()
+      });
+
+      break;
+    case L:  // Bet lo
+      $('#bet-lo').click();
+      break;
+    case H:  // Bet hi
+      $('#bet-hi').click();
+      break;
+    default:
+      return;
+  }
+});
+
+window.addEventListener('message', function(event) {
+  if (event.origin === config.mp_browser_uri && event.data === 'UPDATE_BALANCE') {
+    Dispatcher.sendAction('START_REFRESHING_USER');
+  }
+}, false);
