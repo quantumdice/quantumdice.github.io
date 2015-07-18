@@ -3,159 +3,100 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Quantum Dice</title>
+		<title>Quantum Dice - where your dreams come true</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-        <link rel="stylesheet" href="css/skel.css" />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/style-xlarge.css" />
-        
-        
-        <script src="node_modules/react/dist/react.js"></script>
-
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+        <script src="node_modules/react/dist/react.js"></script>
 	</head>
-	<body class="landing" style="background-color: #202222; width:100%;">
+	<body class="landing">
 
 		<!-- Header -->
-		<<header id="header">
-			<div>
-        <h2 style="margin-bottom: 0px;padding-top: 15px;margin-left: 0px;margin-top: 0px;width: 100%;border-top-width: 1px;padding-left: 70px;padding-top:10px;padding-bottom:10px;"><a href="index.html" style="
-    padding-top: 0px; border: background-color:#056B1D;
-" class="button small">Quantum Dice</a></h2>
-                <section id="navbar" class="align-right" style="margin-right: 0px;margin-bottom: 0px;padding-top: 0px;background-color: #202222;height: 70px;width: 100%"> </section> 
-                
-            </div>	
+			<header id="header" style="background-color:#202222;">
+				<h1><a href="index.html">Quantum Dice</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="play.html">Play</a></li>
+					</ul>
+				</nav>
 			</header>
-        
-  <section id="one" class="wrapper style1 align-center" style="
-    padding-top: 0px;
-    padding-bottom: 250px;
-    margin-bottom: 0px;
-     margin-top: 120px; 
-                                                               width: 100%;
 
-">
-        
-      
-      <div class = "row">
-      <div id="outcomestats" style="
-    width: 400px;
-    height: 260px;
-    margin-left: 90px;
-    margin-top: 35px;
-    border: solid 1px;
-    border-radius:  6px;
-    padding-left: 0px;
+		<!-- One -->
+			<section id="one" class="wrapper style1 align-left">
+				<div class="container">
+					<header id="userBox" class="align-left">
+						
+					</header>
+					<div class="row 200%">
+						<section class="12u$ 12u$(small)">
+				       <div class="row" style="margin-left: 0px;">
+                            
+                            <div id="outcomestats" style=" width: 25%;height: 260px;border: solid 1px;border-radius:  6px;padding-left: 0px;">
+                                <h2 id="outcomeanim" style="margin-left:10%;margin-top:0px;font-size:100px;margin-bottom: 0px;" >0.00</h2>
+                                <div class="row">       
+                                        <h2 class="align-left" style="margin-left:0px;margin-bottom: 0px;">Target</h2>
+                                        <h2 class="align-left" style="margin-left:-35px;margin-bottom: 0px;" id="targetoutcome">0.00</h2>
+                                </div>
+                                <div class="row">       
+                                        <h2 class="align-left" style="margin-left:0px;margin-bottom: 0px;">Profit</h2>
+                                        <h2 class="align-left" style="margin-left: -25px;margin-bottom: 0px;" id="profitoutcome">0.00</h2>
+                                </div>
+                        </div> 
+                           <div class="row" id="betbox" style="width: 70%%;height: 260px;margin-left: 35px ;border: solid 1px;border-radius:  6px;padding-left: 0px;">
 
-                              
-                                         ">
-          
-          <h2 id="outcomeanim" style="margin-top:10px;font-size:100px;margin-bottom: 0px;" >0.00</h2>
-    <div class="row">       
-    <h2 class="align-left" style="margin-left:20px;margin-bottom: 0px;">Target</h2>
-    <h2 class="align-left" style="margin-left:20px;margin-bottom: 0px;" id="targetoutcome">0.00</h2>
-          </div>
-    <div class="row">       
-    <h2 class="align-left" style="margin-left:20px;margin-bottom: 0px;">Profit</h2>
-    <h2 class="align-left" style="margin-left: 31px;margin-bottom: 0px;" id="profitoutcome">0.00</h2>
-          </div>
-          
-          
-          </div> 
-     <div class="row" id="betbox" style="
-    width: 650px;
-    height: 260px;
-    margin-left: 35px;
-    margin-top: 35px;
-    border: solid 1px;
-    border-radius:  6px;
-    padding-left: 0px;
-
-">
-
-<div id='betboxwager'></div>
+<div id='betboxwager' style="width:60%"></div>
+<div style="width:40%;padding-right: 30px;">                              
 <div id='betboxmultiplier'></div>
 <div id='betboxprofit'></div>
-<div id='betboxchance'></div>
+<div id='betboxchance'></div>                               
+</div> 
      
 </div>
-          
-   
-      
-    </div>  
-      
-      <div id = 'betboxbutton' style="
-    width: 630px;
-    height: 100px;
-    margin-left: 150px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+                            
+                            </div>   
+						</section>
+						<section class="12u$ 12u$(small)" id="betButtons" style="padding-top:25px">
+							
+						</section>
+						<section class="12u$ 12u$(small)">
+							<div class ="row" style="padding-left: 0px;margin-left: 0px;">
+                            <div id="chatbox" style="padding-left: 0px;margin-top:25px;padding-top: 25px; width:45%;border:1px solid white; border-radius:4px"></div>
+                            <div style="padding-left: 0px;width:50%">
+                                <div id="table" ></div>
+                                <div id="tablecontent" style="
+    padding-left: 50px;
 "></div>
-      
-      <div class = "row">
-      
-      <div id = "Tabs" style="
-    width: 400px;
-    height: 230px;
-    margin-left: 90px;
-
-    padding-left: 0px;
-
-">
-          
-          <div id = "navtabs" class = "row"></div>
-         <div id="tabcontent" class="row" style="
-    margin-left: 15px;
-    margin-top: 20px;
-    width: 450px;
-"></div>
-          
-          
-          
-          
-          
-          
-          
-          
-          </div>
-          
-      <div id = "chatbox" style="
-    width: 600px;
-    height: 230px;
-    margin-left: 90px;                          
-    border: solid 1px;
-    border-radius:  6px;
-    padding-left: 0px;
-
-">
-          
-          
-          </div>
-      
-      
-      </div>
-      
-      
-      
-      
-        </section>
-           		<footer id="footer" style="width:100%;">
-				<div class="container">
-					<div class="row">
-					
-						
+                                </div>
+</div>
+						</section>
 					</div>
+				</div>
+			</section>
+
+		
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					
 					<ul class="copyright">
 						<li>&copy; Quantum Dice 2015. All rights reserved.</li>
-						<li>Visit on <a href="https://www.moneypot.com/apps/85-quantum-dice">MoneyPot</a></li>
+						<li>View app on <a href="https://www.moneypot.com/apps/85-quantum-dice">MoneyPot</a></li>
 					</ul>
 				</div>
 			</footer>
-
-
-                  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/CBuffer/cbuffer.js"></script>
   <script src="vendor/cryptojs-sha256-3.1.2.js"></script>
   <script src="node_modules/socket.io-client/socket.io.js"></script>

@@ -8,25 +8,7 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
-
-/* ChatBox */
-
-.chat-list {
-    overflow-y: scroll;
-    height: 215px;
-    word-wrap: break-word;
-}
-
-.chat-list li {
-    /* Since .focus() is used to scroll to last message item,
-       turn off the outline that appears by default */
-    outline: none;
-}
-
 /* Basic */
-
-
-
 
 	body {
 		background: #fff;
@@ -50,7 +32,7 @@
 		}
 
 	strong, b {
-		color: 'white';
+		color: #666;
 		font-weight: 400;
 	}
 
@@ -862,33 +844,6 @@
 				background-color: #459a65;
 			}
 
-
-    	input[type="submit"].special,
-		input[type="reset"].special,
-		input[type="button"].special,
-		.button.transparent {
-			background-color: #000000;
-			color: #ffffff !important;
-		}
-
-			input[type="submit"].special:hover,
-			input[type="reset"].special:hover,
-			input[type="button"].special:hover,
-			.button.transparent:hover {
-				background-color: #5cb67e;
-			}
-
-			input[type="submit"].special:active,
-			input[type="reset"].special:active,
-			input[type="button"].special:active,
-			.button.transparent:active {
-				background-color: #459a65;
-			}
-
-
-
-
-
 		input[type="submit"].disabled, input[type="submit"]:disabled,
 		input[type="reset"].disabled,
 		input[type="reset"]:disabled,
@@ -901,14 +856,7 @@
 			color: #fff !important;
 			cursor: default;
 			opacity: 0.25;
-            
-            
-            
-            
 		}
-
-
-
 
 /* Header */
 
@@ -1009,27 +957,13 @@
 
 /* Banner */
 
-
-   
-		#one .button {
-			background-color: transparent;
-			border: 1px solid #ffffff;
-			font-weight: 300;
-		}
-
-			#one .button:hover {
-				background-color: rgba(255, 255, 255, 0.2);
-			}
-
-
-
 	#banner {
 		background: url("images/overlay.png"), url("../images/banner.jpg");
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		color: #ffffff;
-		padding: 2em 0em 4em;
+		padding: 16em 0em 14em;
 		text-align: center;
 	}
 
@@ -1062,11 +996,8 @@
 
 /* Wrapper */
 
-    
-
-
 	.wrapper {
-		padding: 0em 0em 0em;
+		padding: 6em 0em 4em;
 	}
 
 		.wrapper.style1 {
@@ -1076,8 +1007,6 @@
 			-o-background-image: linear-gradient(60deg, #4dac71 50%, #3ba666 50%);
 			-ms-background-image: linear-gradient(60deg, #4dac71 50%, #3ba666 50%);
 			background-image: linear-gradient(60deg, #4dac71 50%, #3ba666 50%);
-            
-          
 			color: #ffffff;
 		}
 
