@@ -3,27 +3,33 @@
 <html lang="en" style="background-color:#202222">
 
 	<head>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-xlarge.css" />
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript">
+        $('html').addClass('hidden');
+        $(document).ready(function() {
+        $('html').show();  // EDIT: Can also use $('html').removeClass('hidden'); 
+        });  
+        </script>
+        <script src="node_modules/react/dist/react.js"></script>
+        
 		<meta charset="UTF-8">
 		<title>Quantum Dice - where your dreams come true</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-        <meta 
-    name="viewport" 
-    content="width=1000, initial-scale=1.0, maximum-scale=1.0" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
 
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+
 
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-        <script src="node_modules/react/dist/react.js"></script>
+      
+        
+        
 	</head>
-	<body class="landing">
+	<body class="landing" style="width=100%">
 
 		<!-- Header -->
 			<header id="header" style="background-color:#202222;width:100%" >
@@ -37,7 +43,7 @@
 			</header>
 
 		<!-- One -->
-			<section id="one" class="wrapper style1 align-left">
+			<section id="one" class="wrapper style1 align-left" style="width:100%">
 				<div class="container">
 					<header id="userBox" class="align-left">
 						
@@ -46,9 +52,9 @@
 						<section class="12u$ 12u$(small)">
 				       <div class="row" style="margin-left: 0px;">
                             
-                            <div id="outcomestats" style=" width: 25%;height: 260px;border: solid 1px;border-radius:  6px;padding-left: 0px;">
-                                <h2 id="outcomeanim" style="margin-left:10%;margin-top:0px;font-size:100px;margin-bottom: 0px;" >0.00</h2>
-                                <div style="font-size:13.5px">
+                            <div class ="align-center" id="outcomestats" style=" width: 30%;height: 260px;border: solid 1px;border-radius:  6px;padding-left: 0px;">
+                                <h2 id="outcomeanim" style="margin-top:0px;font-size:100px;margin-bottom: 0px;" >0.00</h2>
+                                <div style="font-size:16px">
                                 <div class="row">       
                                         <h2 class="align-left" style="margin-left:0px;margin-bottom: 0px;">Target</h2>
                                         <h2 class="align-left" style="margin-left:-35px;margin-bottom: 0px;" id="targetoutcome">0.00</h2>
@@ -59,7 +65,7 @@
                                 </div>
                                     </div>
                         </div> 
-                           <div class="row" id="betbox" style="width: 70%%;height: 260px;margin-left: 35px ;border: solid 1px;border-radius:  6px;padding-left: 0px;">
+                           <div class="row" id="betbox" style="width: 60%%;height: 260px;margin-left: 50px ;border: solid 1px;border-radius:  6px;padding-left: 0px;">
 
 <div id='betboxwager' style="width:60%"></div>
 <div style="width:40%;padding-right: 30px;">                              
@@ -101,7 +107,6 @@
 					</ul>
 				</div>
 			</footer>
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/CBuffer/cbuffer.js"></script>
   <script src="vendor/cryptojs-sha256-3.1.2.js"></script>
   <script src="node_modules/socket.io-client/socket.io.js"></script>
