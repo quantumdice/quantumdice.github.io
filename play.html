@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" style="background-color:#202222">
+
 	<head>
 		<meta charset="UTF-8">
 		<title>Quantum Dice - where your dreams come true</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+        <meta 
+    name="viewport" 
+    content="width=1000, initial-scale=1.0, maximum-scale=1.0" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
+
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
+
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
         <script src="node_modules/react/dist/react.js"></script>
 	</head>
 	<body class="landing">
 
 		<!-- Header -->
-			<header id="header" style="background-color:#202222;">
+			<header id="header" style="background-color:#202222;width:100%" >
 				<h1><a href="index.html">Quantum Dice</a></h1>
-				<nav id="nav">
+				<nav id="nav" >
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="play.html">Play</a></li>
@@ -45,6 +48,7 @@
                             
                             <div id="outcomestats" style=" width: 25%;height: 260px;border: solid 1px;border-radius:  6px;padding-left: 0px;">
                                 <h2 id="outcomeanim" style="margin-left:10%;margin-top:0px;font-size:100px;margin-bottom: 0px;" >0.00</h2>
+                                <div style="font-size:13.5px">
                                 <div class="row">       
                                         <h2 class="align-left" style="margin-left:0px;margin-bottom: 0px;">Target</h2>
                                         <h2 class="align-left" style="margin-left:-35px;margin-bottom: 0px;" id="targetoutcome">0.00</h2>
@@ -53,6 +57,7 @@
                                         <h2 class="align-left" style="margin-left:0px;margin-bottom: 0px;">Profit</h2>
                                         <h2 class="align-left" style="margin-left: -25px;margin-bottom: 0px;" id="profitoutcome">0.00</h2>
                                 </div>
+                                    </div>
                         </div> 
                            <div class="row" id="betbox" style="width: 70%%;height: 260px;margin-left: 35px ;border: solid 1px;border-radius:  6px;padding-left: 0px;">
 
