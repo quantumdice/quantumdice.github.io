@@ -11,6 +11,7 @@
 /* Basic */
 
 	body {
+        
 		background: #fff;
 	}
 
@@ -861,6 +862,7 @@
 /* Header */
 
 	body.landing #header {
+        width: 100%;
 		background-color: transparent;
 		left: 0;
 		position: absolute;
@@ -873,8 +875,8 @@
 		cursor: default;
 		height: 4.75em;
 		line-height: 4.75em;
-		width: 100%;
-		z-index: 10000;
+		
+
 	}
 
 		#header h1 {

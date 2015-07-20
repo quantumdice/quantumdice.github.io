@@ -6,6 +6,10 @@
 -->
 <html lang="en">
 	<head>
+            
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
         <script type="text/javascript" src="/js/jquery.min.js"></script>
         <script type="text/javascript">
         $('html').addClass('hidden');
@@ -13,14 +17,8 @@
         $('html').show();  // EDIT: Can also use $('html').removeClass('hidden'); 
         });  
         </script>
-       <script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-        <script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
+  
+	
         
         <script src="node_modules/react/dist/react.js"></script>
 		<meta charset="UTF-8">
@@ -35,63 +33,85 @@
 		<!-- Header -->
 			<header id="header">
 				<h1><a href="index.html">Quantum Dice</a></h1>
-  
-                <nav id="nav" style="right: 2%;width: auto">
+                <div class="align-right">
+                <nav id="nav" style="">
 					<ul>
-                  
+                        
 						<li><a href="index.html">Home</a></li>
 						<li><a href="play.html">Play</a></li>
                         <li id="userBox"></li>
                         <li id="balanceBox"></li>
+                        <li id="hotkeyToggle"></li>
                      
 					</ul>
 				</nav>
-     
+     </div>
 			</header>
 
 		<!-- Banner -->
 			<section id="banner" style="padding-top: 10%;padding-bottom: 2%;">
-                <div class="row 200% align-center">
-                    <section class="6u 12u$(small)" id="outcomestats" style="padding-top:2%">
+                <div class="row 100% align-center" style="
+    margin-left: -10%;
+">
+                      <section class="3u 12u$(small)" style="
+                        
+">                      <div id="betboxwager"></div>
+                         
+						</section>
+                    
+                  <section class="3u 12u$(small)" id="outcomestats" style="padding-top:4%">
 							     <div>
-                                <h2 id="outcomeanim" style="margin-top:0px;font-size:150px;margin-bottom: 0px;" >0.00</h2>
+                                <h2 id="outcomeanim" style="margin-top: 0px; font-size: 120px; margin-bottom: 0px; ">99.99</h2>
                                 </div>
-                                <div style="font-size:24px;margin-left:40%;margin-top: 10%;">
-                                <div class="row"  >       
+                                <div class="row" style="font-size:24px;margin-left: 0px;margin-top: 10%;padding-left: 4%;">
+                                <div class="row">       
                                         <h2 class="align-center" style="font-size:14px;margin-left:0px;margin-bottom: 0px;">Target</h2>
-                                        <h2 class="align-center" style="margin-left:5px;margin-bottom: 0px;" id="targetoutcome">0.00</h2>
+                                        <h2 class="align-center" style="font-size:44px;margin-left:20%;margin-bottom: 0px;" id="targetoutcome">&gt; 99.99</h2>
                                 </div>
                                 <div class="row" style="margin-top: 10%;">       
                                         <h2 class="align-center" style="font-size:14px;margin-left:0px;margin-bottom: 0px;">Profit</h2>
-                                        <h2 class="align-center" style="margin-left:5px;margin-bottom: 0px;" id="profitoutcome">0.00</h2>
+                                        <h2 class="align-center" style="font-size: 44px; margin-left: 5%; width: 100%;margin-bottom: 0px; " id="profitoutcome">0.00 bits</h2>
                                 </div>
                                     </div>
 						</section>
-                    <section class="6u 12u$(small)" id="betbox" style="
-    padding-left: 0px;
-">
-							
+                       <section class="3u 12u$(small)" style="">
+                            <div id="betboxmultiplier"></div>
+                           <div id="betboxbutton" style=""></div>
+                          
 						</section>
+                     <section class="align-left 3u 12u$(small)" style="padding-left:0px;margin-left: -5%;">
+                         <div class="align-right"><h2> Chat </h2></div>
+                         <div id="chatbox" ></div>
+                          
+						</section>
+                       
                     
+                        
+                  
+                
                 </div>
 			</section>
 
 		<!-- One -->
-			<section id="one" style="padding-top: 2%"class="wrapper style1 align-center">
-				<div class="container">
+			<section id="one" style="
+    padding-top: 1%;
+    padding-bottom: 1%;
+"class="wrapper style1 align-center">
+		
 					
-				<section class="12u$ 12u$(small)">
-							<div class ="row" style="padding-left: 0px;margin-left: 0px;">
-                            <div id="chatbox" style="padding-left: 0px;margin-top:25px;padding-top: 25px; width:45%;border:1px solid white; border-radius:4px"></div>
-                            <div style="padding-left: 8px;width:50%">
-                                <div id="table" ></div>
-                                <div id="tablecontent" style="
-    padding-left: 50px;
-"></div>
-                                </div>
-</div>
+				<section id="table" class="12u$ 12u$(small)">
+				
 						</section>
-				</div>
+				
+			</section>
+        
+        <section id="two" style="padding-top: 2%;background-image: linear-gradient(322deg, #4dac71 50%, #3ba666 50%);padding-left: 5%;"class="wrapper style2 align-left">
+		
+					
+				<section id="tablecontent" class="12u$ 12u$(small)">
+				        
+						</section>
+				
 			</section>
  <script src="node_modules/CBuffer/cbuffer.js"></script>
   <script src="vendor/cryptojs-sha256-3.1.2.js"></script>

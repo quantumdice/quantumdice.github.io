@@ -5,17 +5,12 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html lang="en">
-	<head>
-        	<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
+    
+	<head>	
+        <link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
-
+        	<script src="js/jquery.min.js"></script>
         <script type="text/javascript">
         $('html').addClass('hidden');
         $(document).ready(function() {
@@ -37,14 +32,19 @@
 		<!-- Header -->
 			<header id="header">
 				<h2><a href="index.html">Quantum Dice</a></h2>
-                <nav id="nav" style="right: 2%;width: auto">
+                <div class="align-right">
+                <nav id="nav" style="">
 					<ul>
-                  
+                        
 						<li><a href="index.html">Home</a></li>
 						<li><a href="play.html">Play</a></li>
+                        <li id="userBox"></li>
+                        <li id="balanceBox"></li>
+                        <li id="hotkeyToggle"></li>
                      
 					</ul>
 				</nav>
+     </div>
 			</header>
        
             <!-- Banner -->
