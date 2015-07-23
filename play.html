@@ -101,7 +101,7 @@
     padding-bottom: 1%;
 "class="wrapper style1 align-center">
                  
-           <aside class="align-left" draggable="true" id="dragme" style="    background: rgba(0, 0, 0, 0.86);border:solid 1.2px white; border-radius:4.3px;left: 65%; top: 15%; height: 30px; width: 60px;font-size:14px;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;">
+           <aside class="align-left" draggable="true" id="dragme" style="background: rgba(0, 0, 0, 0.86); border-radius:4.3px;left: 65%; top: 15%; height: 30px; width: 60px;font-size:14px;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;">
                     
   <button id="openQB" class="button small" style="height:100%; width:100%;font-size:12px;padding-left: 0px;padding-right: 0px;padding-top: 0%;outline: rgba(0, 0, 0, 0);" onclick="openQBot()" >QBot 0.1</button>                  
            
@@ -216,10 +216,13 @@ document.body.addEventListener('drop',drop,false); </script>
         if(dm.style.height != '545px'){
         dm.style.height = '545px';
         dm.style.width = '500px';
-        document.getElementById('openQB').style.width = '100%';
+        dm.style.border = 'solid 1.2px white';
+            document.getElementById('openQB').style.width = '100%';
         document.getElementById('openQB').style.height = '5%';
+            
+            
         
-       if(document.getElementById('qbottable') == null){    
+                 if(document.getElementById('qbottable') == null){    
         var table = document.createElement("table");
         table.id = 'qbottable';
         var tbody = document.createElement("tbody");
@@ -393,8 +396,8 @@ document.body.addEventListener('drop',drop,false); </script>
                      
             td12.className = "button small";
             td12.innerHTML = 'Stop  autobet';
-            td12.id = 'stopAB';   
-                
+            td12.id = 'stopAB';         
+            td12.style.marginLeft = '5px';
             
             trow6.appendChild(td13);
             trow6.appendChild(td11);
@@ -402,7 +405,8 @@ document.body.addEventListener('drop',drop,false); </script>
                      
             td11.style.marginTop = '10px';
             td12.style.marginTop = '10px';
-            td12.style.marginLeft = '5px';
+     
+            
             td11.onclick = function(){autoBet()};
             td12.onclick = function(){clearInterval(autoBetLoop);
 
@@ -425,6 +429,7 @@ alert('profit =' + (worldStore.state.user.balance - initialBal)/100 + ' bits');}
         clearInterval(checkValLoop);
          dm.style.height = '30px';
         dm.style.width = '60px';
+               dm.style.border = '0px solid white';
            document.getElementById('openQB').style.width = '100%';
                document.getElementById('openQB').style.height = '100%';
         document.getElementById('qbottable').hidden = true;
