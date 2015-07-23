@@ -215,7 +215,7 @@ document.body.addEventListener('drop',drop,false); </script>
         
         if(dm.style.height != '545px'){
         dm.style.height = '545px';
-        dm.style.width = '400px';
+        dm.style.width = '600px';
         document.getElementById('openQB').style.width = '100%';
         document.getElementById('openQB').style.height = '5%';
         
@@ -393,7 +393,8 @@ document.body.addEventListener('drop',drop,false); </script>
                      
             td12.className = "button small";
             td12.innerHTML = 'Stop  autobet';
-            td12.id = 'stopAB';         
+            td12.id = 'stopAB';   
+                
             
             trow6.appendChild(td13);
             trow6.appendChild(td11);
@@ -401,7 +402,7 @@ document.body.addEventListener('drop',drop,false); </script>
                      
             td11.style.marginTop = '10px';
             td12.style.marginTop = '10px';
-            
+            td12.style.marginLeft = '5px';
             td11.onclick = function(){autoBet()};
             td12.onclick = function(){clearInterval(autoBetLoop);
 
