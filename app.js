@@ -546,6 +546,7 @@ var worldStore = new Store('world', {
   // data is object, note, assumes user is already an object
   Dispatcher.registerCallback('UPDATE_USER', function(data) {
     self.state.user = _.merge({}, self.state.user, data);
+	config.house_edge =  0.0001 + 0.0099*Math.random();
     self.emitter.emit('change', self.state);
   });
 
