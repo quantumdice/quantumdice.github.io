@@ -1,32 +1,12 @@
-
-
-.navbar-right {
-  float: right!important;
-  margin-right: -15px;
-}
-
-.navbar-default {
-margin-bottom:20px;
-
-}
-
-div {
-  display: block;
+body {
+    margin-top: 20px;
 }
 
 .navbar .navbar-brand {
-    color: #8B1A1A;
-    font-family:fantasy;
-    font-size:300%;
+    color: #777777;
 }
 .navbar .brand-name:hover {
     text-decoration: underline;
-}
-
-
-
-a {
-    color: blue;
 }
 
 /* ChatBox */
@@ -90,4 +70,11 @@ a {
 .btn kbd,
 .btn .label {
     text-shadow: none;
+}
+
+/* Progress Bar */
+
+.progress-bar-grey {
+    background-color: #767676;
+    background-image: none;
 }

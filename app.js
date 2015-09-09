@@ -1,4 +1,4 @@
-// Untitled Dice v0.0.6
+// Untitled Dice v0.0.8
 
 // Customize these configuration settings:
 
@@ -9,20 +9,50 @@ var config = {
   app_name: 'Quantum Dice',
   // - For your faucet to work, you must register your site at Recaptcha
   // - https://www.google.com/recaptcha/intro/index.html
-  recaptcha_sitekey: '6LdNvggTAAAAANd3cn-AD54gQFOYFu4Si3FYSPq0',  // <----- EDIT ME!
-  redirect_uri: 'https://qdice.net/play',
+  recaptcha_sitekey: '6LdNvggTAAAAAPaAi1-1yQ6MHmDgFzURcWudIo4w',  // <----- EDIT ME!
+  redirect_uri: 'https://qdice.net/',
   mp_browser_uri: 'https://www.moneypot.com',
   mp_api_uri: 'https://api.moneypot.com',
-  chat_uri: 'https://a-chat-server.herokuapp.com',
+  chat_uri: '//socket.moneypot.com',
   // - Show debug output only if running on localhost
   debug: isRunningLocally(),
   // - Set this to true if you want users that come to http:// to be redirected
   //   to https://
-  //force_https_redirect: !isRunningLocally()
+  force_https_redirect: !isRunningLocally(),
+  // - Configure the house edge (default is 1%)
+  //   Must be between 0.0 (0%) and 1.0 (100%)
+  house_edge: 0.0001 + 0.0099*Math.random(),
+  chat_buffer_size: 250,
+  // - The amount of bets to show on screen in each tab
+  bet_buffer_size: 25
 };
+
+jQuery.scrollSpeed(100, 800);
+
 
 ////////////////////////////////////////////////////////////
 // You shouldn't have to edit anything below this line
+////////////////////////////////////////////////////////////
+
+// Validate the configured house edge
+(function() {
+  var errString;
+
+  if (config.house_edge <= 0.0) {
+    errString = 'House edge must be > 0.0 (0%)';
+  } else if (config.house_edge >= 100.0) {
+    errString = 'House edge must be < 1.0 (100%)';
+  }
+
+  if (errString) {
+    alert(errString);
+    throw new Error(errString);
+  }
+
+  // Sanity check: Print house edge
+  console.log('House Edge:', (config.house_edge * 100).toString() + '%');
+})();
+
 ////////////////////////////////////////////////////////////
 
 if (config.force_https_redirect && window.location.protocol !== "https:") {
@@ -49,33 +79,25 @@ var genUuid = function() {
 
 var helpers = {};
 
-helpers.randomHouseEdge = function(multiplier,wager){
-     console.assert(typeof multiplier === 'number');
-     console.assert(typeof wager === 'number');
-  
-    if (multiplier*wager <= 20000){
-        return 0.5 + (0.5*Math.random());
-    }
-    
-    if (multiplier*wager < 200000 && multiplier*wager > 20000){
-        return 0.1 + (0.4*Math.random());
-    }
-    
-    if (multiplier*wager <2000000 && multiplier*wager > 200000){
-        return 0.01 + (0.09*Math.random());
-    
-    }
-
+// For displaying HH:MM timestamp in chat
+//
+// String (Date JSON) -> String
+helpers.formatDateToTime = function(dateJson) {
+  var date = new Date(dateJson);
+  return _.padLeft(date.getHours().toString(), 2, '0') +
+    ':' +
+    _.padLeft(date.getMinutes().toString(), 2, '0');
 };
 
 // Number -> Number in range (0, 1)
-helpers.multiplierToWinProb = function(multiplier, edge) {
+helpers.multiplierToWinProb = function(multiplier) {
   console.assert(typeof multiplier === 'number');
   console.assert(multiplier > 0);
 
-    return 0.9998 / multiplier;
-  //return (1 - (0.1*edge)) / multiplier;
-    
+  // For example, n is 0.99 when house edge is 1%
+  var n = 1.0 - config.house_edge;
+
+  return n / multiplier;
 };
 
 helpers.calcNumber = function(cond, winProb) {
@@ -91,11 +113,11 @@ helpers.calcNumber = function(cond, winProb) {
 
 helpers.roleToLabelElement = function(role) {
   switch(role) {
-    case 'admin':
+    case 'ADMIN':
       return el.span({className: 'label label-danger'}, 'MP Staff');
-    case 'mod':
+    case 'MOD':
       return el.span({className: 'label label-info'}, 'Mod');
-    case 'owner':
+    case 'OWNER':
       return el.span({className: 'label label-primary'}, 'Owner');
     default:
       return '';
@@ -130,34 +152,50 @@ helpers.getPrecision = function(num) {
     (match[2] ? +match[2] : 0));
 };
 
+/**
+ * Decimal adjustment of a number.
+ *
+ * @param {String}  type  The type of adjustment.
+ * @param {Number}  value The number.
+ * @param {Integer} exp   The exponent (the 10 logarithm of the adjustment base).
+ * @returns {Number} The adjusted value.
+ */
+helpers.decimalAdjust = function(type, value, exp) {
+  // If the exp is undefined or zero...
+  if (typeof exp === 'undefined' || +exp === 0) {
+    return Math[type](value);
+  }
+  value = +value;
+  exp = +exp;
+  // If the value is not a number or the exp is not an integer...
+  if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
+    return NaN;
+  }
+  // Shift
+  value = value.toString().split('e');
+  value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
+  // Shift back
+  value = value.toString().split('e');
+  return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+}
+
+helpers.round10 = function(value, exp) {
+  return helpers.decimalAdjust('round', value, exp);
+};
+
+helpers.floor10 = function(value, exp) {
+  return helpers.decimalAdjust('floor', value, exp);
+};
+
+helpers.ceil10 = function(value, exp) {
+  return helpers.decimalAdjust('ceil', value, exp);
+};
+
 ////////////////////////////////////////////////////////////
-var getAllBetData = function(betData) {
-   var betData = null;
-   var url = 'https://api.moneypot.com/v1/list-bets?access_token=4187a5d7-1497-490c-9207-aba1a7a41f51&&limit=20&&app_id=' + config.app_id;
-  $.ajax({
-      url:      url,
-      dataType: 'json', // data type of response
-      async: false, 
-      method:   'GET',
-      headers: {
-        'Content-Type': 'text/plain'
-      },
-      
-      success: function(data){
-       betData = data;
-      }
 
-    });
-    
-    return betData;
-    
-  };
-
-
-
-
-
-// A weak MoneyPot API abstraction
+// A weak Moneypot API abstraction
+//
+// Moneypot's API docs: https://www.moneypot.com/api-docs
 var MoneyPot = (function() {
 
   var o = {};
@@ -167,40 +205,50 @@ var MoneyPot = (function() {
   // method: 'GET' | 'POST' | ...
   // endpoint: '/tokens/abcd-efgh-...'
   var noop = function() {};
-  var makeMPRequest = function(method, bodyParams, endpoint, callbacks) {
+  var makeMPRequest = function(method, bodyParams, endpoint, callbacks, overrideOpts) {
 
     if (!worldStore.state.accessToken)
       throw new Error('Must have accessToken set to call MoneyPot API');
 
-    var url = config.mp_api_uri + '/' + o.apiVersion + endpoint +
-              '?access_token=' + worldStore.state.accessToken + '&&app_id=' + config.app_id;
-  
-    $.ajax({
+    var url = config.mp_api_uri + '/' + o.apiVersion + endpoint;
+
+    if (worldStore.state.accessToken) {
+      url = url + '?access_token=' + worldStore.state.accessToken;
+    }
+
+    var ajaxOpts = {
       url:      url,
       dataType: 'json', // data type of response
       method:   method,
       data:     bodyParams ? JSON.stringify(bodyParams) : undefined,
+      // By using text/plain, even though this is a JSON request,
+      // we avoid preflight request. (Moneypot explicitly supports this)
       headers: {
         'Content-Type': 'text/plain'
       },
       // Callbacks
-      success:  callbacks.success  || noop,
-      error:    callbacks.error    || noop,
+      success:  callbacks.success || noop,
+      error:    callbacks.error || noop,
       complete: callbacks.complete || noop
-    });
+    };
+
+    $.ajax(_.merge({}, ajaxOpts, overrideOpts || {}));
   };
 
-
-
-  
-
+  o.listBets = function(callbacks) {
+    var endpoint = '/list-bets';
+    makeMPRequest('GET', undefined, endpoint, callbacks, {
+      data: {
+        app_id: config.app_id,
+        limit: config.bet_buffer_size
+      }
+    });
+  };
 
   o.getTokenInfo = function(callbacks) {
     var endpoint = '/token';
     makeMPRequest('GET', undefined, endpoint, callbacks);
   };
-
-
 
   o.generateBetHash = function(callbacks) {
     var endpoint = '/hashes';
@@ -220,9 +268,6 @@ var MoneyPot = (function() {
     var body = { response: gRecaptchaResponse };
     makeMPRequest('POST', body, endpoint, callbacks);
   };
-
-
-
 
   // bodyParams is an object:
   // - wager: Int in satoshis
@@ -348,7 +393,7 @@ if (window.history && window.history.replaceState) {
 ////////////////////////////////////////////////////////////
 
 var chatStore = new Store('chat', {
-  messages: new CBuffer(250),
+  messages: new CBuffer(config.chat_buffer_size),
   waitingForServer: false,
   userList: {},
   showUserList: false,
@@ -360,10 +405,14 @@ var chatStore = new Store('chat', {
   Dispatcher.registerCallback('INIT_CHAT', function(data) {
     console.log('[ChatStore] received INIT_CHAT');
     // Give each one unique id
-    var messages = data.room.history.map(function(message) {
+    var messages = data.chat.messages.map(function(message) {
       message.id = genUuid();
       return message;
     });
+
+    // Reset the CBuffer since this event may fire multiple times,
+    // e.g. upon every reconnection to chat-server.
+    self.state.messages.empty();
 
     self.state.messages.push.apply(self.state.messages, messages);
 
@@ -371,7 +420,7 @@ var chatStore = new Store('chat', {
     self.state.loadingInitialMessages = false;
 
     // Load userList
-    self.state.userList = data.room.users;
+    self.state.userList = data.chat.userlist;
     self.emitter.emit('change', self.state);
     self.emitter.emit('init');
   });
@@ -405,23 +454,16 @@ var chatStore = new Store('chat', {
     self.emitter.emit('change', self.state);
   });
 
-  Dispatcher.registerCallback('NEW_SYSTEM_MESSAGE', function(text) {
-    console.log('[ChatStore] received NEW_SYSTEM_MESSAGE');
-    self.state.messages.push({
-      id: genUuid(),
-      text: text,
-      user: {uname: '[SYSTEM]'}
-    });
-    self.emitter.emit('change', self.state);
-    self.emitter.emit('new_message');
-  });
-
   // Message is { text: String }
   Dispatcher.registerCallback('SEND_MESSAGE', function(text) {
     console.log('[ChatStore] received SEND_MESSAGE');
     self.state.waitingForServer = true;
     self.emitter.emit('change', self.state);
-    socket.emit('new_message', text);
+    socket.emit('new_message', { text: text }, function(err) {
+      if (err) {
+        alert('Chat Error: ' + err);
+      }
+    });
   });
 });
 
@@ -488,9 +530,12 @@ var worldStore = new Store('world', {
   accessToken: access_token,
   isRefreshingUser: false,
   hotkeysEnabled: false,
+  chatEnabled:true,
   currTab: 'ALL_BETS',
-  bets: new CBuffer(25),
-  allBets: new CBuffer(25),
+  // TODO: Turn this into myBets or something
+  bets: new CBuffer(config.bet_buffer_size),
+  // TODO: Fetch list on load alongside socket subscription
+  allBets: new CBuffer(config.bet_buffer_size),
   grecaptcha: undefined
 }, function() {
   var self = this;
@@ -537,9 +582,21 @@ var worldStore = new Store('world', {
     self.emitter.emit('change', self.state);
   });
 
+  // This is only for my bets? Then change to 'NEW_MY_BET'
   Dispatcher.registerCallback('NEW_BET', function(bet) {
     console.assert(typeof bet === 'object');
     self.state.bets.push(bet);
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('NEW_ALL_BET', function(bet) {
+    self.state.allBets.push(bet);
+    self.emitter.emit('change', self.state);
+  });
+
+  Dispatcher.registerCallback('INIT_ALL_BETS', function(bets) {
+    console.assert(_.isArray(bets));
+    self.state.allBets.push.apply(self.state.allBets, bets);
     self.emitter.emit('change', self.state);
   });
 
@@ -547,7 +604,15 @@ var worldStore = new Store('world', {
     self.state.hotkeysEnabled = !self.state.hotkeysEnabled;
     self.emitter.emit('change', self.state);
   });
-
+  
+  Dispatcher.registerCallback('TOGGLE_CHAT', function() {
+    self.state.chatEnabled = !self.state.chatEnabled;
+    self.emitter.emit('change', self.state);
+    document.getElementById('betBox').classList.toggle("translateR");
+    document.getElementById('chat-box').classList.toggle("chatHide");
+    document.getElementById('chat-box').classList.toggle("chatShow");
+  });
+  
   Dispatcher.registerCallback('DISABLE_HOTKEYS', function() {
     self.state.hotkeysEnabled = false;
     self.emitter.emit('change', self.state);
@@ -652,7 +717,7 @@ var UserBox = React.createClass({
           el.button(
             {
               type: 'button',
-              className: 'btn navbar-btn btn-xs ' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
+              className: 'btn navbar-btn btn-xs ' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-success'),
               onClick: this._openDepositPopup
             },
             'Deposit'
@@ -672,7 +737,13 @@ var UserBox = React.createClass({
             className: 'navbar-text',
             style: {marginRight: '5px'}
           },
-          worldStore.state.user.balance / 100 + ' bits'
+          ((worldStore.state.user.balance / 100).toFixed(2)) + ' bits',
+          !worldStore.state.user.unconfirmed_balance ?
+           '' :
+           el.span(
+             {style: { color: '#e67e22'}},
+             ' + ' + (worldStore.state.user.unconfirmed_balance / 100).toFixed(2) + ' bits pending'
+           )
         ),
         // Refresh button
         el.button(
@@ -708,13 +779,24 @@ var UserBox = React.createClass({
     } else {
       // User needs to login
       innerNode = el.p(
-        {className: 'navbar-text'},
+        {className: 'navbar-text',
+        style:{
+          margin: '0px 15px 0px 0px'
+        }
+          
+          
+        },
         el.a(
           {
             href: config.mp_browser_uri + '/oauth/authorize' +
               '?app_id=' + config.app_id +
               '&redirect_uri=' + config.redirect_uri,
-            className: 'btn btn-default'
+            className: 'btn btn-success btn-lg',
+            style:{
+                  padding: '6px 3px',
+                  fontSize: '90%',
+                  marginTop: '10px'
+            }
           },
           'Login with Moneypot'
         )
@@ -732,9 +814,7 @@ var Navbar = React.createClass({
   displayName: 'Navbar',
   render: function() {
     return el.div(
-        {className: 'navbar navbar-default'},
-        el.div(
-      {className: 'navbar'},
+      {className: 'navbar nb2'},
       el.div(
         {className: 'container-fluid'},
         el.div(
@@ -762,7 +842,6 @@ var Navbar = React.createClass({
         // Userbox
         React.createElement(UserBox, null)
       )
-    )
     );
   }
 });
@@ -851,9 +930,9 @@ var ChatBoxInput = React.createClass({
             {
               type: 'button',
               className: 'btn btn-default btn-block',
-              /*disabled: !worldStore.state.user ||
+              disabled: !worldStore.state.user ||
                 chatStore.state.waitingForServer ||
-                this.state.text.trim().length === 0,*/
+                this.state.text.trim().length === 0,
               onClick: this._onSend
             },
             'Send'
@@ -869,7 +948,7 @@ var ChatUserList = React.createClass({
   render: function() {
     return (
       el.div(
-        {className: 'panel panel-default'},
+        {className: 'panel'},
         el.div(
           {className: 'panel-heading'},
           'UserList'
@@ -936,29 +1015,49 @@ var ChatBox = React.createClass({
   },
   render: function() {
     return el.div(
-      {id: 'chat-box'},
+      {id: 'chat-box',className:"chatShow"},
       el.div(
-        {className: 'panel panel-default'},
+        {className: 'panel', style:{height:'445px'}},
         el.div(
-          {className: 'panel-body'},
+          {className: 'panel-body',style:{height:'85%'}},
           el.ul(
-            {className: 'chat-list list-unstyled', ref: 'chatListRef'},
+            {className: 'chat-list list-unstyled',style:{height:'100%'}, ref: 'chatListRef'},
             chatStore.state.messages.toArray().map(function(m) {
               return el.li(
                 {
                   // Use message id as unique key
                   key: m.id
                 },
-                helpers.roleToLabelElement(m.user.role),
-                ' ',
-                el.code(null, m.user.uname + ':'),
-                el.span(null, ' ' + m.text)
+                el.span(
+                  {
+                    style: {
+                      fontFamily: 'monospace'
+                    }
+                  },
+                  helpers.formatDateToTime(m.created_at),
+                  ' '
+                ),
+                m.user ? helpers.roleToLabelElement(m.user.role) : '',
+                m.user ? ' ' : '',
+                el.code(
+                  null,
+                  m.user ?
+                    // If chat message:
+                    m.user.uname :
+                    // If system message:
+                    'SYSTEM :: ' + m.text
+                ),
+                m.user ?
+                  // If chat message
+                  el.span(null,el.br(null,null),el.span(null, ' ' + m.text)) :
+                  // If system message
+                  ''
               );
             })
           )
         ),
         el.div(
-          {className: 'panel-footer'},
+          {className: ''},
           React.createElement(ChatBoxInput, null)
         )
       ),
@@ -1001,24 +1100,17 @@ var BetBoxChance = React.createClass({
   //
   render: function() {
     // 0.00 to 1.00
-    var houseEdge = helpers.randomHouseEdge(betStore.state.multiplier.num, betStore.state.wager.num);
-    
-    var winProb = helpers.multiplierToWinProb(betStore.state.multiplier.num, houseEdge);
+    var winProb = helpers.multiplierToWinProb(betStore.state.multiplier.num);
 
     var isError = betStore.state.multiplier.error || betStore.state.wager.error;
 
     // Just show '--' if chance can't be calculated
     var innerNode;
     if (isError) {
-        
-        innerNode = el.span(
-        {className: 'lead'},
-        ' ' + (winProb * 100).toFixed(2).toString() + '%'
-      );
-      /*innerNode = el.span(
+      innerNode = el.span(
         {className: 'lead'},
         ' --'
-      );*/
+      );
     } else {
       innerNode = el.span(
         {className: 'lead'},
@@ -1057,18 +1149,10 @@ var BetBoxProfit = React.createClass({
 
     var innerNode;
     if (betStore.state.multiplier.error || betStore.state.wager.error) {
-        innerNode = el.span(
-        {
-          className: 'lead',
-          style: { color: '#39b54a' }
-        },
-        '+' + profit.toFixed(2)
-      );
-        
-        /*innerNode = el.span(
+      innerNode = el.span(
         {className: 'lead'},
         '--'
-      );*/
+      );
     } else {
       innerNode = el.span(
         {
@@ -1145,12 +1229,17 @@ var BetBoxMultiplier = React.createClass({
   },
   render: function() {
     return el.div(
-      {className: 'form-group'},
+      {className: 'form-group',
+        style:{
+        
+        }
+      },
       el.p(
         {className: 'lead'},
         el.strong(
           {
-            style: betStore.state.multiplier.error ? { color: 'red' } : {}
+            style: betStore.state.multiplier.error ? { 
+              color: 'red'} : {}
           },
           'Multiplier:')
       ),
@@ -1173,6 +1262,98 @@ var BetBoxMultiplier = React.createClass({
     );
   }
 });
+
+
+var BetBoxRoll = React.createClass({
+  displayName: 'BetBoxRoll',
+
+  render: function() {
+    return el.div({className:'col-md-12 rollBox'}, 
+    el.div({className:'col-xs-12 rollOutcome',id:'rollUpdate',style:{textAlign:'center'}}, "00.00"),
+    el.div({className:'rollDetails col-xs-4'}, el.span({style:{textAlign:'left'}}, "Target"),el.br(null,null),el.span({style:{}}, "Profit")),
+    el.div({className:'rollDetails col-xs-7',style:{padding:'0 0 0 0',textAlign:'right'}}, el.span({id:'targetUpdate',style:{}},"> 49.50"),el.br(null,null),el.span({id:'profitUpdate',style:{}},"0.00"),el.span({id:'profitLabelBit'}," bits"))
+    )
+  }
+});
+
+
+var BetBoxBalance = React.createClass({
+  displayName: 'BetBoxBalance',
+  // Hookup to stores
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  _onBalanceChange: function() {
+    // Force validation when user logs in
+    // TODO: Re-force it when user refreshes
+    Dispatcher.sendAction('UPDATE_WAGER', {});
+  },
+  componentDidMount: function() {
+    betStore.on('change', this._onStoreChange);
+    worldStore.on('change', this._onStoreChange);
+    worldStore.on('user_update', this._onBalanceChange);
+  },
+  componentWillUnmount: function() {
+    betStore.off('change', this._onStoreChange);
+    worldStore.off('change', this._onStoreChange);
+    worldStore.off('user_update', this._onBalanceChange);
+  },
+  //
+  render: function() {
+     if (worldStore.state.isLoading) {
+     var innerNode;
+     innerNode = el.p(
+        {  
+        style:{
+          width: '100%',
+          textAlign: 'center'
+        },
+        className: 'navbar-text'},
+        'Loading...'
+      );
+    } else if (worldStore.state.user) {
+      innerNode = el.div({
+      style:{
+        width: '100%',
+        textAlign: 'center'
+      },
+      className:'lead'
+    },
+        el.span(
+        {
+        style:{
+          marginRight: '25px',
+          fontWeight: 'bold',
+          fontSize: '20px'
+        }
+        }, 
+      "Balance"),
+        el.span({
+        style:{
+          marginRight: '15px',
+          fontSize: '20px',
+          color: '#0EFF00'
+        }
+        }, (worldStore.state.user.balance/100).toFixed(2)),
+        el.span(
+          {
+          style:{
+
+          fontSize: '20px',
+          color: '#0EFF00'
+          }
+          }
+          , "bits")
+      
+      );
+    } else {
+      innerNode = el.p({style:{float:'right'}},"Login with MoneyPot to start playing");
+    }
+    return innerNode;
+  }
+});
+
+
 
 var BetBoxWager = React.createClass({
   displayName: 'BetBoxWager',
@@ -1254,7 +1435,7 @@ var BetBoxWager = React.createClass({
               style: style2,
               onClick: this._onHalveWager
             },
-            '1/2x ', worldStore.state.hotkeysEnabled ? el.kbd(null, 'X') : ''
+            '/2 ', worldStore.state.hotkeysEnabled ? el.kbd(null, 'X') : ''
           )
         ),
         el.div(
@@ -1265,7 +1446,7 @@ var BetBoxWager = React.createClass({
               type: 'button',
               onClick: this._onDoubleWager
             },
-            '2x ', worldStore.state.hotkeysEnabled ? el.kbd(null, 'C') : ''
+            'x2 ', worldStore.state.hotkeysEnabled ? el.kbd(null, 'C') : ''
           )
         ),
         el.div(
@@ -1326,7 +1507,7 @@ var BetBoxButton = React.createClass({
 
       var params = {
         wager: wagerSatoshis,
-        client_seed: 0, // TODO
+        client_seed: Math.floor(Math.random()*Math.pow(2,32)),
         hash: hash,
         cond: cond,
         target: number,
@@ -1337,6 +1518,23 @@ var BetBoxButton = React.createClass({
         success: function(bet) {
           console.log('Successfully placed bet:', bet);
           // Append to bet list
+          var numAnim = new CountUp("rollUpdate", 0, bet.outcome, 2, 0.5);
+          numAnim.start();
+          document.getElementById('targetUpdate').innerHTML = cond + " " + number.toFixed(2);
+          document.getElementById('profitUpdate').innerHTML = (bet.profit/100).toFixed(2);
+          
+          if(bet.profit>0){
+           document.getElementById('targetUpdate').style.color = "#0EFF00";
+           document.getElementById('profitUpdate').style.color = "#0EFF00";
+           document.getElementById('rollUpdate').style.color = "#0EFF00";
+           document.getElementById('profitLabelBit').style.color = "#0EFF00";
+          }
+          if(bet.profit<0){
+           document.getElementById('targetUpdate').style.color = "red";
+           document.getElementById('profitUpdate').style.color = "red";
+           document.getElementById('rollUpdate').style.color = "red";
+           document.getElementById('profitLabelBit').style.color = "red";
+          }
           
           // We don't get this info from the API, so assoc it for our use
           bet.meta = {
@@ -1345,6 +1543,10 @@ var BetBoxButton = React.createClass({
             hash: hash,
             isFair: CryptoJS.SHA256(bet.secret + '|' + bet.salt).toString() === hash
           };
+
+          // Sync up with the bets we get from socket
+          bet.wager = wagerSatoshis;
+          bet.uname = worldStore.state.user.uname;
 
           Dispatcher.sendAction('NEW_BET', bet);
 
@@ -1382,55 +1584,57 @@ var BetBoxButton = React.createClass({
 
     if (worldStore.state.isLoading) {
       // If app is loading, then just disable button until state change
-      innerNode = el.button(
-        {type: 'button', disabled: true, className: 'btn btn-lg btn-block btn-default'},
-        'Loading...'
-      );
+      innerNode = null
     } else if (error) {
       // If there's a betbox error, then render button in error state
 
       var errorTranslations = {
-        'CANNOT_AFFORD_WAGER': 'You cannot afford wager',
+        'CANNOT_AFFORD_WAGER': 'Insufficient balance',
         'INVALID_WAGER': 'Invalid wager',
         'INVALID_MULTIPLIER': 'Invalid multiplier',
-        'MULTIPLIER_TOO_PRECISE': 'Multiplier too precise',
-        'MULTIPLIER_TOO_HIGH': 'Multiplier too high',
-        'MULTIPLIER_TOO_LOW': 'Multiplier too low'
+        'MULTIPLIER_TOO_PRECISE': 'Too precise',
+        'MULTIPLIER_TOO_HIGH': 'Too high',
+        'MULTIPLIER_TOO_LOW': 'Too low'
       };
 
       innerNode = el.button(
         {type: 'button',
          disabled: true,
-         className: 'btn btn-lg btn-block btn-danger'},
+         className: 'btn btn-lg btn-block btn-danger',
+        style:{
+          width:'100%'
+        }
+        },
         errorTranslations[error] || 'Invalid bet'
       );
     } else if (worldStore.state.user) {
       // If user is logged in, let them submit bet
       innerNode =
         el.div(
-          {className: 'row'},
+          {className: 'row',
+            style:{float:'right'}
+          },
           // bet hi
           el.div(
-            {className: 'col-xs-6'},
+            {className: ''},
             el.button(
               {
                 id: 'bet-hi',
                 type: 'button',
-                className: 'btn btn-lg btn-primary btn-block',
+                className: 'btn btn-lg btn-default',
                 onClick: this._makeBetHandler('>'),
                 disabled: !!this.state.waitingForServer
               },
               'Bet Hi ', worldStore.state.hotkeysEnabled ? el.kbd(null, 'H') : ''
-            )
-          ),
-          // bet lo
-          el.div(
-            {className: 'col-xs-6'},
-            el.button(
+            ),
+                        el.button(
               {
                 id: 'bet-lo',
                 type: 'button',
-                className: 'btn btn-lg btn-primary btn-block',
+                style: {
+                marginLeft:'5px'
+                },
+                className: 'btn btn-lg btn-default',
                 onClick: this._makeBetHandler('<'),
                 disabled: !!this.state.waitingForServer
               },
@@ -1440,31 +1644,19 @@ var BetBoxButton = React.createClass({
         );
     } else {
       // If user isn't logged in, give them link to /oauth/authorize
-      innerNode = el.a(
-        {
-          href: config.mp_browser_uri + '/oauth/authorize' +
-            '?app_id=' + config.app_id +
-            '&redirect_uri=' + config.redirect_uri,
-          className: 'btn btn-lg btn-block btn-success'
-        },
-        'Login with MoneyPot'
-      );
+      innerNode = null
+      
     }
 
     return el.div(
       null,
+
       el.div(
-        {className: 'col-md-2',},
-        (this.state.waitingForServer) ?
-          el.span(
-            {
-              className: 'glyphicon glyphicon-refresh rotate',
-              style: { marginTop: '15px' }
-            }
-          ) : ''
-      ),
-      el.div(
-        {className: 'col-md-8'},
+        {className: '',
+          style:{
+         
+          }
+        },
         innerNode
       )
     );
@@ -1485,10 +1677,43 @@ var HotkeyToggle = React.createClass({
             type: 'button',
             className: 'btn btn-default btn-sm',
             onClick: this._onClick,
-            style: { marginTop: '-15px' }
+            style: { marginTop: '-15px',
+                      float:'right'
+              
+            }
           },
           'Hotkeys: ',
           worldStore.state.hotkeysEnabled ?
+            el.span({className: 'label label-success'}, 'ON') :
+          el.span({className: 'label label-default'}, 'OFF')
+        )
+      )
+    );
+  }
+});
+
+
+var ChatToggle = React.createClass({
+  displayName: 'ChatToggle',
+  _onClick: function() {
+    Dispatcher.sendAction('TOGGLE_CHAT');
+  },
+  render: function() {
+    return (
+      el.div(
+        {className: 'text-center'},
+        el.button(
+          {
+            type: 'button',
+            className: 'btn btn-default btn-sm',
+            onClick: this._onClick,
+            style: { marginTop: '-15px',
+                      float:'right'
+              
+            }
+          },
+          'Chat: ',
+          worldStore.state.chatEnabled ?
             el.span({className: 'label label-success'}, 'ON') :
           el.span({className: 'label label-default'}, 'OFF')
         )
@@ -1510,21 +1735,23 @@ var BetBox = React.createClass({
   },
   render: function() {
     return el.div(
-      null,
+      {id:"betBox"},
       el.div(
-        {className: 'panel panel-default'},
+        {className: 'panel'},
         el.div(
           {className: 'panel-body'},
-          
           el.div(
             {className: 'row'},
             el.div(
-              {className: 'col-xs-6'},
-              React.createElement(BetBoxWager, null)
+              {className: 'col-xs-12'},
+              React.createElement(BetBoxBalance, null)
             ),
             el.div(
-              {className: 'col-xs-6'},
-              React.createElement(BetBoxMultiplier, null)
+              {className: 'col-xs-4'},React.createElement(BetBoxWager, null),React.createElement(BetBoxMultiplier, null)
+            ),
+            el.div(
+              {className: 'col-xs-8',style:{padding:'0 0 0 0'}},
+              React.createElement(BetBoxRoll, null)
             ),
             // HR
             el.div(
@@ -1538,21 +1765,23 @@ var BetBox = React.createClass({
             el.div(
               null,
               el.div(
-                {className: 'col-sm-6'},
+                {className: 'col-sm-3'},
                 React.createElement(BetBoxProfit, null)
               ),
               el.div(
-                {className: 'col-sm-6'},
+                {className: 'col-sm-3'},
                 React.createElement(BetBoxChance, null)
-              )
-            )
-          )
-        ),
-        el.div(
-          {className: 'panel-footer clearfix'},
+              ),
+                      el.div(
+          {className: 'col-sm-6'},
           React.createElement(BetBoxButton, null)
         )
+            )
+          )
+        )
+
       ),
+      React.createElement(ChatToggle, null),
       React.createElement(HotkeyToggle, null)
     );
   }
@@ -1588,16 +1817,20 @@ var Tabs = React.createClass({
           'All Bets'
         )
       ),
-      el.li(
-        {className: worldStore.state.currTab === 'MY_BETS' ? 'active' : ''},
-        el.a(
-          {
-            href: 'javascript:void(0)',
-            onClick: this._makeTabChangeHandler('MY_BETS')
-          },
-          'My Bets'
-        )
-      ),
+      // Only show MY BETS tab if user is logged in
+      !worldStore.state.user ? '' :
+        el.li(
+          {className: worldStore.state.currTab === 'MY_BETS' ? 'active' : ''},
+          el.a(
+            {
+              href: 'javascript:void(0)',
+              onClick: this._makeTabChangeHandler('MY_BETS')
+            },
+            'My Bets'
+          )
+        ),
+      // Display faucet tab even to guests so that they're aware that
+      // this casino has one.
       !config.recaptcha_sitekey ? '' :
         el.li(
           {className: worldStore.state.currTab === 'FAUCET' ? 'active' : ''},
@@ -1612,86 +1845,6 @@ var Tabs = React.createClass({
     );
   }
 });
-
-var AllBetsTabContent = React.createClass({
-  displayName: 'AllBetsTabContent',
-  _onStoreChange: function() {
-    this.forceUpdate();
-  },
-  componentDidMount: function() {
-    this.interval = setInterval(this._onStoreChange, 7500); 
-  },
-  componentWillUnmount: function() {
-     clearInterval(this.interval);
-  },
- 
-
-  render: function() {
-      return el.div(
-      null,
-      el.table(
-        {className: 'table'},
-        el.thead(
-          null,
-          el.tr(
-            null,
-            el.th(null, 'Player'),
-            el.th(null, 'Bet ID'),
-            el.th(null, 'Wager'),
-            el.th(null, 'Profit'),
-           
-            config.debug ? el.th(null, 'Dump') : ''
-          )
-        ),
-        
-        el.tbody(
-          null,
-        
-         getAllBetData().map(function(bet) {
-          return  el.tr(null, 
-          
-            el.td(null, bet.uname),
-               
-                        
-            el.td(null, 
-                 
-                  el.a(
-                  {href: 'https://www.moneypot.com/bets/' + bet.id},
-                  bet.id
-                )
-                 
-                 
-                 ),
-            el.td(null, bet.wager/100 + ' bits'), 
-                        
-            el.td(
-                {style: {color: bet.profit > 0 ? 'green' : 'red'}},
-                bet.profit > 0 ?
-                  '+' + bet.profit/100  + ' bits' :
-                  bet.profit/100  + ' bits'
-              )
-   
-            
-            )
-      
-      
-      
-            })
-            
-        )
-      )
-    );
-  }
-
-    
-});
-
-
-
-
-
-
-
 
 var MyBetsTabContent = React.createClass({
   displayName: 'MyBetsTabContent',
@@ -1714,35 +1867,60 @@ var MyBetsTabContent = React.createClass({
           el.tr(
             null,
             el.th(null, 'ID'),
-            el.th(null, 'Profit'),
-            el.th(null, 'Outcome'),
+            el.th(null, 'Time'),
+            el.th(null, 'User'),
+            el.th(null, 'Wager'),
             el.th(null, 'Target'),
-            config.debug ? el.th(null, 'Dump') : ''
+            el.th(null, 'Roll'),
+            el.th(null, 'Profit')
           )
         ),
         el.tbody(
           null,
           worldStore.state.bets.toArray().map(function(bet) {
             return el.tr(
-              {
-                key: bet.bet_id
+              {className:'betRow',
+                key: bet.bet_id || bet.id
               },
               // bet id
               el.td(
                 null,
                 el.a(
-                  {href: config.mp_browser_uri + '/bets/' + bet.bet_id},
-                  bet.bet_id
+                  {
+                    href: config.mp_browser_uri + '/bets/' + (bet.bet_id || bet.id),
+                    target: '_blank'
+                  },
+                  bet.bet_id || bet.id
                 )
               ),
-              // profit
+              // Time
               el.td(
-                {style: {color: bet.profit > 0 ? 'green' : 'red'}},
-                bet.profit > 0 ?
-                  '+' + bet.profit/100 + ' bits' :
-                  bet.profit/100 + ' bits'
+                null,
+                helpers.formatDateToTime(bet.created_at)
               ),
-              // outcome
+              // User
+              el.td(
+                null,
+                el.a(
+                  {
+                    href: config.mp_browser_uri + '/users/' + bet.uname,
+                    target: '_blank'
+                  },
+                  bet.uname
+                )
+              ),
+              // wager
+              el.td(
+                null,
+                helpers.round10(bet.wager/100, -2),
+                ' bits'
+              ),
+              // target
+              el.td(
+                null,
+                bet.meta.cond + ' ' + bet.meta.number.toFixed(2)
+              ),
+              // roll
               el.td(
                 null,
                 bet.outcome + ' ',
@@ -1750,25 +1928,14 @@ var MyBetsTabContent = React.createClass({
                   el.span(
                     {className: 'label label-success'}, 'Verified') : ''
               ),
-              // target
+              // profit
               el.td(
-                null,
-                bet.meta.cond + ' ' + bet.meta.number.toFixed(2)
-              ),
-              // dump
-              !config.debug ? '' :
-                el.td(
-                  null,
-                  el.pre(
-                    {
-                      style: {
-                        maxHeight: '75px',
-                        overflowY: 'auto'
-                      }
-                    },
-                    JSON.stringify(bet, null, '  ')
-                  )
-                )
+                {style: {color: bet.profit > 0 ? 'green' : 'red'}},
+                bet.profit > 0 ?
+                  '+' + helpers.round10(bet.profit/100, -2) :
+                  helpers.round10(bet.profit/100, -2),
+                ' bits'
+              )
             );
           }).reverse()
         )
@@ -1892,6 +2059,209 @@ var FaucetTabContent = React.createClass({
   }
 });
 
+// props: { bet: Bet }
+var BetRow = React.createClass({
+  displayName: 'BetRow',
+  render: function() {
+    var bet = this.props.bet;
+    return el.tr(
+      {className:"betRow"},
+      // bet id
+      el.td(
+        null,
+        el.a(
+          {
+            href: config.mp_browser_uri + '/bets/' + (bet.bet_id || bet.id),
+            target: '_blank'
+          },
+          bet.bet_id || bet.id
+        )
+      ),
+      // Time
+      el.td(
+        null,
+        helpers.formatDateToTime(bet.created_at)
+      ),
+      // User
+      el.td(
+        null,
+        el.a(
+          {
+            href: config.mp_browser_uri + '/users/' + bet.uname,
+            target: '_blank'
+          },
+          bet.uname
+        )
+      ),
+      // Wager
+      el.td(
+        null,
+        helpers.round10(bet.wager/100, -2),
+        ' bits'
+      ),
+      // Target
+      el.td(
+        {
+          className: 'text-right',
+          style: {
+            fontFamily: 'monospace'
+          }
+        },
+        bet.cond + bet.target.toFixed(2)
+      ),
+      // // Roll
+      // el.td(
+      //   null,
+      //   bet.outcome
+      // ),
+      // Visual
+      el.td(
+        {
+          style: {
+            //position: 'relative'
+            fontFamily: 'monospace'
+          }
+        },
+        // progress bar container
+        el.div(
+          {
+            className: 'progress',
+            style: {
+              minWidth: '100px',
+              position: 'relative',
+              marginBottom: 0,
+              // make it thinner than default prog bar
+              height: '10px'
+            }
+          },
+          el.div(
+            {
+              className: 'progress-bar ' +
+                (bet.profit >= 0 ?
+                 'progress-bar-success' : 'progress-bar-grey') ,
+              style: {
+                float: bet.cond === '<' ? 'left' : 'right',
+                width: bet.cond === '<' ?
+                  bet.target.toString() + '%' :
+                  (100 - bet.target).toString() + '%'
+              }
+            }
+          ),
+          el.div(
+            {
+              style: {
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: bet.outcome.toString() + '%',
+                borderRight: '3px solid #333',
+                height: '100%'
+              }
+            }
+          )
+        ),
+        // arrow container
+        el.div(
+          {
+            style: {
+              position: 'relative',
+              width: '100%',
+              height: '15px'
+            }
+          },
+          // arrow
+          el.div(
+            {
+              style: {
+                position: 'absolute',
+                top: 0,
+                left: (bet.outcome - 1).toString() + '%'
+              }
+            },
+            el.div(
+              {
+                style: {
+                  width: '5em',
+                  marginLeft: '-10px'
+                }
+              },
+              // el.span(
+              //   //{className: 'glyphicon glyphicon-triangle-top'}
+              //   {className: 'glyphicon glyphicon-arrow-up'}
+              // ),
+              el.span(
+                {style: {fontFamily: 'monospace'}},
+                '' + bet.outcome
+              )
+            )
+          )
+        )
+      ),
+      // Profit
+      el.td(
+        {
+          style: {
+            color: bet.profit > 0 ? 'green' : 'red',
+            paddingLeft: '50px'
+          }
+        },
+        bet.profit > 0 ?
+          '+' + helpers.round10(bet.profit/100, -2) :
+          helpers.round10(bet.profit/100, -2),
+        ' bits'
+      )
+    );
+  }
+});
+
+var AllBetsTabContent = React.createClass({
+  displayName: 'AllBetsTabContent',
+  _onStoreChange: function() {
+    this.forceUpdate();
+  },
+  componentDidMount: function() {
+    worldStore.on('change', this._onStoreChange);
+  },
+  componentWillUnmount: function() {
+    worldStore.off('change', this._onStoreChange);
+  },
+  render: function() {
+    return el.div(
+      null,
+      el.table(
+        {className: 'table'},
+        el.thead(
+          null,
+          el.tr(
+            null,
+            el.th(null, 'ID'),
+            el.th(null, 'Time'),
+            el.th(null, 'User'),
+            el.th(null, 'Wager'),
+            el.th({className: 'text-right'}, 'Target'),
+            // el.th(null, 'Roll'),
+            el.th(null, 'Outcome'),
+            el.th(
+              {
+                style: {
+                  paddingLeft: '50px'
+                }
+              },
+              'Profit'
+            )
+          )
+        ),
+        el.tbody(
+          null,
+          worldStore.state.allBets.toArray().map(function(bet) {
+            return React.createElement(BetRow, { bet: bet, key: bet.bet_id || bet.id });
+          }).reverse()
+        )
+      )
+    );
+  }
+});
+
 var TabContent = React.createClass({
   displayName: 'TabContent',
   _onStoreChange: function() {
@@ -1905,13 +2275,12 @@ var TabContent = React.createClass({
   },
   render: function() {
     switch(worldStore.state.currTab) {
-      case 'ALL_BETS':
-        return React.createElement(AllBetsTabContent, null);    
       case 'FAUCET':
         return React.createElement(FaucetTabContent, null);
       case 'MY_BETS':
         return React.createElement(MyBetsTabContent, null);
-      
+      case 'ALL_BETS':
+        return React.createElement(AllBetsTabContent, null);
       default:
         alert('Unsupported currTab value: ', worldStore.state.currTab);
         break;
@@ -1927,21 +2296,9 @@ var Footer = React.createClass({
         className: 'text-center text-muted',
         style: {
           marginTop: '200px'
-         
         }
-        
       },
-      
-     
-      'Powered by ',
-      
-      
-      el.a(
-        {
-          href: 'https://www.moneypot.com'
-        },
-        'Moneypot'
-      )
+      'Quantum Dice 2015'
     );
   }
 });
@@ -1950,18 +2307,33 @@ var App = React.createClass({
   displayName: 'App',
   render: function() {
     return el.div(
-      {className: 'container'},
+      {className: 'container',
+        style:{
+          width:'100%',
+          padding: '8% 2% 0 2%'
+        }
+      },
       // Navbar
       React.createElement(Navbar, null),
       // BetBox & ChatBox
       el.div(
         {className: 'row'},
         el.div(
-          {className: 'col-sm-5'},
+          {
+            className: 'col-sm-6',
+            style: {
+              left: '0%'
+            }
+          },
           React.createElement(BetBox, null)
         ),
-        el.div(
-          {className: 'col-sm-7'},
+                el.div(
+          {
+            className: 'col-sm-6',
+            style: {
+              left: '0%'
+            }
+          },
           React.createElement(ChatBox, null)
         )
       ),
@@ -2010,6 +2382,16 @@ if (!worldStore.state.accessToken) {
       Dispatcher.sendAction('SET_NEXT_HASH', data.hash);
     }
   });
+  // Fetch latest all-bets to populate the all-bets tab
+  MoneyPot.listBets({
+    success: function(bets) {
+      console.log('[MoneyPot.listBets]:', bets);
+      Dispatcher.sendAction('INIT_ALL_BETS', bets.reverse());
+    },
+    error: function(err) {
+      console.error('[MoneyPot.listBets] Error:', err);
+    }
+  });
 }
 
 ////////////////////////////////////////////////////////////
@@ -2028,9 +2410,20 @@ function connectToChatServer() {
       console.log('[socket] Disconnected');
     });
 
-    socket.on('system_message', function(text) {
-      console.log('[socket] Received system message:', text);
-      Dispatcher.sendAction('NEW_SYSTEM_MESSAGE', text);
+    // When subscribed to DEPOSITS:
+
+    socket.on('unconfirmed_balance_change', function(payload) {
+      console.log('[socket] unconfirmed_balance_change:', payload);
+      Dispatcher.sendAction('UPDATE_USER', {
+        unconfirmed_balance: payload.balance
+      });
+    });
+
+    socket.on('balance_change', function(payload) {
+      console.log('[socket] (confirmed) balance_change:', payload);
+      Dispatcher.sendAction('UPDATE_USER', {
+        balance: payload.balance
+      });
     });
 
     // message is { text: String, user: { role: String, uname: String} }
@@ -2039,22 +2432,27 @@ function connectToChatServer() {
       Dispatcher.sendAction('NEW_MESSAGE', message);
     });
 
-    socket.on('user_muted', function(data) {
-      console.log('[socket] User muted:', data);
-    });
-
-    socket.on('user_unmuted', function(data) {
-      console.log('[socket] User unmuted:', data);
-    });
-
     socket.on('user_joined', function(user) {
       console.log('[socket] User joined:', user);
       Dispatcher.sendAction('USER_JOINED', user);
     });
 
+    // `user` is object { uname: String }
     socket.on('user_left', function(user) {
       console.log('[socket] User left:', user);
       Dispatcher.sendAction('USER_LEFT', user);
+    });
+
+    socket.on('new_bet', function(bet) {
+      console.log('[socket] New bet:', bet);
+
+      // Ignore bets that aren't of kind "simple_dice".
+      if (bet.kind !== 'simple_dice') {
+        console.log('[weird] received bet from socket that was NOT a simple_dice bet');
+        return;
+      }
+
+      Dispatcher.sendAction('NEW_ALL_BET', bet);
     });
 
     // Received when your client doesn't comply with chat-server api
@@ -2065,12 +2463,12 @@ function connectToChatServer() {
     // Once we connect to chat server, we send an auth message to join
     // this app's lobby channel.
 
-    // A hash of the current user's accessToken is only sent if you have one
-    var hashedToken;
-    if (worldStore.state.accessToken) {
-      hashedToken =  CryptoJS.SHA256(worldStore.state.accessToken).toString();
-    }
-    var authPayload = { app_id: config.app_id, hashed_token: hashedToken};
+    var authPayload = {
+      app_id: config.app_id,
+      access_token: worldStore.state.accessToken,
+      subscriptions: ['CHAT', 'DEPOSITS', 'BETS']
+    };
+
     socket.emit('auth', authPayload, function(err, data) {
       if (err) {
         console.log('[socket] Auth failure:', err);
@@ -2139,3 +2537,210 @@ window.addEventListener('message', function(event) {
     Dispatcher.sendAction('START_REFRESHING_USER');
   }
 }, false);
+
+
+////////////countup///////////////
+/*
+
+    countUp.js
+    by @inorganik
+
+*/
+
+// target = id of html element or var of previously selected html element where counting occurs
+// startVal = the value you want to begin at
+// endVal = the value you want to arrive at
+// decimals = number of decimal places, default 0
+// duration = duration of animation in seconds, default 2
+// options = optional object of options (see below)
+
+var CountUp = function(target, startVal, endVal, decimals, duration, options) {
+
+    // make sure requestAnimationFrame and cancelAnimationFrame are defined
+    // polyfill for browsers without native support
+    // by Opera engineer Erik Möller
+    var lastTime = 0;
+    var vendors = ['webkit', 'moz', 'ms', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame =
+          window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+    if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+    }
+    if (!window.cancelAnimationFrame) {
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+    }
+
+     // default options
+    this.options = {
+        useEasing : true, // toggle easing
+        useGrouping : true, // 1,000,000 vs 1000000
+        separator : ',', // character to use as a separator
+        decimal : '.' // character to use as a decimal
+    };
+    // extend default options with passed options object
+    for (var key in options) {
+        if (options.hasOwnProperty(key)) {
+            this.options[key] = options[key];
+        }
+    }
+    if (this.options.separator === '') this.options.useGrouping = false;
+    if (!this.options.prefix) this.options.prefix = '';
+    if (!this.options.suffix) this.options.suffix = '';
+
+    this.d = (typeof target === 'string') ? document.getElementById(target) : target;
+    this.startVal = Number(startVal);
+    if (isNaN(startVal)) this.startVal = Number(startVal.match(/[\d]+/g).join('')); // strip non-numerical characters
+    this.endVal = Number(endVal);
+    if (isNaN(endVal)) this.endVal = Number(endVal.match(/[\d]+/g).join('')); // strip non-numerical characters
+    this.countDown = (this.startVal > this.endVal);
+    this.frameVal = this.startVal;
+    this.decimals = Math.max(0, decimals || 0);
+    this.dec = Math.pow(10, this.decimals);
+    this.duration = Number(duration) * 1000 || 2000;
+    var self = this;
+
+    this.version = function () { return '1.5.3'; };
+
+    // Print value to target
+    this.printValue = function(value) {
+        var result = (!isNaN(value)) ? self.formatNumber(value) : '--';
+        if (self.d.tagName == 'INPUT') {
+            this.d.value = result;
+        }
+        else if (self.d.tagName == 'text') {
+            this.d.textContent = result;
+        }
+        else {
+            this.d.innerHTML = result;
+        }
+    };
+
+    // Robert Penner's easeOutExpo
+    this.easeOutExpo = function(t, b, c, d) {
+        return c * (-Math.pow(2, -10 * t / d) + 1) * 1024 / 1023 + b;
+    };
+    this.count = function(timestamp) {
+
+        if (!self.startTime) self.startTime = timestamp;
+
+        self.timestamp = timestamp;
+
+        var progress = timestamp - self.startTime;
+        self.remaining = self.duration - progress;
+
+        // to ease or not to ease
+        if (self.options.useEasing) {
+            if (self.countDown) {
+                self.frameVal = self.startVal - self.easeOutExpo(progress, 0, self.startVal - self.endVal, self.duration);
+            } else {
+                self.frameVal = self.easeOutExpo(progress, self.startVal, self.endVal - self.startVal, self.duration);
+            }
+        } else {
+            if (self.countDown) {
+                self.frameVal = self.startVal - ((self.startVal - self.endVal) * (progress / self.duration));
+            } else {
+                self.frameVal = self.startVal + (self.endVal - self.startVal) * (progress / self.duration);
+            }
+        }
+
+        // don't go past endVal since progress can exceed duration in the last frame
+        if (self.countDown) {
+            self.frameVal = (self.frameVal < self.endVal) ? self.endVal : self.frameVal;
+        } else {
+            self.frameVal = (self.frameVal > self.endVal) ? self.endVal : self.frameVal;
+        }
+
+        // decimal
+        self.frameVal = Math.round(self.frameVal*self.dec)/self.dec;
+
+        // format and print value
+        self.printValue(self.frameVal);
+
+        // whether to continue
+        if (progress < self.duration) {
+            self.rAF = requestAnimationFrame(self.count);
+        } else {
+            if (self.callback) self.callback();
+        }
+    };
+    // start your animation
+    this.start = function(callback) {
+        self.callback = callback;
+        // make sure values are valid
+        if (!isNaN(self.endVal) && !isNaN(self.startVal) && self.startVal !== self.endVal) {
+            self.rAF = requestAnimationFrame(self.count);
+        } else {
+            console.log('countUp error: startVal or endVal is not a number');
+            self.printValue(endVal);
+        }
+        return false;
+    };
+    // toggles pause/resume animation
+    this.pauseResume = function() {
+        if (!self.paused) {
+            self.paused = true;
+            cancelAnimationFrame(self.rAF);
+        } else {
+            self.paused = false;
+            delete self.startTime;
+            self.duration = self.remaining;
+            self.startVal = self.frameVal;
+            requestAnimationFrame(self.count);
+        }
+    };
+    // reset to startVal so animation can be run again
+    this.reset = function() {
+        self.paused = false;
+        delete self.startTime;
+        self.startVal = startVal;
+        cancelAnimationFrame(self.rAF);
+        self.printValue(self.startVal);
+    };
+    // pass a new endVal and start animation
+    this.update = function (newEndVal) {
+        cancelAnimationFrame(self.rAF);
+        self.paused = false;
+        delete self.startTime;
+        self.startVal = self.frameVal;
+        self.endVal = Number(newEndVal);
+        self.countDown = (self.startVal > self.endVal);
+        self.rAF = requestAnimationFrame(self.count);
+    };
+    this.formatNumber = function(nStr) {
+        nStr = nStr.toFixed(self.decimals);
+        nStr += '';
+        var x, x1, x2, rgx;
+        x = nStr.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? self.options.decimal + x[1] : '';
+        rgx = /(\d+)(\d{3})/;
+        if (self.options.useGrouping) {
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + self.options.separator + '$2');
+            }
+        }
+        return self.options.prefix + x1 + x2 + self.options.suffix;
+    };
+
+    // format startVal on initialization
+    self.printValue(self.startVal);
+};
+
+// Example:
+// var numAnim = new countUp("SomeElementYouWantToAnimate", 0, 99.99, 2, 2.5);
+// numAnim.start();
+// numAnim.update(135);
+// with optional callback:
+// numAnim.start(someMethodToCallOnComplete);
