@@ -546,7 +546,7 @@ var worldStore = new Store('world', {
   // data is object, note, assumes user is already an object
   Dispatcher.registerCallback('UPDATE_USER', function(data) {
     self.state.user = _.merge({}, self.state.user, data);
-	config.house_edge =  0.0001 + 0.0099*Math.random();
+    config.house_edge =  0.0001 + 0.0099*Math.random();
     self.emitter.emit('change', self.state);
   });
 
@@ -1050,7 +1050,7 @@ var ChatBox = React.createClass({
                 ),
                 m.user ?
                   // If chat message
-                  el.span(null,el.br(null,null),el.span(null, ' ' + m.text)) :
+                  el.span(null,el.span(null, ' ' + m.text)) :
                   // If system message
                   ''
               );

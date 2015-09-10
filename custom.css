@@ -1,4 +1,8 @@
-
+html, body {
+  width:  100%;
+  height: 100%;
+  margin: 0px;
+}
 
 @keyframes transitionShow {
     from {
@@ -19,6 +23,14 @@
   animation-name: transitionShow;
   animation-duration: 0.5s;
 }
+
+#canvas{
+      z-index: -100;
+    position: fixed;
+    width:100%;
+    height:100%;
+}
+
 
 @keyframes transitionHide {
     from {
@@ -45,7 +57,8 @@
 
 
 width: 100%;
-background: rgb(20, 33, 41);
+background:black;
+/*background: rgb(20, 33, 41);*/
 height: 100%;
 position: fixed;
 z-index: 100;
@@ -74,18 +87,19 @@ z-index: 100;
 }
 
 #blurbg{
-    z-index:-1000;
+    z-index:-10;
     position:fixed;
     width:100%;
     height:100%;
-      background-image: url(../assets/qbg2.jpg);
+    background-color:rgba(0, 0, 0, 0.85);
+    /*  background-image: url(../assets/qbg.jpg);*/
       background-size:100%;
-      background-repeat: no-repeat;
+      background-repeat: repeat;
       background-attachment: fixed;
-    filter        : blur(2px);
+    /*filter        : blur(2px);
     -moz-filter   : blur(2px);
     -webkit-filter: blur(2px);
-    -o-filter     : blur(2px);  
+    -o-filter     : blur(2px);  */
 }
 
 .nb2 {

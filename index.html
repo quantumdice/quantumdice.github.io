@@ -2,12 +2,14 @@
 <head>
   <title>Quantum Dice</title>
 
-  
+
+
   <link href="bootstrap.css" rel="stylesheet">
 
 
   <link href="custom.css" rel="stylesheet"> <!-- Recommendation: Put your CSS customizations in custom.css -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    
   <script type="text/javascript">
         $('body').addClass('hidden');
         $('#blurbg').addClass('hidden');
@@ -18,8 +20,11 @@
        
         });  
   </script>
+    <script type="text/javascript" src="coderain.js"></script>
+  
 </head>
 <body>
+  <canvas id="canvas"></canvas>
   <div id="welOverlay"></div>
   <div id="blurbg"></div>
   <div id="app"></div>
