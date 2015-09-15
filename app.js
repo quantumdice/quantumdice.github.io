@@ -1858,7 +1858,7 @@ var BetBox = React.createClass({
       ),
       React.createElement(ChatToggle, null),
       React.createElement(HotkeyToggle, null),
-      React.createElement(AutobetToggle, null)
+
     );
   }
 });
@@ -2415,18 +2415,7 @@ var App = React.createClass({
           React.createElement(ChatBox, null)
         )
       ),
-      
-       el.div(
-          {
-            id: 'autobetBox',
-            className: 'col-sm-12 chatHide',
-            style: {
-              
-            }
-          },
-          React.createElement(AutobetBox, null)
-        ),
-      
+
       // Tabs
       el.div(
         {style: {marginTop: '15px'}},
