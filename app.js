@@ -1857,7 +1857,7 @@ var BetBox = React.createClass({
 
       ),
       React.createElement(ChatToggle, null),
-      React.createElement(HotkeyToggle, null),
+      React.createElement(HotkeyToggle, null)
 
     );
   }
