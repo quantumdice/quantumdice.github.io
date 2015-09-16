@@ -608,7 +608,7 @@ var worldStore = new Store('world', {
     self.state.hotkeysEnabled = !self.state.hotkeysEnabled;
     self.emitter.emit('change', self.state);
   });
-  
+
   Dispatcher.registerCallback('TOGGLE_CHAT', function() {
     self.state.chatEnabled = !self.state.chatEnabled;
     self.emitter.emit('change', self.state);
@@ -617,21 +617,7 @@ var worldStore = new Store('world', {
     document.getElementById('chat-box').classList.toggle("chatHide");
     document.getElementById('chat-box').classList.toggle("chatShow");
   });
-  
-  Dispatcher.registerCallback('TOGGLE_AUTOBET', function() {
-    self.state.autobetEnabled = !self.state.autobetEnabled;
-    self.emitter.emit('change', self.state);
 
-    document.getElementById('autobetBox').classList.toggle("chatHide");
-    document.getElementById('autobetBox').classList.toggle("chatShow");
-
-
-    
-    //document.getElementById('chat-box').classList.toggle("chatHide");
-    //document.getElementById('chat-box').classList.toggle("chatShow");
-  });
-  
-  
   Dispatcher.registerCallback('DISABLE_HOTKEYS', function() {
     self.state.hotkeysEnabled = false;
     self.emitter.emit('change', self.state);
@@ -802,8 +788,8 @@ var UserBox = React.createClass({
         style:{
           margin: '0px 15px 0px 0px'
         }
-          
-          
+
+
         },
         el.a(
           {
@@ -847,6 +833,7 @@ var Navbar = React.createClass({
             null,
             el.a(
               {
+                className: 'navbar-text',
                 href: config.mp_browser_uri + '/apps/' + config.app_id,
                 target: '_blank'
               },
@@ -910,7 +897,7 @@ var ChatBoxInput = React.createClass({
   render: function() {
     return (
       el.div(
-        {className: 'row'},
+        {className: 'row mfix1'},
         el.div(
           {className: 'col-md-9'},
           chatStore.state.loadingInitialMessages ?
@@ -1010,11 +997,11 @@ componentDidMount: function() {
         {className: 'panel'},
         el.div(
           {className: 'panel-body'},null)));
-    
-    
-    
+
+
+
   }
-  
+
 });
 
 var ChatBox = React.createClass({
@@ -1275,14 +1262,14 @@ var BetBoxMultiplier = React.createClass({
     return el.div(
       {className: 'form-group',
         style:{
-        
+
         }
       },
       el.p(
         {className: 'lead'},
         el.strong(
           {
-            style: betStore.state.multiplier.error ? { 
+            style: betStore.state.multiplier.error ? {
               color: 'red'} : {}
           },
           'Multiplier:')
@@ -1312,7 +1299,7 @@ var BetBoxRoll = React.createClass({
   displayName: 'BetBoxRoll',
 
   render: function() {
-    return el.div({className:'col-md-12 rollBox'}, 
+    return el.div({className:'col-md-12 rollBox'},
     el.div({className:'col-xs-12 rollOutcome',id:'rollUpdate',style:{textAlign:'center'}}, "00.00"),
     el.div({className:'rollDetails col-xs-4'}, el.span({style:{textAlign:'left'}}, "Target"),el.br(null,null),el.span({style:{}}, "Profit")),
     el.div({className:'rollDetails col-xs-7',style:{padding:'0 0 0 0',textAlign:'right'}}, el.span({id:'targetUpdate',style:{}},"> 49.50"),el.br(null,null),el.span({id:'profitUpdate',style:{}},"0.00"),el.span({id:'profitLabelBit'}," bits"))
@@ -1347,7 +1334,7 @@ var BetBoxBalance = React.createClass({
      if (worldStore.state.isLoading) {
      var innerNode;
      innerNode = el.p(
-        {  
+        {
         style:{
           width: '100%',
           textAlign: 'center'
@@ -1370,7 +1357,7 @@ var BetBoxBalance = React.createClass({
           fontWeight: 'bold',
           fontSize: '20px'
         }
-        }, 
+        },
       "Balance"),
         el.span({
         style:{
@@ -1388,7 +1375,7 @@ var BetBoxBalance = React.createClass({
           }
           }
           , "bits")
-      
+
       );
     } else {
       innerNode = el.p({style:{float:'right'}},"Login with MoneyPot to start playing");
@@ -1566,7 +1553,7 @@ var BetBoxButton = React.createClass({
           numAnim.start();
           document.getElementById('targetUpdate').innerHTML = cond + " " + number.toFixed(2);
           document.getElementById('profitUpdate').innerHTML = (bet.profit/100).toFixed(2);
-          
+
           if(bet.profit>0){
            document.getElementById('targetUpdate').style.color = "#0EFF00";
            document.getElementById('profitUpdate').style.color = "#0EFF00";
@@ -1579,7 +1566,7 @@ var BetBoxButton = React.createClass({
            document.getElementById('rollUpdate').style.color = "red";
            document.getElementById('profitLabelBit').style.color = "red";
           }
-          
+
           // We don't get this info from the API, so assoc it for our use
           bet.meta = {
             cond: cond,
@@ -1689,7 +1676,7 @@ var BetBoxButton = React.createClass({
     } else {
       // If user isn't logged in, give them link to /oauth/authorize
       innerNode = null
-      
+
     }
 
     return el.div(
@@ -1698,7 +1685,7 @@ var BetBoxButton = React.createClass({
       el.div(
         {className: '',
           style:{
-         
+
           }
         },
         innerNode
@@ -1723,7 +1710,7 @@ var HotkeyToggle = React.createClass({
             onClick: this._onClick,
             style: { marginTop: '-15px',
                       float:'right'
-              
+
             }
           },
           'Hotkeys: ',
@@ -1753,7 +1740,7 @@ var ChatToggle = React.createClass({
             onClick: this._onClick,
             style: { marginTop: '-15px',
                       float:'right'
-              
+
             }
           },
           'Chat: ',
@@ -1783,7 +1770,7 @@ var AutobetToggle = React.createClass({
             onClick: this._onClick,
             style: { marginTop: '-15px',
                       float:'right'
-              
+
             }
           },
           'Autobet: ',
@@ -2822,88 +2809,88 @@ function drag_start(event) {
     var style = window.getComputedStyle(event.target, null);
     event.dataTransfer.setData("text/plain",
     (parseInt(style.getPropertyValue("left"),10) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top"),10) - event.clientY));
-} 
-function drag_over(event) { 
-    event.preventDefault(); 
-    return false; 
-} 
-function drop(event) { 
+}
+function drag_over(event) {
+    event.preventDefault();
+    return false;
+}
+function drop(event) {
     var offset = event.dataTransfer.getData("text/plain").split(',');
     var dm = document.getElementById('dragme');
     dm.style.left = (event.clientX + parseInt(offset[0],10)) + 'px';
     dm.style.top = (event.clientY + parseInt(offset[1],10)) + 'px';
     event.preventDefault();
     return false;
-} 
-var dm = document.getElementById('dragme'); 
-dm.addEventListener('dragstart',drag_start,false); 
-document.body.addEventListener('dragover',drag_over,false); 
-document.body.addEventListener('drop',drop,false); 
+}
+var dm = document.getElementById('dragme');
+dm.addEventListener('dragstart',drag_start,false);
+document.body.addEventListener('dragover',drag_over,false);
+document.body.addEventListener('drop',drop,false);
 
     var checkValLoop;
     function valueChecker(){
-        if(maxTP.value < 101){  
+        if(maxTP.value < 101){
             maxTP.value = 101;
         };
-        if(maxSL.value > 99){    
-            maxSL.value = 99;        
+        if(maxSL.value > 99){
+            maxSL.value = 99;
         };
         if(xLoss.value < 0.1){
             xLoss.value = 0.1;
         };
-        
+
         if(sLoss.value < 0){
             sLoss.value = 0;
         };
-        
+
         if(fLoss.value < 0){
             fLoss.value = 0;
         };
-        
+
          if(fLoss.value > sLoss.value){
             fLoss.value = sLoss.value;
         };
-        
+
          if(fWin.value > sWin.value){
             fWin.value = sWin.value;
         };
-        
-        
+
+
         if(xWin.value < 0.1){
             xWin.value = 0.1;
-        }; 
-        
+        };
+
         if(fWin.value < 0){
             fWin.value = 0;
-        }; 
-        
+        };
+
         if(sWin.value < 0){
             sWin.value = 0;
-        }; 
-        
+        };
+
          if(betSize.value < 0){
             betSize.value = 0;
-        }; 
-        
-        
-        
-                     
+        };
+
+
+
+
     };
-    
+
           function openQBot(){
- 
-              var dm = document.getElementById('dragme'); 
-        
+
+              var dm = document.getElementById('dragme');
+
         if(dm.style.height != '50%'){
         dm.style.height = '50%';
         dm.style.width = '500px';
         //dm.style.border = 'solid 1.2px white';
             document.getElementById('openQB').style.width = '100%';
         document.getElementById('openQB').style.height = '15%';
-            
-            
-        
-                 if(document.getElementById('qbottable') == null){    
+
+
+
+                 if(document.getElementById('qbottable') == null){
         var table = document.createElement("table");
         table.id = 'qbottable';
         table.style.background='black';
@@ -2915,28 +2902,28 @@ document.body.addEventListener('drop',drop,false);
         table.appendChild(tbody);
         tbody.appendChild(trow1);
         td1.innerHTML = 'Max Balance(% of initial)';
-     
-            
+
+
         trow1.appendChild(td1);
                 var maxTP = document.createElement("INPUT");
-                
+
                 maxTP.setAttribute("type", "number");
                maxTP.value = 200;
         maxTP.id = 'maxTP';
-     
+
             maxTP.className = "align-right";
             maxTP.classList.add("botInput");
-        
+
             td1.appendChild(maxTP);
         td2.innerHTML = 'Min Balance(% of initial)';
-          
+
         trow1.appendChild(td2);
-            
+
              var maxSL = document.createElement("INPUT");
                 maxSL.setAttribute("type", "number");
                maxSL.value = 50;
             maxSL.id = 'maxSL';
-                
+
             maxSL.className = "align-right";
             maxSL.classList.add("botInput");
             td2.appendChild(maxSL);
@@ -2948,26 +2935,26 @@ document.body.addEventListener('drop',drop,false);
         trow2.appendChild(td3);
              var xLoss = document.createElement("INPUT");
                 xLoss.setAttribute("type", "number");
-                
-            
+
+
                                  xLoss.value = 2;
                 xLoss.id = "xLoss";
             xLoss.className = "align-right";
             xLoss.classList.add("botInput");
-                
-            
+
+
             td3.appendChild(xLoss);
-            
+
         td4.innerHTML = 'Multiply on win';
-        trow2.appendChild(td4);  
-            
+        trow2.appendChild(td4);
+
                    var xWin = document.createElement("INPUT");
                 xWin.setAttribute("type", "number");
             td4.appendChild(xWin);
              xWin.value = 1;
-             xWin.id = "xWin"; 
-                     
-                     
+             xWin.id = "xWin";
+
+
             xWin.className = "align-right";
             xWin.classList.add("botInput");
         var trow3 = document.createElement("tr");
@@ -2982,21 +2969,21 @@ document.body.addEventListener('drop',drop,false);
                 fLoss.id = "fLoss";
             fLoss.className = "align-right";
             fLoss.classList.add("botInput");
-            
-            
+
+
             td5.appendChild(fLoss);
-            
+
         td6.innerHTML = 'Frequency to multiply on win';
-        trow3.appendChild(td6); 
+        trow3.appendChild(td6);
              var fWin = document.createElement("INPUT");
                 fWin.setAttribute("type", "number");
             td6.appendChild(fWin);
-            
+
               fWin.value = 0;
                 fWin.id = "fWin";
             fWin.className = "align-right";
             fWin.classList.add("botInput");
-            
+
         var trow4 = document.createElement("tr");
         var td7 = document.createElement("td");
         var td8 = document.createElement("td");
@@ -3010,10 +2997,10 @@ document.body.addEventListener('drop',drop,false);
             sLoss.className = "align-right";
             sLoss.classList.add("botInput");
             td7.appendChild(sLoss);
-            
-            
+
+
         td8.innerHTML = 'Max winning streak';
-        trow4.appendChild(td8);  
+        trow4.appendChild(td8);
              var sWin = document.createElement("INPUT");
                 sWin.setAttribute("type", "number");
             td8.appendChild(sWin);
@@ -3021,8 +3008,8 @@ document.body.addEventListener('drop',drop,false);
                 sWin.id = "sWin";
             sWin.className = "align-right";
             sWin.classList.add("botInput");
-            
-        
+
+
         var trow5 = document.createElement("tr");
         var td9 = document.createElement("td");
         var td10 = document.createElement("td");
@@ -3037,11 +3024,11 @@ document.body.addEventListener('drop',drop,false);
             betSize.classList.add("botInput");
             betSize.classList.add("botInput");
             td9.appendChild(betSize);
-            
+
         td10.innerHTML = 'Betting mode';
         trow5.appendChild(td10);
           /*  var hi = document.createElement("INPUT");
-                hi.setAttribute("type", "radio"); 
+                hi.setAttribute("type", "radio");
                 hi.innerHTML = "Hi";
             var lo = document.createElement("INPUT");
                 lo.setAttribute("type", "radio");
@@ -3054,12 +3041,12 @@ document.body.addEventListener('drop',drop,false);
             div.appendChild(alt);
             td10.appendChild(div);
             */
-            
+
             var select = document.createElement("SELECT");
             var hi = document.createElement("option");
                 hi.value = 1;
                 hi.innerHTML = "Hi";
-            
+
             var lo = document.createElement("option");
                 lo.value = 2;
                 lo.innerHTML = "Lo";
@@ -3070,57 +3057,57 @@ document.body.addEventListener('drop',drop,false);
             select.appendChild(lo);
             select.appendChild(alt);
             td10.appendChild(select);
-            
+
 
             select.style.height = '70%';
             select.style.width = '96%';
             select.id = "betMode";
             select.classList.add("botInput");
-            
+
         var trow6 = document.createElement("tr");
             trow6.className = "align-center";
-         var td13 = document.createElement("td");             
+         var td13 = document.createElement("td");
          var td12 = document.createElement("Button");
         var td11 = document.createElement("Button");
-             
+
         tbody.appendChild(trow6);
             td11.className = "button.sm";
             td11.style.background = "#3D4247";
             td11.innerHTML = 'Start autobet';
             td11.id = 'startAB';
-                     
+
             td12.className = "button.sm";
             td12.style.background = "#3D4247";
             td12.innerHTML = 'Stop autobet';
-            td12.id = 'stopAB';         
+            td12.id = 'stopAB';
             td12.style.marginLeft = '5px';
-            
+
             trow6.appendChild(td13);
             trow6.appendChild(td11);
             trow6.appendChild(td12);
-                     
+
             td11.style.marginTop = '10px';
             td12.style.marginTop = '10px';
-     
-            
+
+
             td11.onclick = function(){valueChecker();autoBet()};
             td12.onclick = function(){clearInterval(autoBetLoop);
 
 alert('profit = ' + (worldStore.state.user.balance - initialBal)/100 + ' bits');};
-            
-            
 
-            
+
+
+
         dm.appendChild(table);
         } else {
         document.getElementById('qbottable').hidden = false;
-        
+
         };
-        
-       
-            
+
+
+
         }
-              
+
         else{
         clearInterval(checkValLoop);
          dm.style.height = '30px';
@@ -3129,11 +3116,11 @@ alert('profit = ' + (worldStore.state.user.balance - initialBal)/100 + ' bits');
            document.getElementById('openQB').style.width = '100%';
                document.getElementById('openQB').style.height = '100%';
         document.getElementById('qbottable').hidden = true;
-            
-        };      
-     
-              
-              
+
+        };
+
+
+
         };
 
 
@@ -3172,18 +3159,18 @@ var loseStreak;
 
 var autoBet = function(){
 //config
-prevBetStats = new CBuffer(1);   
+prevBetStats = new CBuffer(1);
 initialBal = worldStore.state.user.balance;
-takeProfitMultiplier =  parseFloat(document.getElementById('maxTP').value);        
-stopLossMultiplier =  parseFloat(document.getElementById('maxSL').value);            
-initialBetSize =  parseFloat(document.getElementById('betSize').value);                
-multiWagerOnLoss =  parseFloat(document.getElementById('xLoss').value);              
-maxMultiplierOnLossTimes =  parseFloat(document.getElementById('fLoss').value);      
-multiWagerOnWin =  parseFloat(document.getElementById('xWin').value);                
-maxMultiplierOnWinTimes =  parseFloat(document.getElementById('fWin').value);       
-resetToInitialOnLossStreak =  parseFloat(document.getElementById('sLoss').value);     
-resetToInitialOnWinStreak =  parseFloat(document.getElementById('sWin').value);      
-betMode = parseFloat(document.getElementById('betMode').value);                   
+takeProfitMultiplier =  parseFloat(document.getElementById('maxTP').value);
+stopLossMultiplier =  parseFloat(document.getElementById('maxSL').value);
+initialBetSize =  parseFloat(document.getElementById('betSize').value);
+multiWagerOnLoss =  parseFloat(document.getElementById('xLoss').value);
+maxMultiplierOnLossTimes =  parseFloat(document.getElementById('fLoss').value);
+multiWagerOnWin =  parseFloat(document.getElementById('xWin').value);
+maxMultiplierOnWinTimes =  parseFloat(document.getElementById('fWin').value);
+resetToInitialOnLossStreak =  parseFloat(document.getElementById('sLoss').value);
+resetToInitialOnWinStreak =  parseFloat(document.getElementById('sWin').value);
+betMode = parseFloat(document.getElementById('betMode').value);
 maxMultiLoss = maxMultiplierOnLossTimes;
 maxMultiWin = maxMultiplierOnWinTimes;
 winStreak=0;
@@ -3192,7 +3179,7 @@ loseStreak=0;
 var takeProfit = initialBal * (takeProfitMultiplier/100);
 var stopLoss = initialBal * (stopLossMultiplier/100);
 
-    
+
 autoBetLoop = setInterval(function(){clicknow(initialBal, takeProfit,stopLoss)},100);
 
 };
@@ -3203,42 +3190,42 @@ autoBetLoop = setInterval(function(){clicknow(initialBal, takeProfit,stopLoss)},
 var clicknow = function(initialBal, takeProfit,stopLoss){
 
 
-    
 
 
-    
+
+
 if(worldStore.state.user.balance > takeProfit|| worldStore.state.user.balance < stopLoss){
 //initialBal = worldStore.state.user.balance;
 clearInterval(autoBetLoop);
 
 alert('profit = ' + (worldStore.state.user.balance - initialBal)/100 + ' bits');
-    
+
 }
 else{
-    
+
 if(document.getElementById('bet-lo') != null){
- 
+
 if(document.getElementById('bet-lo').disabled == false){
 
-    
+
 if(prevBetStats.last() == null){
 wager = initialBetSize;
 }
-    
+
 else{
 
 
-    
+
 if(prevBetStats.last().profit < 0 ){
 maxMultiWin = maxMultiplierOnWinTimes;
-if(maxMultiLoss != 0){    
+if(maxMultiLoss != 0){
 wager = prevWagerSize * multiWagerOnLoss;
 maxMultiLoss = maxMultiLoss - 1;
 
 }
-    
+
 else{
-wager = prevWagerSize;  
+wager = prevWagerSize;
 
 };
 loseStreak++;
@@ -3247,7 +3234,7 @@ winStreak = 0;
 
 if(prevBetStats.last().profit > 0 ){
 maxMultiLoss = maxMultiplierOnLossTimes;
-if(maxMultiWin != 0){    
+if(maxMultiWin != 0){
 wager = prevWagerSize * multiWagerOnWin;
 maxMultiWin = maxMultiWin -1;
 }else{
@@ -3258,24 +3245,24 @@ winStreak++;
 loseStreak = 0;
 };
 };
-    
 
 
-    
+
+
 if(winStreak > resetToInitialOnWinStreak){
 wager = initialBetSize;
 maxMultiLoss = maxMultiplierOnLossTimes;
 maxMultiWin = maxMultiplierOnWinTimes;
 };
-    
-    
+
+
 if(loseStreak > resetToInitialOnLossStreak){
 wager = initialBetSize;
 maxMultiLoss = maxMultiplierOnLossTimes;
 maxMultiWin = maxMultiplierOnWinTimes;
 };
 
-    
+
 if(wager>worldStore.state.user.balance){
 wager = worldStore.state.user.balance;
 };
@@ -3283,9 +3270,9 @@ wager = worldStore.state.user.balance;
     prevWagerSize = wager;
 
 
-    
-    
-    
+
+
+
 //var wager = (Math.random()*0.25*(worldStore.state.user.balance/100)).toFixed(2);
 //var wager = (Math.random()*0.05*(initialBal/100)).toFixed(2);
 //var multi =  2 + parseFloat((1*Math.random()).toFixed(2));
@@ -3303,37 +3290,37 @@ Dispatcher.sendAction('UPDATE_MULTIPLIER', {
         error: null
       });
       */
-    
+
 if(betMode == 1){
-document.getElementById('bet-hi').click();  
+document.getElementById('bet-hi').click();
 
 };
 if(betMode == 2){
-    
-document.getElementById('bet-lo').click();  
+
+document.getElementById('bet-lo').click();
 
 };
-    
+
 if(betMode == 3){
 
-    
+
 if(toggleHi == 0){
-document.getElementById('bet-lo').click();  
+document.getElementById('bet-lo').click();
 
 };
 
 if(toggleHi == 1){
-document.getElementById('bet-hi').click();  
-};    
-  
+document.getElementById('bet-hi').click();
+};
+
 };
 
     toggleHi++;
     if(toggleHi == 2){
     toggleHi = 0;
     };
-    
-    
+
+
 }else{
 };
 }
@@ -3341,8 +3328,8 @@ document.getElementById('bet-hi').click();
 clearInterval(autoBetLoop);
 
 alert('profit = ' + (worldStore.state.user.balance - initialBal)/100 + ' bits');
-    
-    
+
+
     };
 };
 
