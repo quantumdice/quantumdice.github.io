@@ -2370,12 +2370,7 @@ var App = React.createClass({
   displayName: 'App',
   render: function() {
     return el.div(
-      {className: 'container',
-        style:{
-          width:'100%',
-          padding: '8% 2% 0 2%'
-        }
-      },
+      {className: 'container'},
       // Navbar
       React.createElement(Navbar, null),
       // BetBox & ChatBox
