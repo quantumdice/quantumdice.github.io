@@ -605,7 +605,7 @@ var worldStore = new Store('world', {
     self.state.hotkeysEnabled = !self.state.hotkeysEnabled;
     self.emitter.emit('change', self.state);
   });
-  
+
   Dispatcher.registerCallback('TOGGLE_CHAT', function() {
     self.state.chatEnabled = !self.state.chatEnabled;
     self.emitter.emit('change', self.state);
@@ -613,7 +613,7 @@ var worldStore = new Store('world', {
     document.getElementById('chat-box').classList.toggle("chatHide");
     document.getElementById('chat-box').classList.toggle("chatShow");
   });
-  
+
   Dispatcher.registerCallback('DISABLE_HOTKEYS', function() {
     self.state.hotkeysEnabled = false;
     self.emitter.emit('change', self.state);
@@ -784,8 +784,8 @@ var UserBox = React.createClass({
         style:{
           margin: '0px 15px 0px 0px'
         }
-          
-          
+
+
         },
         el.a(
           {
@@ -829,6 +829,7 @@ var Navbar = React.createClass({
             null,
             el.a(
               {
+                className: 'navbar-text',
                 href: config.mp_browser_uri + '/apps/' + config.app_id,
                 target: '_blank'
               },
@@ -892,7 +893,7 @@ var ChatBoxInput = React.createClass({
   render: function() {
     return (
       el.div(
-        {className: 'row'},
+        {className: 'row mfix1'},
         el.div(
           {className: 'col-md-9'},
           chatStore.state.loadingInitialMessages ?
@@ -1232,14 +1233,14 @@ var BetBoxMultiplier = React.createClass({
     return el.div(
       {className: 'form-group',
         style:{
-        
+
         }
       },
       el.p(
         {className: 'lead'},
         el.strong(
           {
-            style: betStore.state.multiplier.error ? { 
+            style: betStore.state.multiplier.error ? {
               color: 'red'} : {}
           },
           'Multiplier:')
@@ -1269,7 +1270,7 @@ var BetBoxRoll = React.createClass({
   displayName: 'BetBoxRoll',
 
   render: function() {
-    return el.div({className:'col-md-12 rollBox'}, 
+    return el.div({className:'col-md-12 rollBox'},
     el.div({className:'col-xs-12 rollOutcome',id:'rollUpdate',style:{textAlign:'center'}}, "00.00"),
     el.div({className:'rollDetails col-xs-4'}, el.span({style:{textAlign:'left'}}, "Target"),el.br(null,null),el.span({style:{}}, "Profit")),
     el.div({className:'rollDetails col-xs-7',style:{padding:'0 0 0 0',textAlign:'right'}}, el.span({id:'targetUpdate',style:{}},"> 49.50"),el.br(null,null),el.span({id:'profitUpdate',style:{}},"0.00"),el.span({id:'profitLabelBit'}," bits"))
@@ -1304,7 +1305,7 @@ var BetBoxBalance = React.createClass({
      if (worldStore.state.isLoading) {
      var innerNode;
      innerNode = el.p(
-        {  
+        {
         style:{
           width: '100%',
           textAlign: 'center'
@@ -1327,7 +1328,7 @@ var BetBoxBalance = React.createClass({
           fontWeight: 'bold',
           fontSize: '20px'
         }
-        }, 
+        },
       "Balance"),
         el.span({
         style:{
@@ -1345,7 +1346,7 @@ var BetBoxBalance = React.createClass({
           }
           }
           , "bits")
-      
+
       );
     } else {
       innerNode = el.p({style:{float:'right'}},"Login with MoneyPot to start playing");
@@ -1523,7 +1524,7 @@ var BetBoxButton = React.createClass({
           numAnim.start();
           document.getElementById('targetUpdate').innerHTML = cond + " " + number.toFixed(2);
           document.getElementById('profitUpdate').innerHTML = (bet.profit/100).toFixed(2);
-          
+
           if(bet.profit>0){
            document.getElementById('targetUpdate').style.color = "#0EFF00";
            document.getElementById('profitUpdate').style.color = "#0EFF00";
@@ -1536,7 +1537,7 @@ var BetBoxButton = React.createClass({
            document.getElementById('rollUpdate').style.color = "red";
            document.getElementById('profitLabelBit').style.color = "red";
           }
-          
+
           // We don't get this info from the API, so assoc it for our use
           bet.meta = {
             cond: cond,
@@ -1646,7 +1647,7 @@ var BetBoxButton = React.createClass({
     } else {
       // If user isn't logged in, give them link to /oauth/authorize
       innerNode = null
-      
+
     }
 
     return el.div(
@@ -1655,7 +1656,7 @@ var BetBoxButton = React.createClass({
       el.div(
         {className: '',
           style:{
-         
+
           }
         },
         innerNode
@@ -1680,7 +1681,7 @@ var HotkeyToggle = React.createClass({
             onClick: this._onClick,
             style: { marginTop: '-15px',
                       float:'right'
-              
+
             }
           },
           'Hotkeys: ',
@@ -1710,7 +1711,7 @@ var ChatToggle = React.createClass({
             onClick: this._onClick,
             style: { marginTop: '-15px',
                       float:'right'
-              
+
             }
           },
           'Chat: ',

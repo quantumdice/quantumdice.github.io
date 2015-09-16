@@ -5,26 +5,26 @@
 
 
   <link href="bootstrap.css" rel="stylesheet">
+  <link href="application.css" rel="stylesheet">
 
 
   <link href="custom.css" rel="stylesheet"> <!-- Recommendation: Put your CSS customizations in custom.css -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    
+
   <script type="text/javascript">
         $('body').addClass('hidden');
         $('#blurbg').addClass('hidden');
 
         $(document).ready(function() {
-        $('body').removeClass('hidden');   // EDIT: Can also use $('html').removeClass('hidden'); 
+        $('body').removeClass('hidden');   // EDIT: Can also use $('html').removeClass('hidden');
             $('#welOverlay').addClass('hidden');
-       
-        });  
+
+        });
   </script>
     <script type="text/javascript" src="coderain.js"></script>
-  
+
 </head>
-<body>
-  <canvas id="canvas"></canvas>
+<body class="background-dark">
   <div id="welOverlay"></div>
   <div id="blurbg"></div>
   <div id="app"></div>
