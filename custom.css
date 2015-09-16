@@ -1,8 +1,29 @@
+.botInput{
+  background: rgba(21, 29, 33, 0.54);
+  color: white;
+}
+
+
 html, body {
   width:  100%;
   height: 100%;
   margin: 0px;
 }
+
+aside { 
+    position:  absolute;
+    left: 0;
+    top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+    width: 200px; 
+    background: rgba(255,255,255,0.66); 
+   
+    border-radius: 4px; padding: 8px;
+}
+
+#autobetBox{
+  margin-top:25px;
+}
+
 
 @keyframes transitionShow {
     from {
