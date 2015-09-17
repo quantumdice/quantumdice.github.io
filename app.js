@@ -2372,7 +2372,7 @@ var App = React.createClass({
     return el.div(
       {className: 'container',
         style:{
-          padding-top: '8%'
+          paddingTop: '8%'
         }
       },
       // Navbar
