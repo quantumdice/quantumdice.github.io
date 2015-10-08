@@ -1446,7 +1446,7 @@ html {
 
 /* line 27, ../../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_scaffolding.scss */
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: monospace, sans-serif;
   font-size: 13px;
   line-height: 1.428571429;
   color: #f8f8f8;
@@ -15325,7 +15325,7 @@ textarea + .help-block,
 
 /* line 599, ../../src/sass/_override-bootstrap.scss */
 .navbar-nav {
-  margin: -7px;
+  margin: 6px;
 }
 /* line 602, ../../src/sass/_override-bootstrap.scss */
 .navbar-nav > li > a {
@@ -27743,7 +27743,7 @@ table.table thead .sorting_desc_disabled {
 
 /* line 1502, ../../src/sass/_widgets.scss */
 .dd3-handle:before {
-  content: '≡';
+  content: 'тЙб';
   display: block;
   position: absolute;
   left: 0;
