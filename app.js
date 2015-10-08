@@ -600,6 +600,8 @@ var worldStore = new Store('world', {
     temp > 0 ? localStorage.setItem("bonus",temp) : localStorage.setItem("bonus",0);
     if(temp == 0){
       worldStore.state.bonusEnabled = false;
+		      document.getElementById("bonusProgress").classList.toggle("progress-info");
+      document.getElementById("bonusProgress").classList.toggle("progress-striped");
     }
     document.getElementById("bonusProgress").children[0].style.width = localStorage.getItem("bonus") + "%";
     }
