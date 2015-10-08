@@ -639,6 +639,7 @@ var worldStore = new Store('world', {
     if(document.getElementById("bonusProgress").children[0].style.width == "100%"){
     self.state.bonusEnabled = !self.state.bonusEnabled;
     self.emitter.emit('change', self.state);
+	config.house_edge = worldStore.state.bonusEnabled?(0.0001 + 0.0009*Math.random()):(0.0001 + 0.0099*Math.random());
     document.getElementById("bonusProgress").classList.toggle("progress-info");
     document.getElementById("bonusProgress").classList.toggle("progress-striped");
     }
